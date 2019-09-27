@@ -71,6 +71,7 @@ class AppInstall extends Command
     {
         $data = json_decode(file_get_contents('https://restcountries.eu/rest/v2/all'));
 
+        dd($data);
         foreach($data as $country) {
             Country::forceCreate([
                 'name' => $country->name,
