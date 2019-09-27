@@ -1,0 +1,120 @@
+/*! themes/_colors.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Bulkit general color variables 
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Bulkit colors
+1. State colors
+2. Social colors
+3. Predefined gradients
+4. Predefined box shadows
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Bulkit colors
+========================================================================== */
+
+$white: #fff;
+$smoke-white: #fcfcfc;
+$grey-white: #f2f2f2;
+$grey-white-accent: #e2e2e2;
+$command-grey: #fafbfc;
+$light-grey: #EFF4F7;
+$ultra-light-grey: #f7fcff;
+$title-grey: #A9ABAC;
+$blue-grey: #444F60;
+$light-blue-grey: #98a9c3;
+$medium-grey: #66676b;
+$basaltic-grey: #878787;
+$muted-grey: #999;
+$section-grey: #fbfbfb;
+$section-grey-accent: #efefef;
+$background-grey: #f3f5f7;
+$header-grey: #F5F9FC;
+$default-input: #ccc;
+$placeholder: #cecece;
+$fade-grey: #ededed;
+$sidebar: #344258;
+$coal: #444444;
+$grey-6: #666;
+$grey-5: #555;
+$grey-3: #333;
+$cream-grey: #f6f4ff;
+$icon-grey: #818a97;
+$border-grey: #d4dadf;
+$dashboard-grey: #f4f6fb;
+
+/* ==========================================================================
+1. State colors
+========================================================================== */
+
+$red: #FF7273;
+$blue: #039BE5;
+$green: #00b289;
+$orange: #eda514;
+
+/* ==========================================================================
+2. Social colors
+========================================================================== */
+
+$facebook: #3B5998;
+$twitter: #1dcaff;
+$linkedin: #007bb6;
+$tumblr: #35465c;
+$github: #444;
+$dribbble: #ea4c89;
+$google-plus: #d34836;
+$youtube: #cc181e;
+$reddit: #ff4500;
+
+
+/* ==========================================================================
+3. Predefined gradients
+========================================================================== */
+
+// Modal gradient
+$modal-ga: #6a85b6;
+$modal-gb: #bac8e0;
+
+$webkit-modal-gradient: -webkit-linear-gradient(45deg, $modal-ga 0%, $modal-gb 100%);
+$modal-gradient: linear-gradient(45deg, $modal-ga 0%, $modal-gb 100%);
+
+// Coal
+$coal-a: $blue-grey;
+$coal-b: #444;
+
+$webkit-coal-gradient: -webkit-linear-gradient(45deg, $coal-a, $coal-b); /* Chrome 10-25, Safari 5.1-6 */
+$coal-gradient: linear-gradient(45deg, $coal-a, $coal-b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+/* ==========================================================================
+4. Predefined box shadows
+========================================================================== */
+
+$base-shadow: rgba(0, 0, 0, 0.12);
+
+//Orange box shadow
+$orange-shadow-from: rgba(237, 165, 20, 0.42);
+$orange-shadow-to: rgba(237, 165, 20, 0.2);
+$orange-box-shadow:  0 14px 26px -12px $orange-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $orange-shadow-to !important;
+
+//Green box shadow
+$green-shadow-from: rgba(0, 178, 137, 0.42);
+$green-shadow-to: rgba(0, 178, 137, 0.2);
+$green-box-shadow:  0 14px 26px -12px $green-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $green-shadow-to !important;
+
+//Red box shadow
+$red-shadow-from: rgba(255, 114, 115, 0.42);
+$red-shadow-to: rgba(255, 114, 115, 0.2);
+$red-box-shadow:  0 14px 26px -12px $red-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $red-shadow-to !important;
+
+//Blue box shadow
+$blue-shadow-from: rgba(3, 155, 229, 0.42);
+$blue-shadow-to: rgba(3, 155, 229, 0.2);
+$blue-box-shadow:  0 14px 26px -12px $blue-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $blue-shadow-to !important;

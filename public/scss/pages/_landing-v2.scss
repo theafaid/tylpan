@@ -1,0 +1,745 @@
+/*! _landing-v2.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Landing kit v3 SCSS file
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Hero styles
+1. Floating chat bubbles
+2. Section title
+3. Icon box
+4. Font
+5. Images
+6. testimonials
+7. Wavy footer
+8. Pricing page
+10. Chat widget trigger button
+11. Chat widget
+12. Tablet media queries (portrait orientation)
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Hero styles
+========================================================================== */
+
+//Hero header with wave shape
+.hero.hero-wavy:before {
+    background: transparent url(../images/bg/shapes/wavy-alt.png) no-repeat scroll 0 bottom / 100% auto;
+    content: "";
+    height: 321px;
+    width: 100%;
+    z-index: 1 !important;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+//Page title 
+.hero-caption {
+    text-align: left;
+    .title.big-landing-title {
+        color: $white;
+        z-index: 999;
+        font-size: 2.8rem;
+        font-family: 'Nexa Bold', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+    .subtitle {
+        margin-bottom: 0;
+    }
+}
+
+//Page title adjustment on mobile
+@media (max-width: 767px) {
+    .hero-caption {
+        text-align: center !important;
+        h1, h2 {
+            padding-right: 0;
+        }
+    }
+}
+
+//Hero canvas icons
+#canvas {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: visible;
+    position: absolute;
+    top: 10%;
+}
+
+//Floating avatars on homepage hero
+.floating-avatars .avatar {
+    height: 60px;
+    border-radius: 100px;
+    position: absolute;
+    &.avatar-1st {
+        left: 50%;
+        top: 64%;
+    }
+    &.avatar-2nd {
+        height: 40px;
+        left: 80%;
+        top: 45%;
+    }
+    &.avatar-3rd {
+        height: 50px;
+        left: 68%;
+        top: 60%;
+    }
+    &.avatar-4th {
+        left: 90%;
+        top: 75%;
+    }
+    &.avatar-5th {
+        height: 50px;
+        left: 33%;
+        top: 55%;
+    }
+    &.avatar-6th {
+        left: 20%;
+        top: 69%;
+        z-index: 2;
+    }
+    &.avatar-7th {
+        height: 40px;
+        left: 8%;
+        top: 45%;
+    }
+}
+
+//pricing hero
+.pricing-hero {
+    padding: 120px 0;
+    min-height: 70vh;
+}
+
+/* ==========================================================================
+1. Floating chat bubbles
+========================================================================== */
+
+//Floating chat bubbles on homepage
+.floating-bubbles {
+    .bubble  {
+        img {
+            height: 100px;
+            position: absolute;
+            &.bubble-1st {
+                left: 20%;
+                top: -5%;  
+                animation-delay: .5s;
+            }
+            &.bubble-2nd {
+                left: 50%;
+                top: 25%;    
+                animation-delay: 1.5s;
+            }
+            &.bubble-3rd {
+                left: 15%;
+                top: 75%;    
+                animation-delay: 2.5s;
+            }
+            &.bubble-4th {
+                right: 15%;
+                top: -15%;    
+                animation-delay: 4.5s;
+            }
+            &.bubble-5th {
+                right: 15%;
+                top: -15%;    
+                animation-delay: 3.5s;
+            }
+            &.bubble-6th {
+                right: 50%;
+                top: 20%;    
+                animation-delay: 2s;
+            }
+            &.bubble-7th {
+                right: 10%;
+                top: -80%;    
+                animation-delay: 1.7s;
+                transform: rotate(-60deg);
+            }
+            &.bubble-8th {
+                left: 10%;
+                top: -7%;    
+                animation-delay: 5.3s;
+            }
+            &.bubble-9th {
+                left: 30%;
+                top: 80%;    
+                animation-delay: 5.3s;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. Section title
+========================================================================== */
+
+.subtitle:not(:last-child), .title:not(:last-child), .content h5 {
+    margin-bottom: 0 !important;
+}
+
+.section-title-wrapper {
+    .section-title-landing {
+        font-family: 'Nexa Bold', sans-serif;
+        font-size: 2.7rem;
+        color: $blue-grey;
+        padding: 20px 0;
+    }
+    h4 {
+        font-family: 'Nexa Light', sans-serif;
+        font-weight: 300;
+        font-size: 1.2rem;
+        color: $muted-grey;
+    }
+}
+
+.title-wrapper {
+    .top-subtitle {
+        text-transform: uppercase;
+        color: $muted-grey;
+        font-family: 'Nexa Light', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+    }
+    h2 {
+        font-size: 2rem !important;
+    }
+}
+
+.quick-feature {
+    font-family: 'Nexa Light';
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.title {
+    &.is-landing {
+        font-family: 'Nexa Bold', sans-serif;
+    }
+    &.is-landing-light {
+        font-family: 'Nexa Light', sans-serif;
+    }
+}
+
+/* ==========================================================================
+3. Icon box
+========================================================================== */
+
+.chat-icon-box {
+    i {
+        font-size: 3.8rem;
+        font-weight: normal;
+        color: $primary;
+    }
+    .box-title {
+        font-family: 'Nexa Light', sans-serif;
+        padding: 5px 0;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        color: $primary;
+    }
+}
+
+.square-icon-box {
+    .box-title {
+        font-family: 'Nexa Light';
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+    .box-text {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================================================
+4. Font
+========================================================================== */
+
+//Font styling helper class
+.is-landing {
+    font-family: 'Nexa Light', sans-serif !important;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+5. Images
+========================================================================== */
+
+//animated UI svg
+.vivus-svg {
+    max-height: 450px;
+    width: 450px;
+}
+
+//Featured images settings
+.featured-svg {
+    max-width: 450px;
+    &.is-large {
+        max-width: 540px;
+    }
+}
+
+
+/* ==========================================================================
+6. testimonials
+========================================================================== */
+
+//Testimonials company logo position
+.flat-testimonial-item {
+    .company {
+        max-width: 100px;
+        margin-right: 0 !important;
+    }
+}
+
+/* ==========================================================================
+7. Wavy footer
+========================================================================== */
+.section.footer-wavy:before {
+    background: transparent url(../images/bg/shapes/wavy-alt.png) no-repeat scroll 0 bottom / 100% auto;
+    content: "";
+    height: 321px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1 !important;
+}
+
+//Footer logo adjustment on mobile
+@media (max-width: 768px) {
+    .footer-logo {
+        padding-top: 20px;
+    }
+}
+
+/* ==========================================================================
+8. Pricing page
+========================================================================== */
+
+//Pricing table position
+#fancy-pricing {
+    margin-top: -20%;
+}
+
+//Material inputs color adjustment
+.contact-material {
+    .material-input {
+        color: $white !important;
+    }
+}
+
+//Giant newsletter subscribe input
+.giant-input-wrapper {
+    padding: 30px 40px;
+    background: $section-grey-accent;
+    .giant-input {
+        position: relative;
+        min-width: 300px;
+        max-width: 100%;
+        input {
+            padding: 20px 165px 20px 20px;
+            width: 100%;
+            background: $white;
+            color: $muted-grey;
+            border: none;
+            height: 60px;
+            line-height: 60px;
+            transition: all 0.5s;
+            border: 1px solid rgba(213,220,247,0.59);
+            &:focus {
+                outline: none !important;
+                box-shadow:  0px 5px 43px rgba(0, 0, 0, 0.18) !important;
+            }
+        }
+        button.inner {
+            position: absolute;
+            right: 7px;
+            top: 7px;
+        }
+    }
+}
+
+/* ==========================================================================
+9. Login and Sign up pages
+========================================================================== */
+
+//Login and signup cards
+.clean-login-card, .clean-signup-card {
+    padding: 40px;
+    border-radius: 6px;
+    max-width: 400px;
+    margin: auto;
+    background-color: $white;
+    border: 1px solid #ecf0f1;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    h2 {
+        font-size: 24px;
+        padding: 20px 0;
+        font-weight: 700 !important;
+        font-family: 'Nexa Light', sans-serif;
+    }
+}
+
+.signup-context {
+    border: none !important;
+    border-radius: 6px;
+    .argument {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        padding-top: 30px;
+        .icon i {
+            font-size: 2.4rem;
+            color: $white;
+        }
+        .argument-text {
+            margin-left: 22px;
+            color: $white;
+        }
+    }
+}
+
+/* ==========================================================================
+10. Chat widget trigger button
+========================================================================== */
+#bulchat {
+    position: fixed;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    bottom: 85px;
+    margin: 0 25px 0 0;
+    z-index: 9999;
+    transition: 0.35s;
+    transform: scale(0.7);
+    transition: all 0.5s;
+    animation: gelatine;
+}
+
+#bulchat.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+
+}
+
+#bulchat.visible div {
+    outline: none;
+    opacity: 1;
+    background: $secondary;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+
+    }
+}
+
+#bulchat div {
+    outline: none;
+    text-decoration: none;
+    border: 0 none;
+    display: block;
+    width: 46px;
+    height: 46px;
+    background-color: $medium-grey;
+    opacity: 1;
+    transition: all 0.3s;
+    border-radius: 50% 50% 50% 0;
+    text-align: center;
+    font-size: 26px
+}
+
+body #bulchat div {
+    outline: none;
+    color: #fff;
+}
+
+#bulchat div:after {
+    outline: none;
+    content: url(../images/illustrations/icons/landing-v2/smile.svg);
+    font-family: "FontAwesome";
+    position: relative;
+    display: block;
+    top: 50%;
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%);
+}
+
+#bulchat.visible.close {
+    transform: rotate(90deg);
+}
+
+#bulchat div.close:after {
+    outline: none;
+    content: url(../images/illustrations/icons/landing-v2/close.svg);
+    font-family: "FontAwesome";
+    position: relative;
+    display: block;
+    top: 50%;
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%);
+    transition: all 0.5s ease;
+}
+
+/* ==========================================================================
+11. Chat widget
+========================================================================== */
+#chat-widget {
+    display: none;
+    //component body
+    .chat-widget-body {
+        background-color: #fff;
+        position: fixed;
+        bottom: 85px;
+        right: 85px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 370px;
+        height: 550px;
+        border-radius: 10px 10px 0;
+        box-shadow: 0 24px 25px rgba(0,0,0,.1);
+        transition: all 0.5s ease;
+        box-sizing: border-box;
+        z-index: 999;
+        &.is-closed {
+            -webkit-animation-name: fadeOutUp;
+            -webkit-animation-duration: .5s;
+            animation-name: fadeOutUp;
+            animation-duration: .5s;
+        }
+        &.is-opened {
+            -webkit-animation-name: fadeInDown;
+            -webkit-animation-duration: .5s;
+            animation-name: fadeInDown;
+            animation-duration: .5s;
+        }
+        //header
+        .chat-header {
+            padding: 20px 20px 10px 20px;
+            background-color: $secondary;
+            .close-chat img {
+                height: 10px;
+            }
+            .chat-title {
+                text-align: center;
+                color: $white;
+                font-size: 17px;
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+            .chat-team {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .team-member {
+                    margin: 0 5px 0 5px;
+                    img {
+                        height: 50px;
+                        border-radius: 100px;
+                    }
+                    div {
+                        color: $white;
+                    }
+                }
+            }
+            .response-delay {
+                color: $white;
+                margin-top: 20px;
+                font-size: 12px;
+            }
+        }
+        //messages wrapper
+        .message-container {
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            height: 100%;
+            padding-bottom: 100px;
+            .chat-message {
+                padding: 20px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                img {
+                    height: 35px;
+                    border-radius: 100px;
+                }
+                .bubble-wrapper {
+                    width: 100%;
+                    .chat-bubble {
+                        padding: 10px 20px 10px 20px;
+                        font-size: 12px;
+                        border: 1px solid $fade-grey;
+                        position: relative;
+                        top: 30px;
+                    }
+                    .timestamp {
+                        position: relative;
+                        top: 8px;
+                        font-size: 11px;
+                        font-weight: 500;
+                        color: $muted-grey;
+                    }
+                } 
+                //received message
+                &.from {
+                    .chat-bubble {
+                        margin-left: 20px;
+                        color: $white;
+                        background: $secondary;
+                        border-radius: 0 15px 15px 15px;
+                    }
+                    .timestamp {
+                        right: 10px;
+                        float: right;
+                    }
+                }
+                //sent message
+                &.to {
+                    .chat-bubble {
+                        margin-right: 20px;
+                        color: $white;
+                        background: $secondary;
+                        border: 1px solid $fade-grey;
+                        border-radius: 15px 0 15px 15px;
+                        text-align: left !important;
+                    }
+                    .timestamp {
+                        left: 0;
+                        top: 23px;
+                    }
+                }
+            }
+        }
+        //Scrollbar styles for webkit browsers
+        .message-container::-webkit-scrollbar {
+            width: 10px;
+        }
+        .message-container::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background: rgba(0,0,0,0.2)
+        }
+        //Chat message input
+        .message-input {
+            position: absolute;
+            bottom: -5px !important;
+            width: 100%;
+            textarea {
+                box-sizing: border-box;
+                padding: 18px;
+                padding-right: 100px;
+                padding-left: 30px;
+                width: 100%;
+                height: 100%;
+                font-family: "intercom-font", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 1.33;
+                white-space: pre;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                border: none !important;
+                resize: none;
+                background-color: $smoke-white;
+                &:focus {
+                    outline: none !important;
+                }
+            }
+            .message-options {
+                position: absolute;
+                right: 30px;
+                top: 0;
+                .emoji-button {
+                    position: relative;
+                    float: left;
+                    display: inline-block;
+                    cursor: pointer;
+                    opacity: .7;
+                    height: 55px;
+                    width: 30px;
+                    &:before {
+                        background-image: url(https://image.ibb.co/gH13KQ/emoji_icon.png);
+                        background-size: 18px 18px;
+                        background-repeat: no-repeat;
+                        content: " ";
+                        width: 18px;
+                        height: 18px;
+                        left: 5px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 20px;
+                        background-position: 50%;
+                    }
+                }
+                .attach-button {
+                    position: relative;
+                    float: left;
+                    display: inline-block;
+                    cursor: pointer;
+                    opacity: .7;
+                    height: 55px;
+                    width: 30px;
+                    &:before {
+                        background-image: url(https://image.ibb.co/hSE165/attach_icon.png);
+                        background-size: 16px 18px;
+                        background-repeat: no-repeat;
+                        content: " ";
+                        width: 16px;
+                        height: 18px;
+                        left: 5px;
+                        //border-radius: 50%;
+                        position: absolute;
+                        top: 20px;
+                        background-position: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Chat widget on mobile
+@media (max-width: 767px) {
+    .chat-widget-body {
+        height: 100% !important;
+        width: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+        border-radius: 0 !important;
+        z-index: 99999 !important;
+    }
+    #bulchat.visible.close {
+        transform: rotate(90deg);
+        visibility: hidden;
+    }
+}
+
+/* ==========================================================================
+12. Tablet media queries (portrait orientation)
+========================================================================== */
+
+//Tablet portrait media queries
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    .is-tablet-padded {
+        padding: 0 10%;
+    }
+    .is-tablet-padded-lg {
+        padding: 0 20%;
+    }
+
+}

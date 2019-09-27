@@ -1,0 +1,211 @@
+/*! _navigation.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Website sidebar
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Website sidebar
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Website sidebar
+========================================================================== */
+.side-navigation-menu {
+    display: flex;
+    justify-content: flex-start;
+    background: $sidebar;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    width:300px;
+    overflow:hidden;
+    transform: translateX(-301px);
+    -webkit-transition:width .05s linear;
+    transition: width .05s linear;
+    transition: transform 0.3s;
+    z-index:1000;
+    //Active state
+    &.is-active {
+        transform: translateX(0);
+    }
+    //Categories side menu
+    .category-menu-wrapper {
+        height: 100%;
+        position: relative;
+        width: 80px;
+        background: $secondary;
+        ul.categories {
+            li {
+                height: 60px;
+                &.square-logo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        max-height: 28px;
+                    }
+                }
+                &.category-link {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    i {
+                        font-size: 20px;
+                        color: $white;
+                    }
+                    &:hover {
+                        background: darken($secondary, 5%);
+                    }
+                }
+                &.is-active  {
+                    background: darken($secondary, 10%);
+                }
+            }
+        }
+        //Bottom avatar
+        .author {
+            position:absolute;
+            left:0;
+            bottom:0;
+            width: 100%;
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            a {
+                position: relative;
+                z-index: 4;
+            }
+            .main-menu-author {
+                width: 48px;
+                height: 48px;
+                border-radius: 100px;
+                margin: 0 auto;
+                margin-bottom: 10px;
+                transform: scale(1);
+                transition: transform .4s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    //Right part of the sidebar
+    .navigation-menu-wrapper {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        ul.navigation-menu {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            max-width: 400px;
+            list-style: none;
+            list-style-type: none;
+            overflow: auto;
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background: rgba(255,255,255,0.1)
+            }
+        }
+        //Header
+        .navigation-menu-header {
+            height: 60px;
+            color: $white;
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: $smoke-white;
+            letter-spacing: 3px;
+            font-size: 92%;
+            .menu-toggle .icon-box-toggle span i {
+                background: $white;
+            }
+            .navigation-close {
+                opacity: 0;
+            }
+        }
+        //Menu and menu items
+        .navigation-menu li a span {
+            margin-right: 20px;
+            color: $white;
+            font-size: 22px;
+        }
+        .navigation-menu li a  {
+            padding: 18px 25px;
+            display: block;
+            text-decoration: none;
+            color: $white;
+            display: flex;
+            align-items: center;
+            &.is-submenu {
+                padding: 12px 25px;
+            }
+            &.parent-link {
+                height: 60px !important;
+            }
+        }
+        .navigation-menu li a:hover  {
+            background: lighten($sidebar, 5%);
+
+        }
+        li.has-children.active-section a.parent-link {
+            color: lighten($secondary, 15%) !important;
+            span, span:after {
+                color: lighten($secondary, 15%) !important;
+            }
+        }
+        li.has-children ul {
+            padding: 0px;
+        } 
+        li.has-children ul li a.is-submenu {
+            background-color: darken($sidebar, 5%);
+            padding-left: 62px !important;
+            font-size: 95%;
+            &:hover, &.is-active {
+                color: $secondary;
+            }
+        } 
+        li.has-children ul li a:hover {
+            color: $white;
+            padding-left: 42px;
+        } 
+        li.has-children, li {
+            position: relative;
+        }
+        .has-children span::after {
+            position: absolute;
+            right: 30px;
+            content: "\E315";
+            color: #fff;
+            transition: all .5s;
+            font-size: 90%;
+            padding-top: 2px;
+        }
+        li.active.has-children span::after {
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        li.active.has-children {
+            background: lighten($sidebar, 5%);
+        }
+        .navigation-menu .has-children > ul {
+            display: none;
+        }
+    }
+}

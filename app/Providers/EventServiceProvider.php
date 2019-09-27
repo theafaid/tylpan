@@ -18,6 +18,25 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+        'App\Events\Orders\OrderCreated' => [
+            'App\Listeners\Orders\NotifyAdmins',
+            'App\Listeners\Orders\NotifyCreator',
+        ],
+
+        'App\Events\Orders\DelegateAssigned' => [
+            'App\Listeners\OrderDelegate\NotifyDelegate',
+            'App\Listeners\OrderDelegate\NotifyOrderCreator',
+        ],
+
+        'App\Events\Chats\ChatEvent' => [
+            'App\Listeners\Chats\ChatListener',
+        ]
+    ];
+
+    protected $subscribe = [
+        'App\Listeners\Tasks\NotifyTaskBased',
+        'App\Listeners\Orders\NotifyCreator',
     ];
 
     /**

@@ -1,0 +1,557 @@
+/*! _details.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Miscellaneous styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Video embed
+1. Image hover effects setup
+2. Hover effects and team hover effects
+3. Material design box shadow helpers
+4. Dashboard login style switcher
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Video embed
+========================================================================== */
+.side-block {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: transparent;
+    overflow: visible;
+    z-index: 2;
+    .background-wrapper {
+        background-color: $sidebar;
+        border-radius: 10px;
+        overflow: visible;
+        .video-wrapper {
+            position: relative;
+            height: 0;
+            max-width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 0;
+            overflow: hidden;
+            cursor: pointer;
+            display: block;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .video-overlay {
+                position: absolute;
+                /*height: 100%;*/
+                width: 100%;
+                background-size: cover;
+                filter: alpha(opacity=35);
+                opacity: 0.2;
+            }
+
+            .playbutton {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -40px;
+                margin-top: -63px;
+                cursor: pointer;
+                .icon-play i {
+                    font-size: 6rem;
+                    color: $primary;
+                    transition: all 0.5s;
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+1. Image hover effects setup
+========================================================================== */
+
+//Base setup
+.image-grid {
+    .image-title {
+        font-size: 1.1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: $blue-grey;
+    }
+    figure {
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+        text-align: center;
+        cursor: pointer; 
+        box-shadow:  0px 5px 12px rgba(0, 0, 0, 0.18);
+        img {
+            position: relative;
+            display: block;
+            min-height: 100%;
+            max-width: 100%;
+            opacity: 0.8;
+        }
+        figcaption {
+            padding: 2em;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1.25em;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            &:before, &:after {
+                pointer-events: none;
+            }
+            a {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1000;
+                text-indent: 200%;
+                white-space: nowrap;
+                font-size: 0;
+                opacity: 0;
+            }
+        }
+        h2 {
+            word-spacing: -0.15em;
+            font-weight: 300;
+            margin: 0;
+            span {
+                font-weight: 800;
+            }
+        }
+        p {
+            margin: 0;
+            letter-spacing: 1px;
+            font-size: 68.5%;
+            span {
+                font-size: 75% !important;
+                color: $white;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. Hover effects and team hover effects
+========================================================================== */
+figure {
+    // Rounded caption on hover
+    &.round-corner {
+        background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
+        background: linear-gradient(-45deg, #000 0%,#fff 100%);
+        border-radius: 5px;
+        box-shadow: 0 3px 10px 4px rgba(0,0,0,.04);
+        img {
+            margin: -10px 0 0 -10px;
+            max-width: none;
+            width: -webkit-calc(100% + 10px);
+            width: calc(100% + 10px);
+            opacity: 0.9;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(10px,10px,0);
+            transform: translate3d(10px,10px,0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        figcaption {
+            &:before {
+                -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                transition: opacity 0.35s, transform 0.35s;
+                position: absolute;
+                right: -100px;
+                bottom: -100px;
+                width: 300px;
+                height: 300px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                box-shadow: 0 0 0 900px rgba(255,255,255,0.2);
+                content: '';
+                opacity: 0;
+                -webkit-transform: scale3d(0.5,0.5,1);
+                transform: scale3d(0.5,0.5,1);
+                -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+            }
+        }
+        p {
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 0 1.5em 1.5em 0;
+            width: 140px;
+            text-align: right;
+            opacity: 0;
+            -webkit-transform: translate3d(20px,20px,0);
+            transform: translate3d(20px,20px,0);
+        }
+        &:hover {
+            img {
+                opacity: 0.6;
+                -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0); 
+            }
+            figcaption::before {
+                opacity: 1;
+                -webkit-transform: scale3d(1,1,1);
+                transform: scale3d(1,1,1);
+            }
+            h2, p {
+                opacity: 1;
+                -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+            }
+
+        }
+        h2 {
+            text-align: left;
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(5px,5px,0);
+            transform: translate3d(5px,5px,0);
+        }
+    }
+    // Corner caption on hover
+    &.cornered {
+        img {
+            max-width: none;
+            width: -webkit-calc(100% + 60px);
+            width: calc(100% + 60px);
+            opacity: 1;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(-30px,0,0) scale(1.12);
+            transform: translate3d(-30px,0,0) scale(1.12);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        h2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 1em 1.2em;
+        }
+        &:hover {
+            img {
+                opacity: 0.5;
+                -webkit-transform: translate3d(0,0,0) scale(1);
+                transform: translate3d(0,0,0) scale(1);
+            }
+            p {
+                opacity: 1;
+                -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+            }
+        }
+        p {
+            padding: 0 10px 0 0;
+            width: 50%;
+            border-right: 1px solid #fff;
+            text-align: right;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(-40px,0,0);
+            transform: translate3d(-40px,0,0);
+        }
+    }
+    //Team section hover effect
+    &.team-hover {
+        figcaption {
+            top: auto;
+            bottom: 0;
+            padding: 1em;
+            height: 3.75em;
+            background: #fff;
+            color: #3c4a50;
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0,100%,0);
+            transform: translate3d(0,100%,0);
+        }
+        h2 {
+            float: left;
+            display: inline-block;
+        }
+        p.icon-links a {
+            float: right !important;
+            color: #3c4a50;
+            font-size: 1.4em;
+            &:hover span::before {
+                color: $primary;
+            }
+        }
+        p.description {
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.3);
+            bottom: 65px;
+            padding: 1em;
+            color: #fff;
+            text-transform: none;
+            font-size: 90%;
+            opacity: 0;
+            -webkit-backface-visibility: hidden; 
+            -webkit-transition: opacity 0.35s;
+            transition: opacity 0.35s;
+            -webkit-backface-visibility: hidden; 
+        }
+
+        h2, p.icon-links a {
+            position: static; 
+            width: auto; 
+            height: auto; 
+            z-index: 1000; 
+            text-indent: 0 !important; 
+            white-space: nowrap; 
+            opacity: inherit; 
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0,200%,0);
+            transform: translate3d(0,200%,0);
+        }
+        p.icon-links a span::before {
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-top: -5px;
+            padding: 8px 10px;
+            font-family: 'FontAwesome';
+            color: $blue-grey;
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .icon-twitter::before {
+            content: '\f099';
+        }
+
+        .icon-linkedin::before {
+            content: '\f0e1';
+        }
+
+        .icon-dribbble::before {
+            content: '\f17d';
+        }
+        &:hover p.icon-links a:hover, &:hover p.icon-links a:focus {
+            color: #252d31;
+        }
+        &:hover p.description {
+            opacity: 1;
+        }
+        &:hover figcaption, &:hover h2, &:hover p.icon-links a {
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        &:hover h2 {
+            -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s;
+        }
+        &:hover p.icon-links a:nth-child(3) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+        &:hover p.icon-links a:nth-child(2) {
+            -webkit-transition-delay: 0.15s;
+            transition-delay: 0.15s;
+        }
+        &:hover p.icon-links a:first-child {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+        }
+    }
+    //Team section slanted hover effect
+    &.team-slanted {
+        background: #162633;
+        text-align: left;
+        img {
+            -webkit-transition: opacity 0.45s;
+            transition: opacity 0.45s;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        figcaption::before {
+            position: absolute;
+            top: 95%;
+            left: 10%;
+            width: 200%;
+            height: 100%;
+            opacity: 0;
+            background: rgba(255,255,255,0.8) no-repeat center center;
+            background-size: 100% 100%;
+            content: '';
+            -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+            transition: opacity 0.45s, transform 0.45s;
+            -webkit-transform: rotate3d(0,0,1,0);
+            transform: rotate3d(0,0,1,0);
+            -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+        }
+        .member-position {
+            position: static !important;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        h2 {
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0,20px,0);
+            transform: translate3d(0,20px,0);
+        }
+        p {
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+            padding: 0 1.5em 7% 0;
+        }
+        a {
+            margin: 0 10px;
+            color: #5d504f;
+            font-size: 170% !important;
+            position: static !important; 
+            width: auto; 
+            height: auto; 
+            text-indent: 0 !important; 
+            white-space: nowrap; 
+            opacity: 1 !important;
+            &:hover, &:focus {
+                color: $primary;
+            }
+        }
+        p a i {
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,50px,0);
+            transform: translate3d(0,50px,0);
+        }
+        &:hover img {
+            opacity: 0.6;
+        }
+        &:hover h2 {
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        &:hover figcaption::before {
+            opacity: 0.9;
+            //-webkit-transform: rotate3d(0,60deg,1,0);
+            //transform: rotate3d(0,60deg,1,0);
+            transform: rotate(-15deg);
+        }
+        &:hover p i {
+            opacity: 1;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        &:hover p a:nth-child(3) i {
+            -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s;
+        }
+        &:hover p a:nth-child(2) i {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+        &:hover p a:first-child i {
+            -webkit-transition-delay: 0.15s;
+            transition-delay: 0.15s;
+
+        }
+        &:hover .member-position {
+            opacity: 1;
+        }
+    }
+}
+
+/* ==========================================================================
+3. Material design box shadow helpers
+========================================================================== */
+.shadow-z-1 {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+
+.shadow-z-2 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.shadow-z-3 {
+    box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 7px 7px 0 rgba(0, 0, 0, 0.19);
+}
+
+.shadow-z-4 {
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.3), 0 14px 12px 0 rgba(0, 0, 0, 0.17);
+}
+
+.shadow-z-5 {
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================================================
+4. Dashboard login style switcher
+========================================================================== */
+.switcher {
+    .switcher-block {
+        width: 48px;
+        height: 48px;
+        background-color: $muted-grey;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        border-radius: 4px;
+        transition: all 0.5s;
+        cursor: pointer;
+        overflow: visible;
+        &.is-primary {
+            background-color: $primary;
+        }
+        &.is-secondary {
+            background-color: $secondary;
+        }
+        &.is-accent {
+            background-color: $accent;
+        }
+        &:hover {
+            width: 200px;
+            .button-text {
+                display: block;
+            }
+        }
+        i {
+            position: relative;
+            top: 15px;
+            left:15px;
+            color: $white;
+            font-size: 1.3rem;
+        }
+        .button-text {
+            position: absolute;
+            top: 13px;
+            left: 35%;
+            color: $white;
+            display: none;
+        }
+    }
+}

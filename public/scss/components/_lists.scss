@@ -1,0 +1,271 @@
+/*! _lists.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+List styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Resets
+1. Bullet icon list
+2. Solid list
+3. Inline list
+4. List blocks
+5. Levels
+6. User list
+7. Media list
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Resets
+========================================================================== */
+
+.content {
+    ul {
+        list-style-type: disc;
+    }
+    ol {
+        list-style-type: decimal;
+    }
+}
+ul, ol {
+    list-style-type: none;
+}
+
+/* ==========================================================================
+1. Bullet icon list
+========================================================================== */
+
+.icon-bullet-list {
+    list-style: none;
+    padding: 0;
+    li {
+        padding-left: 1.3em;
+        padding: 3px 0 3px 1.3em;
+        &:before {
+            content: "\f10c";
+            font-family: FontAwesome;
+            display: inline-block;
+            margin-left: -1.3em;
+            margin-right: 0.7rem;
+            width: 1.3em;
+        }
+    }
+}
+
+/* ==========================================================================
+2. Solid list
+========================================================================== */
+
+.solid-list {
+    display: inline-block;
+    .solid-list-item {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        margin: 5px 0;
+        .list-bullet i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            position: relative;
+            top: 2px;
+            color: $title-grey;
+        }
+    }
+}
+
+/* ==========================================================================
+3. Inline list
+========================================================================== */
+
+.inline-list {
+    display: flex !important;
+    flex-wrap: wrap;
+    i.inline-bullet {
+        font-size: 0.4rem;
+        margin: 0 10px;
+        color: $fade-grey;
+        position: relative;
+        top: 8px;
+    }
+}
+
+/* ==========================================================================
+4. List blocks
+========================================================================== */
+
+.list-block {
+    border: 1px solid $fade-grey;
+    box-shadow: -1px 3px 10px 0 rgba(0,0,0,.06);
+    //item
+    li {
+        padding: 10px 20px;
+        a {
+            color: $coal;
+        }
+        //item active state
+        &.is-active {
+            background: $primary;
+            &:hover {
+                background: $primary;
+            }
+            .b-badge {
+                border: 1px solid $white;
+                background: transparent;
+            }
+        }
+        &.is-active a {
+            color: $white;
+        }
+        &:hover {
+            background: $light-grey;
+        }
+    }
+    //bordered style
+    &.bordered {
+        li:not(last-child) {
+            border-bottom: 1px solid $fade-grey;
+        }
+    }
+    //minimal style
+    &.minimal {
+        border: none;
+        box-shadow: none;
+        li {
+            border-bottom: 1px solid $fade-grey;
+        }
+    }
+    //with badge floating
+    .b-badge {
+        float: right;
+    }
+    //alternate colors
+    &.is-secondary {
+        li.is-active {
+            background: $secondary;
+        }
+    }
+    &.is-accent {
+        li.is-active {
+            background: $accent;
+        }
+    }
+
+}
+
+/* ==========================================================================
+5. Levels
+========================================================================== */
+
+.level.nav-level {
+    padding: 20px 40px;
+    border: 1px solid $fade-grey;
+    background: $white;
+    i {
+        cursor: pointer;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+//centered level
+.level.centered-level {
+    padding: 20px 40px;
+    border: 1px solid $fade-grey;
+    background: $white;
+}
+
+/* ==========================================================================
+6. User list
+========================================================================== */
+
+.user-list {
+    //list item
+    li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px 15px;
+    }
+    //avatar
+    .user-list-avatar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+    }
+    //meta
+    .user-list-info {
+        margin: 0 10px;
+        .name {
+            font-size: 14px;
+            font-weight: 500;
+            color: $blue-grey;
+        }
+        .position {
+            font-size: 12px;
+            color: $title-grey;
+        }
+    }
+    //statuses
+    .user-list-status {
+        height: 10px;
+        width: 10px;
+        border-radius: 100px;
+        background: $title-grey;
+        margin-left: auto;
+        //colors
+        &.is-offline {
+            background: $fade-grey;
+        }
+        &.is-online {
+            background: $green;
+        }
+        &.is-busy {
+            background: $orange;
+        }
+    }
+}
+
+/* ==========================================================================
+7. Media list
+========================================================================== */
+
+.user-media-list {
+    //list item
+    li {
+        margin: 15px 0;
+    }
+    //avatar
+    .media-left .image {
+        position: relative;
+        //status
+        .avatar-status {
+            height: 10px;
+            width: 10px;
+            border-radius: 200px;
+            background: $title-grey;
+            position: absolute;
+            right: 1px;
+            top: 3px;
+            //status colors
+            &.is-offline {
+                background: $fade-grey;
+            }
+            &.is-online {
+                background: $green;
+            }
+            &.is-busy {
+                background: $orange;
+            }
+        }
+    }
+    //content
+    .media-content span {
+        color: $blue-grey;
+        font-weight: 500;
+    }
+}

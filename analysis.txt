@@ -1,0 +1,20 @@
+- welcome
+
+- registration
+- avoid because of invalid country
+- login
+- reset password
+- verify email
+
+- automatic detect speaking languages
+
+- profile
+
+- create order
+        // Countries // statistics
+        // Universities // statistics
+                - if he choosed a univ >> add specialization from univ or any
+        // Specializations (colleges from country)
+        // Budget
+        - notify admins
+        - notify super admins

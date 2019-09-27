@@ -11,6 +11,15 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
+Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
+});
+
+Broadcast::channel('order.created', function ($user) {
+    return $user->isAdmin();
+});
+
+Broadcast::channel('order.{order}.chat', function ($user, $order) {
+    $order = \App\Models\Order::findOrFail($order);
+    return $order->ownedBy($user) || $user->isAdmin() || $order->delegate_id == $user->id;
 });

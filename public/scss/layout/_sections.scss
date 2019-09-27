@@ -1,0 +1,279 @@
+/*! _sections.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Sections related styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Sections general styles
+1. Quick flex block
+2. Divider
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Sections general styles
+========================================================================== */
+.section {
+    //Section colors
+    &.section-light-grey {
+        background-color: $light-grey;
+    }
+    &.section-feature-grey {
+        background-color: $section-grey;
+    }
+    &.section-header-grey {
+        background-color: $header-grey;
+    }
+    &.section-feature-grey-accent {
+        background-color: $section-grey-accent;
+    }
+    &.section-primary {
+        background-color: $primary;
+    }
+    &.section-secondary {
+        background-color: $secondary;
+    }
+    //Bordered sections
+    &.has-border-bottom {
+        border-bottom: 1px solid $fade-grey;
+    }
+    &.has-border-top {
+        border-top: 1px solid $fade-grey;
+    }
+    //Helpers
+    &.is-relative {
+        position: relative;
+    }
+    &.is-cover {
+        background-size: cover !important;
+    }
+    &.no-margin {
+        margin: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    &.section-half {
+        height: 75vh !important;
+    }
+    //Slanted section
+    &.is-skewed-sm {
+        transform: skew(0deg,-3deg) translate(0,-45px);
+        padding-top: 140px;
+    }
+    //Reverse slant on container
+    .container {
+        z-index: 1;
+        &.is-reverse-skewed-sm {
+            transform: skew(0deg,3deg) translate(0,45px);
+        }
+        &.slanted-container {
+            margin-top: -100px;
+        }
+    }
+    //Content spacing
+    .content-wrapper {
+        padding-top: 40px;
+    }
+    //Spacing wrapper
+    .bottom-spacer {
+        padding-bottom: 200px;
+    }
+    //Section title wrapper
+    .section-title-wrapper {
+        position: relative;
+        padding: 40px 20px;
+        //Background numbers and symbols
+        .bg-number, .bg-symbol {
+            position: absolute;
+            text-align: center;
+            font-weight: bolder;
+            top: -18px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            font-size: 160px;
+            z-index: 0;
+            opacity: 0.1;
+            color: #999;
+            width: 160px;
+            height: 160px;
+            line-height: 160px;
+            .material-icons {
+                font-size: 12rem;
+            }
+        }
+        //Small above subtitle
+        .top-subtitle {
+            text-transform: uppercase;
+            color: $primary;
+            font-family: 'Nexa Light', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        //Icon subtitle
+        .icon-subtitle {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            &.is-one i {
+                margin: 10px 5px 0 5px;
+                font-size: 2.2rem;
+                color: $secondary;
+            }
+            &.is-many i {
+                margin: 10px 5px 0 5px;
+                font-size: 1.4rem;
+                color: $secondary;
+            }
+        }
+    }
+    //Title
+    .title {
+        &.section-title {
+            font-size: 2.7rem;
+            color: $title-grey;
+            font-weight: bold;
+            font-family: 'Nexa Bold', sans-serif;
+        }
+        &.section-subtitle {
+            font-size: 2.3rem;
+            color: $title-grey;
+        }
+        &.quick-feature {
+            font-size: 2.7rem;
+            color: $blue-grey;
+            position: relative;
+            .bg-number, .bg-symbol {
+                position: absolute;
+                font-weight: bolder;
+                top: -100px;
+                left: 40px;
+                font-size: 14rem;
+                z-index: 0;
+                opacity: 0.1;
+                color: #999;
+            }
+        }
+        &.feature-title {
+            font-weight: 600;
+            color: $blue-grey;
+            font-size: 2.2rem;
+        }
+
+    }
+    //Single icon subtitle
+    .icon-subtitle i {
+        font-size: 2.4rem;
+        color: $primary;
+    }
+    //Detailed feature subtitle
+    .detailed-feature-subtitle {
+        text-transform: uppercase;
+        font-family: 'Nexa Light';
+        font-size: 15px;
+        color: $title-grey;
+        font-weight: 600;
+    }
+    //Divider
+    .title-divider {
+        margin: 10px 0;
+        width: 80px;
+        height: 5px;
+        background:  $primary;
+        &.is-right {
+            margin-left: auto;
+        }
+        &.is-centered {
+            margin: 0 auto;
+        }
+    }
+    //Headline
+    h2.feature-headline {
+        color: $primary !important;
+        line-height: 1.2;
+        padding: 5px 0;
+        margin-bottom: 0 !important;
+    }
+    //Feature description
+    .section-feature-description {
+        color: $basaltic-grey;
+    }
+    //Media icon box
+    .media.icon-box {
+        border-top: none !important;
+        .media-content .content p {
+            span.icon-box-title {
+                color: $blue-grey;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+            span.icon-box-text {
+                color: $title-grey;
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
+        }
+    }
+    //Flex-wrapper
+    .flex-wrapper {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        &.flex-center {
+            justify-content: center;
+        }
+        &.flex-start {
+            justify-content: flex-start;
+        }
+        &.flex-end {
+            justify-content: flex-end;
+        }
+        img {
+            width: 23%;
+        }
+    } 
+}
+
+/* ==========================================================================
+1. Quick flex block
+========================================================================== */
+.content.content-flex, .content-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    &.center-flex {
+        justify-content: center !important;
+    }
+}
+
+/* ==========================================================================
+2. Divider
+========================================================================== */
+.divider {
+    display: table;
+    white-space: nowrap;
+    margin-top: 20px;
+    padding: 0 20px;
+    .before-divider, .after-divider {
+        display: table-cell;
+        width: 50%;
+        border-bottom: 1px solid $fade-grey;
+        transform: translateY(-50%);
+        color: $muted-grey;
+    }
+    .children {
+        padding: 0 20px;
+        font-size: 14px;
+        color: $placeholder;
+    }
+}
+
+
+
+

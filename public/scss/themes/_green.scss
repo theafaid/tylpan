@@ -1,0 +1,64 @@
+/*! themes/_green.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Green theme variables and styles (Green theme is used in "Landing kit v2" )
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Theme color variables
+1. Theme gradient
+2. Box shadows
+3. Theme specific Hero
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Theme color variables
+========================================================================== */
+$primary: #00b289;
+$secondary: #00b289;
+$accent: #06f4b6;
+
+/* ==========================================================================
+1. Theme Gradient
+========================================================================== */
+$webkit-hero-gradient: -webkit-linear-gradient(to right, $accent, $secondary); 
+$hero-gradient: linear-gradient(to right, $accent, $secondary); 
+
+/* ==========================================================================
+2. Box shadows
+========================================================================== */
+//Base shadow
+$base-shadow: rgba(0, 0, 0, 0.12);
+
+//Primary box shadow
+$primary-shadow-from: rgba(0, 178, 137, 0.42);
+$primary-shadow-to: rgba(0, 178, 137, 0.2);
+$primary-box-shadow:  0 14px 26px -12px $primary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $primary-shadow-to !important;
+
+//Secondary box shadow
+$secondary-shadow-from: rgba(0, 178, 137, 0.42);
+$secondary-shadow-to: rgba(0, 178, 137, 0.2);
+$secondary-box-shadow:  0 14px 26px -12px $secondary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $secondary-shadow-to !important;
+
+//Accent box shadow
+$accent-shadow-from: rgba(0, 178, 137, 0.42);
+$accent-shadow-to: rgba(0, 178, 137, 0.2);
+$accent-box-shadow:  0 14px 26px -12px $accent-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $accent-shadow-to !important;
+
+/* ==========================================================================
+3. Theme specific Hero
+========================================================================== */
+.hero, .section {
+    &.is-theme-primary {
+        background-color: $primary;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+}

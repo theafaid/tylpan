@@ -1,0 +1,616 @@
+/*! _animations.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Core animation styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Default settings
+1. Translate Left
+2. Translate Down
+3. Translate Up
+4. Fade In
+5. Fade In Left
+6. Fade In Right
+7. Fade In Up
+8. Fade In Down
+9. Fade Out Up
+10. Levitate
+11. Gelatine
+12. Unzoom
+13. Dot pulsation
+14. Bouncy entrance
+15. Scale in 
+16. Scale in circle
+17. Scale out
+18. Predefined animation delays
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Default settings
+========================================================================== */
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+}
+
+/* ==========================================================================
+1. Translate Left
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes translateLeft {
+    from {
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes translateLeft {
+    from {
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+//Settings
+.translateLeft {
+    -webkit-animation-name: translateLeft;
+    animation-name: translateLeft;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-transition: all 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition:         all 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+/* ==========================================================================
+2. Translate Down
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes translateDown {
+    from {
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes translateDown {
+    from {
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+//Settings
+.translateDown {
+    //-moz-animation-name: translateDown;
+    -webkit-animation-name: translateDown;
+    animation-name: translateDown;
+    //-moz-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    //-moz-transition: all 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transition: all 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition:         all 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+/* ==========================================================================
+3. Translate Up
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes translateUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes translateUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+//Settings
+.translateUp {
+    -webkit-animation-name: translateUp;
+    animation-name: translateUp;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-transition: all 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition:         all 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+/* ==========================================================================
+4. Fade In
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+//Settings
+.fadeIn {
+    opacity: 0;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+/* ==========================================================================
+5. Fade In Left
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes fadeInLeft {
+    from {
+        -webkit-transform: translate3d(20px, 0, 0);
+        transform: translate3d(20px, 0, 0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInLeft {
+    from {
+        -webkit-transform: translate3d(20px, 0, 0);
+        transform: translate3d(20px, 0, 0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+//Settings
+.preFadeInLeft {
+    opacity: 0;
+}
+
+.fadeInLeft {
+    opacity: 0;
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;    
+}
+
+/* ==========================================================================
+6. Fade In Right
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes fadeInRight {
+    from {
+        -webkit-transform: translate3d(-20px, 0, 0);
+        transform: translate3d(-20px, 0, 0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInRight {
+    from {
+        -webkit-transform: translate3d(-20px, 0, 0);
+        transform: translate3d(-20px, 0, 0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+//Settings
+.preFadeInRight {
+    opacity: 0;
+}
+
+.fadeInRight {
+    opacity: 0;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+/* ==========================================================================
+7. Fade In Up
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes fadeInUp {
+    from {
+        -webkit-transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        -webkit-transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+//Settings
+.preFadeInUp {
+    opacity: 0;
+}
+
+.fadeInUp {
+    opacity: 0;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+/* ==========================================================================
+8. Fade In Down
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes fadeInDown {
+    from {
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInDown {
+    from {
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+//Settings
+.preFadeInDown {
+    opacity: 0;
+}
+
+.fadeInDown {
+    opacity: 0;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+/* ==========================================================================
+9. Fade Out Up
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes fadeOutUp {
+    from {
+        -webkit-transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+}
+@keyframes fadeOutUp {
+    from {
+        -webkit-transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+}
+//Settings
+.preFadeOutUp {
+    opacity: 1;
+}
+
+.fadeOutUp {
+    opacity: 1;
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+}
+
+/* ==========================================================================
+10. Levitate
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes levitate {
+    from {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0); }
+    50% {
+        -webkit-transform: translate(0, 10px);
+        transform: translate(0, 10px); }
+    to {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0); } }
+
+@keyframes levitate {
+    from {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0); }
+    50% {
+        -webkit-transform: translate(0, 10px);
+        transform: translate(0, 10px); }
+    to {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0); } }
+//Settings
+.levitate {
+    -webkit-animation-name: levitate;
+    animation-name: levitate;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+/* ==========================================================================
+11. Gelatine
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes gelatine {
+    from, to { -webkit-transform: scale(1, 1); }
+    25% { -webkit-transform: scale(0.9, 1.1); }
+    50% { -webkit-transform: scale(1.1, 0.9); }
+    75% { -webkit-transform: scale(0.95, 1.05); }
+}
+@keyframes gelatine {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05); }
+}
+//Settings
+.gelatine {
+    -webkit-animation: gelatine 0.6s;
+    animation: gelatine 0.6s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+/* ==========================================================================
+12. Unzoom
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes unzoom {
+    from, to { -webkit-transform: scale(1, 0); }
+    25% { -webkit-transform: scale(0.9, 1.1); }
+    50% { -webkit-transform: scale(1.1, 0); }
+}
+@keyframes unzoom {
+    from, to { transform: scale(1, 0); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0); }
+}
+//Settings
+.unzoom {
+    -webkit-animation: unzoom 0.7s;
+    animation: unzoom 0.7s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+/* ==========================================================================
+13. Dot pulsation
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes dotPulse {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1.8);
+        transform:  scale(1.8);
+        opacity: 0;
+    }
+}
+@keyframes dotPulse {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1.8);
+        transform:  scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+14. Bouncy entrance
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes entrance {
+    from { -webkit-transform: scale(0); }
+    25% { -webkit-transform: scale(1.05); }
+    50% { -webkit-transform: scale(0.95); }
+    75% { -webkit-transform: scale(1.05); }
+    to { -webkit-transform: none; }
+}
+@keyframes entrance {
+    from { transform: scale(0); }
+    25% { transform: scale(1.05); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.05); }
+    to { transform: none; }
+}
+//Settings
+.entrance {
+    -webkit-animation: entrance 0.8s;
+    animation: entrance 0.8s;
+}
+
+/* ==========================================================================
+15. Scale in 
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes scaleIn {
+    from { -webkit-transform: scale(0); }
+    to { -webkit-transform: scale(1); }
+}
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+//Settings
+.scaleIn {
+    /* ... */
+    -webkit-animation: scaleIn 0.5s;
+    animation: scaleIn 0.5s;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* ==========================================================================
+16. Scale in circle (used for modal popup)
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes scaleInCircle {
+    from { -webkit-transform: scale(0); }
+    to { -webkit-transform: scale(7); }
+}
+@keyframes scaleInCircle {
+    from { transform: scale(0); }
+    to { transform: scale(7); }
+}
+//Settings
+.scaleInCircle {
+    /* ... */
+    -webkit-animation: scaleInCircle 0.6s;
+    animation: scaleInCircle 0.6s;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* ==========================================================================
+17. Scale out
+========================================================================== */
+
+//Keyframes
+@-webkit-keyframes scaleOut {
+    from { -webkit-transform: scale(1); }
+    to { -webkit-transform: scale(0); }
+}
+@keyframes scaleOut {
+    from { transform: scale(1); }
+    to { transform: scale(0); }
+}
+//Settings
+.scaleOut {
+    -webkit-animation: scaleOut 0.6s;
+    animation: scaleOut 0.6s;
+}
+
+/* ==========================================================================
+18. Predefined delays
+========================================================================== */
+
+.delay-1 {
+    animation-delay: .25s;
+}
+.delay-2 {
+    animation-delay: .5s;
+}
+.delay-3 {
+    animation-delay: .75s;
+}
+.delay-4 {
+    animation-delay: 1s;
+}
+.delay-5 {
+    animation-delay: 1.25s;
+}
+.delay-6 {
+    animation-delay: 1.5s;
+}
+.delay-7 {
+    animation-delay: 1.75s;
+}
+.delay-8 {
+    animation-delay: 2.25s;
+}
+.delay-9 {
+    animation-delay: 2.5s;
+}
+.delay-10 {
+    animation-delay: 2.75s;
+}
+.delay-11 {
+    animation-delay: 3s;
+}

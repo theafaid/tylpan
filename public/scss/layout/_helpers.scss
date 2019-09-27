@@ -1,0 +1,676 @@
+/*! _helpers.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Helper classes (must always be at the end of the core imports)
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Color helpers
+1. Typography helpers
+2. Display helpers
+3. Padding helpers
+4. Margin helpers
+5. Sizing helpers
+6. Position helpers
+7. States helpers
+8. Overflow helpers
+9. Icon helpers
+10. Image helpers
+11. Responsive helpers
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Color helpers
+========================================================================== */
+
+.color-primary {
+    color: $primary !important;
+}
+
+.color-secondary {
+    color: $secondary !important;
+}
+
+.color-accent {
+    color: $accent !important;
+}
+
+.color-red {
+    color: $red !important;
+}
+
+.border-light {
+    border-color: $white !important;
+}
+
+.dark-text {
+    color: $blue-grey !important;
+}
+
+.light-text {
+    color: $white !important;
+}
+
+.primary-text {
+    color: $primary !important;
+}
+
+.secondary-text {
+    color: $secondary !important;
+}
+
+.accent-text {
+    color: $accent !important;
+}
+
+.info-text {
+    color: $blue !important;
+}
+
+.success-text {
+    color: $green !important;
+}
+
+.warning-text {
+    color: $orange !important;
+}
+
+.danger-text {
+    color: $red !important;
+}
+
+.dark-bg {
+    background: $coal !important;
+}
+
+.light-bg {
+    background: $white !important;
+}
+
+/* ==========================================================================
+1. Typography helpers
+========================================================================== */
+
+.font-w-400 {
+    font-weight: 400 !important;
+}
+.font-w-500 {
+    font-weight: 500 !important;
+}
+.font-w-600 {
+    font-weight: 600 !important;
+}
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+.text-upper {
+    text-transform: uppercase !important;
+}
+
+.text-bold {
+    font-weight: 600 !important;
+}
+
+.text-bolder {
+    font-weight: 700 !important;
+}
+.font-size-normal {
+    font-size: 1rem;
+}
+
+.font-size-2x {
+    font-size: 2rem;
+}
+
+.is-size-1 {
+    font-size: 3rem;
+}
+
+.is-size-2 {
+    font-size: 2.5rem;
+}
+
+.is-size-3 {
+    font-size: 2rem;
+}
+
+.is-size-4 {
+    font-size: 1.5rem;
+}
+
+.is-size-5 {
+    font-size: 1.25rem;
+}
+
+.is-size-6 {
+    font-size: 1rem;
+}
+
+.is-size-7 {
+    font-size: 0.75rem;
+}
+
+/* ==========================================================================
+2. Display helpers
+========================================================================== */
+
+//quick flex
+.is-flex {
+    display: flex;
+    &.is-start {
+        justify-content: flex-start;
+    }
+    &.is-center {
+        justify-content: center;
+    }
+    &.is-end {
+        justify-content: flex-end;
+    }
+    &.is-vcenter {
+        align-items: center;
+        align-content: center;
+    }
+}
+//Block display
+.is-block {
+    display: block !important;
+}
+
+.z-index-2 {
+    z-index: 2 !important;
+}
+
+.z-index-101 {
+    z-index: 101 !important;
+}
+
+/* ==========================================================================
+3. Padding helpers
+========================================================================== */
+
+.no-padding {
+    padding: 0 !important;
+}
+.no-padding-top {
+    padding-top: 0 !important;
+}
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+.no-padding-right {
+    padding-right: 0 !important;
+}
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+.padding-15 {
+    padding: 15px;
+}
+.padding-20 {
+    padding: 20px;
+}
+.padding-25 {
+    padding: 25px;
+}
+.padding-30 {
+    padding: 30px;
+}
+.padding-40 {
+    padding: 40px;
+}
+.padding-50 {
+    padding: 50px;
+}
+.padding-60 {
+    padding: 60px;
+}
+.padding-70 {
+    padding: 70px;
+}
+.padding-80 {
+    padding: 80px;
+}
+.padding-90 {
+    padding: 90px;
+}
+.padding-100 {
+    padding: 100px;
+}
+.pt-5 {
+    padding-top: 5px;
+}
+.pt-10 {
+    padding-top: 10px;
+}
+.pt-20 {
+    padding-top: 20px;
+}
+.pt-30 {
+    padding-top: 30px;
+}
+.pt-40 {
+    padding-top: 40px;
+}
+.pt-50 {
+    padding-top: 50px;
+}
+.pt-60 {
+    padding-top: 60px;
+}
+.pt-70 {
+    padding-top: 70px;
+}
+.pt-80 {
+    padding-top: 80px;
+}
+.pb-5 {
+    padding-bottom: 5px;
+}
+.pb-10 {
+    padding-bottom: 10px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pb-30 {
+    padding-bottom: 30px;
+}
+.pb-40 {
+    padding-bottom: 40px;
+}
+.pb-50 {
+    padding-bottom: 50px;
+}
+.pb-60 {
+    padding-bottom: 60px;
+}
+.pb-70 {
+    padding-bottom: 70px;
+}
+.pb-80 {
+    padding-bottom: 80px;
+}
+.pl-5 {
+    padding-left: 5px;
+}
+.pl-10 {
+    padding-left: 10px;
+}
+.pl-20 {
+    padding-left: 20px;
+}
+.pl-30 {
+    padding-left: 30px;
+}
+.pl-40 {
+    padding-left: 40px;
+}
+.pl-50 {
+    padding-left: 50px;
+}
+.pl-60 {
+    padding-left: 60px;
+}
+.pl-70 {
+    padding-left: 70px;
+}
+.pl-80 {
+    padding-left: 80px;
+}
+.pr-5 {
+    padding-right: 5px;
+}
+.pr-10 {
+    padding-right: 10px;
+}
+.pr-20 {
+    padding-right: 20px;
+}
+.pr-30 {
+    padding-right: 30px;
+}
+.pr-40 {
+    padding-right: 40px;
+}
+.pr-50 {
+    padding-right: 50px;
+}
+.pr-60 {
+    padding-right: 60px;
+}
+.pr-70 {
+    padding-right: 70px;
+}
+.pr-80 {
+    padding-right: 80px;
+}
+
+.huge-pt {
+    padding-top: 100px;
+}
+
+.huge-pb {
+    padding-bottom: 100px;
+}
+
+.giant-pb {
+    padding-bottom: 150px;
+}
+
+/* ==========================================================================
+4. Margin helpers
+========================================================================== */
+
+.no-margin {
+    margin: 0 !important;
+}
+.no-margin-left {
+    margin-left: 0 !important;
+}
+.no-margin-right {
+    margin-right: 0 !important;
+}
+.no-margin-top {
+    margin-top: 0 !important;
+}
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+.margin-x-auto {
+    margin: 0 auto !important;
+}
+.mr-auto {
+    margin-right: auto !important;
+}
+.ml-auto {
+    margin-left: auto !important;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+.margin-20 {
+    margin: 20px;
+}
+.margin-25 {
+    margin: 25px;
+}
+.margin-30 {
+    margin: 30px;
+}
+.margin-40 {
+    margin: 40px;
+}
+.margin-50 {
+    margin: 50px;
+}
+.margin-60 {
+    margin: 60px;
+}
+.margin-70 {
+    margin: 70px;
+}
+.margin-80 {
+    margin: 80px;
+}
+.margin-90 {
+    margin: 90px;
+}
+.margin-100 {
+    margin: 100px;
+}
+.mt-5 {
+    margin-top: 5px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mt-40 {
+    margin-top: 40px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+.mt-60 {
+    margin-top: 60px;
+}
+.mt-70 {
+    margin-top: 70px;
+}
+.mt-80 {
+    margin-top: 80px;
+}
+.mt-120 {
+    margin-top: 120px;
+}
+.mb-5 {
+    margin-bottom: 5px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.mb-40 {
+    margin-bottom: 40px;
+}
+.mb-50 {
+    margin-bottom: 50px;
+}
+.mb-60 {
+    margin-bottom: 60px;
+}
+.mb-70 {
+    margin-bottom: 70px;
+}
+.mb-80 {
+    margin-bottom: 80px;
+}
+.ml-5 {
+    margin-left: 5px;
+}
+.ml-10 {
+    margin-left: 10px;
+}
+.ml-20 {
+    margin-left: 20px;
+}
+.ml-30 {
+    margin-left: 30px;
+}
+.ml-40 {
+    margin-left: 40px;
+}
+.ml-50 {
+    margin-left: 50px;
+}
+.ml-60 {
+    margin-left: 60px;
+}
+.ml-70 {
+    margin-left: 70px;
+}
+.ml-80 {
+    margin-left: 80px;
+}
+.mr-5 {
+    margin-right: 5px;
+}
+.mr-10 {
+    margin-right: 10px;
+}
+.mr-20 {
+    margin-right: 20px;
+}
+.mr-30 {
+    margin-right: 30px;
+}
+.mr-40 {
+    margin-right: 40px;
+}
+.mr-50 {
+    margin-right: 50px;
+}
+.mr-60 {
+    margin-right: 60px;
+}
+.mr-70 {
+    margin-right: 70px;
+}
+.mr-80 {
+    margin-right: 80px;
+}
+
+/* ==========================================================================
+5. Sizing helpers
+========================================================================== */
+
+.width-40 {
+    width: 40px!important;
+}
+
+.width-100 {
+    width: 100px!important;
+}
+
+.width-250 {
+    width: 250px !important;
+}
+
+.height-30 {
+    height: 30px !important;
+}
+
+.height-60 {
+    height: 60px !important;
+}
+.height-60 {
+    height: 60px !important;
+}
+.height-70 {
+    height: 60px !important;
+}
+.height-80 {
+    height: 60px !important;
+}
+.height-90 {
+    height: 60px !important;
+}
+
+/* ==========================================================================
+6. Position helpers
+========================================================================== */
+
+.pull-right {
+    float: right;
+}
+.pull-left {
+    float: left;
+}
+
+.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* ==========================================================================
+7. States helpers
+========================================================================== */
+
+.is-hidden {
+    display: none !important;
+}
+
+.is-vhidden {
+    visibility: hidden !important;
+}
+
+.is-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: default !important;
+}
+
+.stuck {
+    position:fixed !important;
+    top: 0 !important;
+    z-index: 2 !important;
+    animation-name: translateDown;
+    animation-duration: 0.4s;
+}
+
+/* ==========================================================================
+8. Overflow helpers
+========================================================================== */
+
+.overflow-auto {
+    overflow: auto !important;
+}
+
+/* ==========================================================================
+9. Icon helpers
+========================================================================== */
+
+.im, .sl, .material-icons {
+    &.is-icon-xs {
+        font-size: 0.8rem !important;
+    }
+    &.is-icon-md {
+        font-size: 1.5rem !important;
+    }
+    &.is-icon-2x {
+        font-size: 2rem;
+    }
+    &.is-icon-3x {
+        font-size: 3rem;
+    }
+    &.is-icon-4x {
+        font-size: 4rem;
+    }
+    &.is-gigantic {
+        font-size: 12rem;
+    }
+}
+
+/* ==========================================================================
+10. Image helpers
+========================================================================== */
+
+.img-circle {
+    border-radius: 1000px;
+}
+
+/* ==========================================================================
+11. Responsive helpers
+========================================================================== */
+
+@media (max-width: 767px) {
+    .mobile-padding-20 {
+        padding: 20px 30px;
+    }
+    .mobile-padding-40 {
+        padding: 40px;
+    }
+    .has-text-centered-mobile {
+        text-align: center !important;
+    }
+}

@@ -1,0 +1,590 @@
+/*! _startup.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Startup Kit SCSS file
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Wallop fullscreen slider
+1. Section title
+2. Icon box
+3. Images
+4. Pulsating dots and custom tooltips
+5. Product page
+6. Cards
+7. Team section
+8. Parallax counters
+9. Pricing
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Wallop fullscreen slider
+========================================================================== */
+.Wallop {
+    top: -65px;
+    .Wallop-list {
+        width: 100%;
+        height: 100%;
+    }
+    .Wallop-item {
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .Wallop-buttonPrevious, .Wallop-buttonNext {
+        position: absolute;
+        top: 48%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 6;
+        &:hover {
+            i {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+        i {
+            font-size: 3.5rem;
+            color: $white;
+            transition: all .4s;
+        }
+        &:active, &:focus {
+            outline: none !important,
+        }
+    }
+    .Wallop-buttonPrevious {
+        left: 20px;
+    }
+    .Wallop-buttonNext {
+        right: 20px;
+    }
+    .Wallop-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3);
+        z-index: 1;
+    }
+
+    /* Pagination */
+    .Wallop-pagination {
+        text-align: center;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        bottom: 40px;
+        z-index: 100;
+    }
+
+    .Wallop-dot {
+        text-indent: -9999px;
+        border: 0;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        padding: 0;
+        margin: 5px;
+        background-color: #ccc;
+        cursor: pointer;
+        -webkit-appearance: none;  
+        &:active, &:focus {
+            outline:  none !important;
+        }
+    }
+
+    .Wallop-dot--current {
+        background-color: $primary;
+    }
+    //Slider caption
+    .Wallop-caption-wrapper {
+        align-items: center;
+        min-height: 100vh;
+        position: relative;
+        z-index: 99;
+        .container {
+            position: relative;
+            min-height: 500px;
+            height: 100vh;
+            display: flex;
+            .caption-inner {
+                /*position: absolute;
+                top: calc(50% - 135px);
+                left: 20px;
+                max-width: 40%;*/
+                h1 {
+                    font-family: 'Nexa Bold', sans-serif;
+                    font-weight: 700;
+                    font-size: 3.8rem;
+                    line-height: 3.8rem;
+                    color: $white;
+                }
+                .caption-divider {
+                    width: 30%;
+                    height: 3px;
+                    background: $white;
+                    margin: 10px 0;
+                }
+                .caption-text {
+                    //max-width: 90%;
+                    //padding: 10px 0;
+                    color: $white;
+                    font-size: 1.05rem;
+                    font-weight: 400;
+                    .action {
+                        padding: 20px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero-foot.is-pulled {
+    margin-top: -65px;
+}
+
+//Wallop slider media query (mobile)
+@media (max-width: 767px) {
+    .caption-inner {
+        max-width: 100% !important;
+        top: 30% !important;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        .caption-divider {
+            height: 3px !important;
+            margin: 10px auto !important;
+        }
+        h1 {
+            font-size: 3.2rem !important;
+        }
+        .caption-text span {
+            margin: 0 20px;
+            display: block;
+        }
+    }
+}
+
+//Wallop slider media query (tablet in portrait mode)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .caption-inner {
+        text-align: center;
+        position: relative;
+        top: 40vh !important;
+        .caption-divider {
+            margin: 10px auto !important;
+            height: 3px !important;
+        }
+        .caption-text {
+            padding: 0 15%;
+        }
+    }
+    .is-tablet-padded {
+        padding: 0 20% !important;
+    }
+}
+
+/* ==========================================================================
+1. Section title
+========================================================================== */
+
+.title.main-title {
+    font-family: 'Nexa Bold', sans-serif;
+    margin-bottom: 0;
+    padding: 20px 0;
+}
+
+.section-title-wrapper {
+    .section-title {
+        font-family: 'Nexa Bold', sans-serif;
+        margin-bottom: 0;
+        padding: 10px 0;
+    }
+    .subtitle {
+        font-family: 'Nexa Light', sans-serif;
+        font-size: 1.2rem;
+        line-height: 30px;
+        font-weight: 400;
+        padding: 20px 25%;
+        color: $title-grey;
+    }
+}
+
+.section-subtitle, .title.feature-title {
+    font-family: 'Nexa Bold', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 2rem !important;
+    margin-bottom: 0 !important;
+    padding: 5px 0 !important;
+}
+
+@media (max-width: 767px) {
+    .section-title-wrapper {
+        .subtitle {
+            font-size: 1.1rem;
+            line-height: 22px;
+            padding: 30px 0;
+        }
+    }
+}
+
+//(Portrait mode)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .section-title-wrapper {
+        .subtitle {
+            padding: 20px 10% !important;
+        }
+    }
+}
+
+//Parallax title
+.parallax-title {
+    font-family: 'Nexa Bold', sans-serif;
+    font-weight: 600 !important;
+    font-size: 2.4rem !important;
+    margin-bottom: 0 !important;
+    padding: 10px 0;
+}
+
+/* ==========================================================================
+2. Icon box
+========================================================================== */
+
+.startup-icon-box {
+    padding: 20px 0;
+    i {
+        font-size: 3.8rem;
+        font-weight: normal;
+        color: $primary;
+    }
+    .box-title {
+        font-family: 'Nexa Light', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 700;
+        color: $blue-grey;
+        padding: 5px 0;
+    }
+    .box-content {
+        color: $muted-grey;
+    }
+}
+
+/* ==========================================================================
+3. Images
+========================================================================== */
+
+//Featured images
+.featured-svg {
+    max-width: 450px;
+}
+
+@media (max-width: 767px) {
+    .featured-svg {
+        max-width: 100% !important;
+    }
+}
+
+/* ==========================================================================
+4. Pulsating dots and custom tooltips
+========================================================================== */
+
+//Pulsating dots on laptop mockup
+.mockup-dots {
+    .dot {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: block;
+        background-color: $primary;
+        z-index: 5;
+        &:before {
+            position: absolute;
+            background: $primary;
+            content: '';
+            top: 0;
+            left: 0;
+            border: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: dotPulse 2s ease-out infinite;
+        }
+        &.first {
+            top: 42%;
+            left: 20%;
+            &:hover + .dot-tip.tip-first {
+                display: block;
+            }
+        }
+        &.second {
+            top: 65%;
+            left: 20%;
+            &:hover + .dot-tip.tip-second {
+                display: block;
+            }
+        }
+        &.third {
+            top: 55%;
+            right: 20%;
+            &:hover + .dot-tip.tip-third {
+                display: block;
+            }
+        }
+    }
+    //Custom tooltips
+    .dot-tip {
+        padding: 15px 20px;
+        background-color: $primary;
+        color: $white;
+        border-radius: 10px 10px 0 10px;
+        font-size: 13px;
+        display:none;
+        z-index: 4;
+        &.tip-first {
+            position: absolute;
+            top: 38%;
+            left: 0;
+        }
+        &.tip-second {
+            position: absolute;
+            top: 60%;
+            left: 0;
+        }
+        &.tip-third {
+            position: absolute;
+            top: 50%;
+            right: 24%;
+        }
+    }
+}
+
+/* ==========================================================================
+5. Product page
+========================================================================== */
+
+//Hero email signup
+.signup-block {
+    .product-hero {
+        background-position-x: center !important;
+    }
+    .control {
+        position: relative;
+        width: 80%;
+        .input {
+            height: 50px;
+            padding-left: 10px;
+            padding-right: 140px;
+            font-size: 1rem;
+            &::placeholder {
+                color: $placeholder;
+            }
+        }
+        button {
+            position: absolute;
+            top: 4px;
+            right: 5px;
+            height: 42px;
+            width: 120px;
+            font-weight: 600;
+        }
+    }
+}
+
+//Hero email signup media query (mobile and tablet)
+@media (max-width: 768px) {
+    .signup-column {
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+    .signup-block {
+        .control {
+            width: 100%;
+        }
+    }
+}
+
+
+/* ==========================================================================
+6. Cards
+========================================================================== */
+
+//Feature cards
+.feature-card.is-startup {
+    padding: 20px;
+    img {
+        margin: 0;
+    }
+}
+
+//Integrations cards
+.integration-cards {
+    .feature-card {
+        padding: 50px 20px;
+        margin-bottom: 20px;
+    }
+    .brand-logo {
+        padding: 10px 0;
+        img {
+            max-height: 60px;
+            max-width: 120px;
+        }
+    }
+    .card-title {
+        padding: 10px 0;
+    }
+    .card-feature-description {
+        padding: 0 !important;
+    }
+    a {
+        margin: 20px 0;
+    }
+}
+
+//CTA
+.cta-text {
+    font-family: 'Nexa Bold', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+//Values cards
+.values-cards {
+    .feature-card {
+        height: 310px;
+    }
+    .card-feature-description {
+        font-size: 95%;
+    }
+    .card-icon {
+        padding-top: 50px;
+        i {
+            font-size: 5rem;
+            color: $primary;
+        }
+    }
+    &.is-minimal {
+        padding: 0 8%;
+        i {
+            color: $blue-grey;
+            font-size: 4.5rem;
+        }
+        .feature-card:hover {
+            i {
+                color: $primary;
+            }
+        }
+    }
+}
+
+//Values cards media query (mobile)
+@media (max-width: 768px) {
+    .values-cards.is-minimal {
+        padding: 0 !important;
+    }
+}
+
+//Startup contact page cards
+.contact-card {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    .icon i {
+        font-size: 26px;
+        color: $accent;
+        position: relative;
+    }
+    .contact-info {
+        margin: 0 30px;
+        .contact-name {
+            color: $placeholder;
+        }
+        .contact-details {
+            .details-text {
+                font-size: 16px;
+                color: $blue-grey !important;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+7. Team section
+========================================================================== */
+
+//Team section
+.modern-team.startup-team {
+    .modern-team-item {
+        padding: 0 5px;
+        width: 33%;
+        .item-wrapper {
+            border: 1px solid $fade-grey;
+            box-shadow: 0 3px 10px 4px rgba(0,0,0,.04);
+        }
+        .item-img {
+            &:before {
+                content: "";
+                background-color: rgba(79, 193, 234, .8);
+            }
+        }
+        img {
+            border-radius: 10px;
+        }
+        &:hover .item-img {
+            border-radius: 10px;
+        }
+        a {
+            i {
+                color: $primary;
+            }
+            &:hover i {
+                color: $blue-grey;
+            }
+        }
+    }
+}
+
+//Team section media query (mobile only)
+@media (max-width: 767px) {
+    .modern-team-item {
+        width: auto !important;
+    }
+    #google-map {
+        min-height: 50vh;
+    }
+}
+
+/* ==========================================================================
+8. Parallax counters
+========================================================================== */
+
+//Parallax counters icons
+.parallax-counter.is-primary i {
+    color: $primary !important;
+}
+
+/* ==========================================================================
+9. Pricing
+========================================================================== */
+
+.pricing-plan {
+    .plan-header {
+        text-transform: uppercase;
+        font-weight: 400 !important;
+        font-family: 'Nexa Bold', sans-serif;
+        color: $muted-grey;
+    }
+}

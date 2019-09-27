@@ -1,0 +1,204 @@
+/*! _auth.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Login and Sign up shared styles 
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Logo section
+1. Layout
+2. Hero sections
+3. Links
+4. Miscellaneous
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Logo section
+========================================================================== */
+.top-logo {
+    height: 40px;
+}
+
+//Top text below logo
+.intro-section {
+    //padding-bottom: 10px !important;
+    .intro-text {
+        .intro-title  {
+            margin: 15px 0;
+            font-size: 18px;
+            color: $primary;
+        }
+        .intro-sub {
+            padding: 20px 30px;
+            font-size: 14px;
+            color: $title-grey;
+        }
+    }
+}
+
+
+/* ==========================================================================
+1. Layout
+========================================================================== */
+
+//login control spacing
+.login {
+    padding: 10px 0;
+}
+
+//Suppressing padding
+.column.login-column {
+    padding: 0 !important;
+}
+
+//Wrapper
+.login-wrapper {
+    overflow: hidden !important;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    &.is-gapless:not(:last-child) {
+        margin-bottom: 0 !important;
+    }
+}
+
+//Login hero
+.hero.login-hero, .hero.signup-hero {
+    background-position: center;
+    background-size:auto;
+}
+
+//Signup hero
+#signup-banner .hero {
+    background: url('https://source.unsplash.com/DWui9DmfCXA/');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+}
+
+
+/* ==========================================================================
+2. Hero sections
+========================================================================== */
+
+//Hero title
+.hero-banner {
+    .title {
+        padding: 25px;
+        padding-top: 25%;
+    }
+    .subtitle {
+        padding: 0 30px;
+    }
+    img.login-city {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+    }
+    .button {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+//Hero title
+.signup-hero {
+    .title {
+        padding: 25px;
+        padding-top: 15%;
+    }
+    .subtitle {
+        padding: 0 22%;
+    }
+    img.mockup {
+        position: absolute;
+        bottom: -15%;
+        left: 0;
+        right: 0;
+        z-index: 0;
+    }
+    .already {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+        span {
+            margin-right: 15px;
+            color: $white;
+        }
+        a {
+            min-width: 80px;
+        }
+    }
+}
+
+/* ==========================================================================
+3. Links
+========================================================================== */
+
+//Side links (forgot password, don't have an account etc...)
+.forgot, .no-account, .return {
+    color: $title-grey !important;
+    transition: opacity 0.5s;
+    &:hover {
+        opacity: 0.8;
+        color: $primary !important;
+    }   
+    &.is-secondary {
+        color: $secondary !important;
+    }
+    &.is-accent {
+        color: $accent !important;
+    }
+}
+
+//Forgot password
+.forgot-password a {
+    color: #95A5A6;
+    font-weight: normal;
+    padding-right: 20px;
+    transition: all 0.6s;
+    &:hover {
+        color: $primary;
+    }
+}
+
+//No account
+.no-account-link  {
+    a {
+        color: $title-grey;
+        font-weight: 500;
+        &:hover {
+            color: $primary; 
+        }
+    }
+}
+
+
+/* ==========================================================================
+4. Miscellaneous
+========================================================================== */
+
+//Icon positionning
+.icon.user,
+.icon.password {
+    margin: 5px 10px 0 0;
+}
+
+//Checkbox
+.checkbox-wrap {
+    color: $title-grey;
+    margin-bottom: 10px;
+    span {
+        position: relative;
+        top: -2px;
+    }
+}

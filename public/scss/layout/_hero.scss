@@ -1,0 +1,215 @@
+/*! _hero.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Hero related styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Hero general styles
+1. Hero body 
+2. Hero footer
+3. Parallax Overlay
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Hero general styles
+========================================================================== */
+.hero {
+    //Helpers
+    &.is-relative {
+        position: relative;
+    }
+    &.is-cover {
+        background-size: cover !important;
+    }
+    //Primary background
+    &.is-theme-primary {
+        background-color: $primary;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+    //Secondary background
+    &.is-theme-secondary {
+        background-color: $secondary;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+    //Accent background
+    &.is-theme-accent {
+        background-color: $accent;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+    //Info background
+    &.is-theme-info {
+        background-color: $blue;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+    //Success background
+    &.is-theme-success {
+        background-color: $green;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+    //Warning background
+    &.is-theme-warning {
+        background-color: $orange;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+    //Danger background
+    &.is-theme-danger {
+        background-color: $red;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+    //Feature grey background
+    &.is-feature-grey {
+        background-color: $section-grey;
+        .title {
+            color: $blue-grey;
+        }
+        .subtitle {
+            color: $blue-grey;
+        }
+    }
+    //Light grey background
+    &.is-light-grey {
+        background-color: $light-grey;
+        background-image: -webkit-linear-gradient(309deg, #d0e0ec 0%, #f5f7fa 71%, white 100%);
+        background-image: linear-gradient(141deg, #d0e0ec 0%, #f5f7fa 71%, white 100%);
+        .title.dark {
+            color: $blue-grey;
+        }
+        .title.theme {
+            color: $primary;
+        }
+        .subtitle {
+            margin-top: 0 !important;
+            padding-right: 20%;
+            line-height: 1.6 !important;
+        }
+    }
+    //Coal background
+    &.is-coal{
+        background-color: $coal;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+}
+
+/* ==========================================================================
+1. Hero body 
+========================================================================== */
+.hero-body {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    //page title styles
+    .title {
+        &.main-title {
+            color: $white;
+            z-index: 999;
+            font-size: 3.5rem;
+        }
+        &.big-title {
+            color: $blue-grey;
+            z-index: 999;
+            font-size: 4rem;
+        }
+        &.page-title {
+            font-size: 3.5rem;
+        }
+        &.medium-title {
+            font-size: 2.5rem;
+        }
+        &.small-title {
+            font-size: 2rem;
+        }
+    }
+    //Subtitle styles
+    .subtitle {
+        &.page-subtitle {
+            font-size: 1.8rem;
+        }
+    }
+    //Small clients logo under hero caption
+    .clients-small {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        padding: 15px 0;
+        img {
+            height: 42px;
+            margin: 0 5px;
+        }
+        &.centered {
+            justify-content: center !important;
+        }
+    }
+    //Helpers
+    &.is-relative {
+        position: relative;
+    }
+}
+
+/* ==========================================================================
+2. Hero footer
+========================================================================== */
+
+.hero-foot {
+    img.partner-logo {
+        height: 70px !important;
+    }
+}
+
+/* ==========================================================================
+3. Parallax Overlay
+========================================================================== */
+
+.parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: #333;
+    opacity: 0.4;
+}

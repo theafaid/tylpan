@@ -1,0 +1,95 @@
+/*! themes/_deep-blue.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Deep Blue theme variables and styles (Deep blue theme is used in "Landing kit v3")
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Theme color variables
+1. Box shadows
+2. Theme gradient
+3. Pageloader
+4. Theme specific Hero
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Theme color variables
+========================================================================== */
+$primary: #0082c8;
+$primary-accent: #6441A5;
+$secondary: #7c4dff;
+$accent: #6441A5;
+
+
+/* ==========================================================================
+1. Box shadows
+========================================================================== */
+//Base shadow
+$base-shadow: rgba(0, 0, 0, 0.12);
+
+//Primary box shadow
+$primary-shadow-from: rgba(57, 106, 252, 0.42);
+$primary-shadow-to: rgba(57, 106, 252, 0.2);
+$primary-box-shadow:  0 14px 26px -12px $primary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $primary-shadow-to !important;
+
+//Secondary box shadow
+$secondary-shadow-from: rgba(124, 77, 255, 0.42);
+$secondary-shadow-to: rgba(124, 77, 255, 0.2);
+$secondary-box-shadow:  0 14px 26px -12px $secondary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $secondary-shadow-to !important;
+
+//Accent box shadow
+$accent-shadow-from: rgba(255, 114, 115, 0.42);
+$accent-shadow-to: rgba(255, 114, 115, 0.2);
+$accent-box-shadow:  0 14px 26px -12px $accent-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $accent-shadow-to !important;
+
+
+/* ==========================================================================
+2. Theme gradient
+========================================================================== */
+$webkit-hero-gradient: -webkit-linear-gradient(45deg, $primary, $primary-accent);
+$hero-gradient: linear-gradient(45deg, $primary, $primary-accent); 
+
+$webkit-section-gradient: -webkit-linear-gradient(45deg, $primary, $secondary); 
+$section-gradient: linear-gradient(45deg, $primary, $secondary); 
+
+
+/* ==========================================================================
+3. Pageloader
+========================================================================== */
+.pageloader {
+    background-color: $primary;
+    background: $webkit-hero-gradient;
+    background: $hero-gradient;
+}
+
+/* ==========================================================================
+4. Theme specific Hero
+========================================================================== */
+.hero, .section {
+    &.is-theme-primary {
+        background: $webkit-hero-gradient;
+        background: $hero-gradient;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+}
+
+.hero, .section {
+    &.is-theme-secondary {
+        background: $webkit-section-gradient;
+        background: $section-gradient;
+        .title {
+            color: $white;
+        }
+        .subtitle {
+            color: $white;
+        }
+    }
+}

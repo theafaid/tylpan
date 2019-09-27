@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/orders';
 
     /**
      * Create a new controller instance.
@@ -35,5 +35,17 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * @return string
+     */
+    public function redirectTo()
+    {
+        if(auth()->user()->isDefaultUser()) {
+            return route('orders.index');
+        }
+
+        return auth()->user()->isDelegate() ? route('admin.orders.index') : route('admin.dashboard.index');
     }
 }

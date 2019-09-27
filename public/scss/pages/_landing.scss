@@ -1,0 +1,424 @@
+/*! _landing.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Landing kit v1 SCSS file
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Animated Hero background
+1. Hero Header styles
+2. Landing page styles
+3. Video embed
+4. Pricing page
+5. Footer styles
+6. Login and Sign up
+7. Tablet media queries (portrait orientation)
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Animated Hero background
+========================================================================== */
+#landing-hero {
+    background: $secondary url(../images/bg/shapes/icon-bg.png) repeat 0 0;
+    -webkit-animation: 18s linear 0s normal none infinite animate;
+    -moz-animation: 18s linear 0s normal none infinite animate;
+    -ms-animation: 18s linear 0s normal none infinite animate;
+    -o-animation: 18s linear 0s normal none infinite animate;
+    animation: 18s linear 0s normal none infinite animate;
+}
+
+//Animated background keyframes animations (background position y value should match your background image height to avoid "jumping effects")
+@-webkit-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 0 -1450px;}
+}
+
+@-moz-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 0 -1450px;}
+}
+
+@-ms-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 0 -1450px;}
+}
+
+@-o-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 0 -1450px;}
+}
+
+@keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 0 -1450px;}
+}
+
+/* ==========================================================================
+1. Hero Header styles
+========================================================================== */
+
+//Hero wave shape
+.hero.hero-waves:before {
+    background: transparent url(../images/bg/shapes/wavy.png) no-repeat scroll 0 bottom / 100% auto;
+    content: "";
+    height: 321px;
+    width: 100%;
+    z-index: 0 !important;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+//Hero caption
+.header-caption {
+    margin-top: -80px;
+    padding: 0 20px;
+    text-align: left;
+    .landing-title {
+        font-family: 'Nexa Bold', sans-serif;
+        font-size: 3.4rem;
+        font-weight: 900 !important;
+        margin-bottom: 0 !important;
+        color: $white;
+        &.is-big {
+            font-size: 4rem;
+        }
+    }
+    .subtitle {
+        margin-bottom: 0;
+        padding: 10px 0;
+    }
+    &.is-centered {
+        text-align: center !important;
+    }
+}
+
+//Header caption media query (mobile)
+@media (max-width: 767px) {
+    .header-caption {
+        text-align: center;
+        padding: 40px 10px;
+        .landing-title {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header-caption {
+        margin-top: 0 !important;
+    }
+}
+
+//Tablet orientation portrait
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .header-caption {
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+2. Landing page styles
+========================================================================== */
+
+//section title
+.section-title-wrapper {
+    .section-title-landing {
+        font-family: 'Nexa Bold', sans-serif;
+        font-size: 2.6rem;
+        color: $blue-grey;
+        padding: 10px 0;
+    }
+    h4 {
+        padding: 20px 40px;
+        font-family: 'Nexa Light', sans-serif;
+        font-weight: 300;
+        font-size: 1.2rem;
+        color: $muted-grey;
+    }
+}
+
+//Half laptop and phone mockup
+.half-mockup {
+    position: absolute;
+    bottom: 0;
+    max-height: 550px;
+}
+
+//Smartphone slider
+.phone-slide {
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    vertical-align: top;
+    padding: 800px 30px 30px 30px;
+    &.is-first {
+        background-image: url(../images/illustrations/mockups/startup/phone-slide-1.png);
+    }
+    &.is-second {
+        background-image: url(../images/illustrations/mockups/startup/phone-slide-2.png);
+    }
+    &.is-third {
+        background-image: url(../images/illustrations/mockups/startup/phone-slide-3.png);
+    }
+    &.is-fourth {
+        background-image: url(../images/illustrations/mockups/startup/phone-slide-4.png);
+    }
+}
+
+//Large feature image
+.featured-svg-lg{
+    max-width: 550px;
+    max-height: 550px;
+}
+
+//Icon boxes
+.wavy-icon-box {
+    i {
+        font-size: 3.8rem;
+        font-weight: normal;
+        color: $secondary;
+    }
+    .box-title {
+        font-family: 'Nexa Light', sans-serif;
+        padding: 5px 0;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $secondary;
+    }
+    .box-content {
+        color: $muted-grey;
+    }
+}
+
+.square-icon-box {
+    &.is-landing {
+        .box-title {
+            font-family: 'Nexa Light', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: $blue-grey;
+        }
+        .box-text {
+            font-size: 14px;
+        }
+    }
+}
+
+//Features text
+.quick-feature.is-handwritten {
+    font-size: 2.1rem !important;
+    font-family: 'Nexa Bold', sans-serif;
+    font-weight: 400 !important;
+    margin-bottom: 0.8rem !important;
+    .bg-number {
+        padding-right: 10px !important;
+        font-family: 'Roboto' !important;
+    }
+}
+
+//Event cards
+.event-card.is-wavy {
+    h2.text-title {
+        font-family: 'Nexa Bold', sans-serif;
+        text-transform: none;
+        font-size: 1.35em;
+    }
+    p.text-subtitle {
+        font-family: 'Nexa Light', sans-serif;
+        font-size: 0.9rem;
+    }
+}
+
+//Testimonials
+.testimonials.is-wavy {
+    .testimonial-name h3 {
+        font-family: 'Nexa Bold', sans-serif;
+    }
+}
+
+//Testimonial item media query (mobile)
+@media (max-width: 768px) {
+    .testimonial-item {
+        margin: 40px 15px !important;
+        .testimonial-content {
+            p {
+                padding: 20px !important;
+            }
+        }
+    }
+}
+
+//Spacer
+.bottom-spacer {
+    margin-bottom: 80px;
+    min-height: 100px;
+}
+
+//Small feature
+.small-feature {
+    padding: 5px 0;
+    font-family: 'Nexa Bold', sans-serif;
+    font-size: 1.3rem;
+}
+
+/* ==========================================================================
+3. Video embed
+========================================================================== */
+
+//Adjustments
+#features-video {
+    margin-top: -35%;
+}
+
+#header-pricing {
+    margin-top: -20%;
+}
+
+//Video block adjustment media query (mobile)
+@media (max-width: 768px) {
+    #features-video {
+        margin-top: 0 !important;
+    }
+}
+
+/* ==========================================================================
+4. Pricing page
+========================================================================== */
+
+//Pricing plan switch
+.pricing-picker {
+    span {
+        color: $white;
+        font-family: 'Nexa Light', sans-serif;
+        margin: 0 5px 0 5px;
+        padding: 10px 20px 13px 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        &.is-active {
+            border: 1px solid $white;
+        }
+    }
+}
+
+//Pricing tables with header
+.header-pricing.is-wavy {
+    .flex-card {
+        border: none !important;
+        .plan-name {
+            font-family: 'Nexa Bold', sans-serif;
+            text-transform: none;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+//Giant newsletter input
+.giant-input-wrapper.is-wavy {
+    padding: 30px 40px;
+    background: $section-grey-accent;
+    .giant-input {
+        position: relative;
+        min-width: 300px;
+        max-width: 100%;
+        input {
+            padding: 20px 165px 20px 20px;
+            width: 100%;
+            background: $white;
+            color: $muted-grey;
+            border: none;
+            height: 60px;
+            line-height: 60px;
+            transition: all 0.5s;
+            border: 1px solid rgba(213,220,247,0.59);
+            border-radius: 100px;
+            &:focus {
+                outline: none !important;
+                box-shadow:  0px 5px 43px rgba(0, 0, 0, 0.18) !important;
+            }
+        }
+        button.inner {
+            position: absolute;
+            right: 7px;
+            top: 7px;
+        }
+    }
+}
+
+/* ==========================================================================
+5. Footer styles
+========================================================================== */
+
+//Footer Wave shape
+.section.footer-waves:after {
+    background: transparent url(../images/bg/shapes/wavy-dark.png) no-repeat scroll 0 bottom / 100% auto;
+    content: "";
+    height: 321px;
+    width: 100%;
+    z-index: 0 !important;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+/* ==========================================================================
+6. Login and Sign up
+========================================================================== */
+
+//Login and signup dark wave footer shape
+.hero.hero-waves-dark:before {
+    background: transparent url(../images/bg/shapes/wavy-dark.png) no-repeat scroll 0 bottom / 100% auto;
+    content: "";
+    height: 321px;
+    width: 100%;
+    z-index: 0 !important;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+//Login and signup cards
+.wavy-login-card, .wavy-signup-card {
+    padding: 40px;
+    border-radius: 6px;
+    max-width: 400px;
+    margin: auto;
+    background-color: white;
+    border: 1px solid #ecf0f1;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    h2 {
+        font-size: 22px;
+        margin-bottom: 40px;
+        font-weight: 700 !important;
+        font-family: 'Nexa Light', sans-serif;
+    }
+}
+
+/* ==========================================================================
+7. Tablet media queries (portrait orientation)
+========================================================================== */
+
+//Tablet portrait media queries
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    #landing-hero {
+        figure img {
+            left: 25%;
+            top: 20%;
+        }
+    }
+    p.is-tablet-padded {
+        padding: 0 10%;
+    }
+    .column.slide-description {
+        padding: 40px 0 !important;
+    }
+    .event-card.is-wavy .text-title {
+        font-size: 1.5rem !important;
+    }
+}

@@ -1,0 +1,308 @@
+/*! _slider.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Range slider extension 
+========================================================================== */
+
+// Github: https://github.com/darlanrod/input-range-sass
+// Author: Darlan Rod https://github.com/darlanrod
+// Version 1.1.1
+// MIT License
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Variables
+1. Mixins
+2. Bubble
+3. Range input
+4. Bubble label
+5. Input box
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Variables
+========================================================================== */
+$main-color: #01c9ca;
+$track-color: #cecece !default;
+$thumb-color: $main-color !default;
+
+$thumb-radius: 100% !default;
+$thumb-height: 25px !default;
+$thumb-width: 25px !default;
+$thumb-border-width: 5px !default;
+$thumb-border-color: rgba(255, 255, 255, 0.5) !default;
+
+$track-width: 100% !default;
+$track-height: 5px !default;
+$track-border-width: 0px !default;
+$track-border-color: #000 !default;
+$track-radius: 0px !default;
+$contrast: 0% !default;
+
+/* ==========================================================================
+1. Mixins
+========================================================================== */
+//track mixin
+@mixin track {
+    width: $track-width;
+    height: $track-height;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+//Thumb mixins
+@mixin thumb {
+    position: relative;
+    border: $thumb-border-width solid $thumb-border-color;
+    height: $thumb-height;
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+    background: $thumb-color;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@mixin thumb-primary {
+    position: relative;
+    border: $thumb-border-width solid lighten($primary, 20%);
+    height: $thumb-height;
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+    background: $primary;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@mixin thumb-secondary {
+    position: relative;
+    border: $thumb-border-width solid lighten($secondary, 20%);
+    height: $thumb-height;
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+    background: $secondary;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@mixin thumb-accent {
+    position: relative;
+    border: $thumb-border-width solid lighten($accent, 20%);
+    height: $thumb-height;
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+    background: $accent;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* ==========================================================================
+2. Bubble
+========================================================================== */
+.bubble-range {
+    -webkit-appearance: none;
+    margin: ($thumb-height / 2) 0;
+    width: $track-width;
+    &:focus {
+        outline: none;
+    }
+    //thumb
+    &::-webkit-slider-thumb {
+        @include thumb;
+        -webkit-appearance: none;
+        margin-top: (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2;
+            }
+    &:focus::-webkit-slider-runnable-track {
+        background: lighten($track-color, $contrast);
+    }
+    &::-moz-range-thumb {
+        @include thumb;
+    }
+    &::-ms-thumb {
+        @include thumb;
+    }
+
+    &:focus::-ms-fill-lower {
+        background: $track-color;
+    }
+
+    &:focus::-ms-fill-upper {
+        background: lighten($track-color, $contrast);
+    }
+    //track
+    &::-webkit-slider-runnable-track {
+        @include track;
+
+        background: $track-color;
+        border: $track-border-width solid $track-border-color;
+        border-radius: $track-radius;
+    }
+    &::-moz-range-track {
+        @include track;
+
+        background: $track-color;
+        border: $track-border-width solid $track-border-color;
+        border-radius: $track-radius;
+    }
+    &::-ms-track {
+        @include track;
+
+        background: transparent;
+        border-color: transparent;
+        border-width: $thumb-width 0;
+        color: transparent;
+    }
+
+    &::-ms-fill-lower {
+        background: darken($track-color, $contrast);
+        border: $track-border-width solid $track-border-color;
+        border-radius: $track-radius * 2;
+    }
+    &::-ms-fill-upper {
+        background: $track-color;
+        border: $track-border-width solid $track-border-color;
+        border-radius: $track-radius * 2;
+    }
+}
+
+/* ==========================================================================
+3. Range input
+========================================================================== */
+.range {
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 50px;
+    width: 100%;
+
+    @for $i from 0 through 100 {
+        &[data-value='#{$i}'] .bubble-label {
+            left: percentage($i / 100);
+        }
+    }
+    //primary color
+    &.is-primary {
+        .bubble-label .drop {
+            background: $primary !important;
+        }
+        .bubble-range {
+            &::-webkit-slider-thumb {
+                @include thumb-primary;
+                -webkit-appearance: none;
+                margin-top: (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2;
+            }
+            &::-moz-range-thumb {
+                @include thumb-primary;
+            }
+            &::-ms-thumb {
+                @include thumb-primary;
+            }
+        }
+    }
+    //secondary color
+    &.is-secondary {
+        .bubble-label .drop {
+            background: $secondary !important;
+        }
+        .bubble-range {
+            &::-webkit-slider-thumb {
+                @include thumb-secondary;
+                -webkit-appearance: none;
+                margin-top: (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2;
+            }
+            &::-moz-range-thumb {
+                @include thumb-secondary;
+            }
+            &::-ms-thumb {
+                @include thumb-secondary;
+            }
+        }
+    }
+    //accent color
+    &.is-accent {
+        .bubble-label .drop {
+            background: $accent !important;
+        }
+        .bubble-range {
+            &::-webkit-slider-thumb {
+                @include thumb-accent;
+                -webkit-appearance: none;
+                margin-top: (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2;
+            }
+            &::-moz-range-thumb {
+                @include thumb-accent;
+            }
+            &::-ms-thumb {
+                @include thumb-accent;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+4. Bubble label
+========================================================================== */
+.bubble-label {
+    position: relative;
+    top: 0;
+    margin-left: -40px;
+    margin-bottom: 20px;
+    width: 80px;
+    transform: scale(0.8);
+    //value
+    .value {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        z-index: 1;
+    }
+    //drop
+    .drop {
+        box-sizing: content-box !important;
+        width: 80px;
+        height: 80px;
+        border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        background: $main-color;
+        -webkit-transform: rotateZ(135deg);
+        transform: rotateZ(135deg);
+    }
+}
+
+/* ==========================================================================
+5. Input box
+========================================================================== */
+.input-box {
+    position: relative;
+    margin: 0 -12.5px;
+    height: 60px;
+    input[type="range"] {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 60px;
+        background: transparent;
+    }
+    .bar {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        margin: 0 0 -2.5px;
+        height: 5px;
+        background: $main-color;
+        z-index: 0;
+    }
+    //position function
+    @for $i from 0 through 100 {
+        &[data-value='#{$i}'] .bar {
+            margin-right: 25px;
+            width: calc(#{$i}% - #{$thumb-width} / (100/#{$i}));
+        }
+    }
+}

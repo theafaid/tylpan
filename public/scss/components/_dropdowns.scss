@@ -1,0 +1,207 @@
+/*! _dropdowns.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Dropdown styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Hover dropdowns
+1. jQuery Dropdowns
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Hover dropdowns
+========================================================================== */
+.is-drop {
+    position: relative;
+    cursor: pointer;
+    //caret
+    i.sl-icon-arrow-down {
+        font-size: 8px !important;
+        top: 2px !important;
+    }
+    .drop-caret {
+        position: relative;
+        top: 5px;
+    }
+    //container
+    .dropContain {
+        width: 220px;
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        margin-left: -165px; /* 3/4 of width */
+        top: -500vh;
+        //dropdown
+        .dropOut {
+            width: 220px;
+            background: $white;
+            float: left;
+            position: relative;
+            margin-top: 15px;
+            opacity: 0;
+            border: 1px solid $fade-grey;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 3px 10px 4px rgba(0,0,0,.04);
+            -moz-box-shadow: 0 3px 10px 4px rgba(0,0,0,.04);
+            box-shadow: 0 3px 10px 4px rgba(0,0,0,.04);
+            -webkit-transition: all .5s ease-out;
+            -moz-transition: all .5s ease-out;
+            -ms-transition: all .5s ease-out;
+            -o-transition: all .5s ease-out;
+            transition: all .5s ease-out;
+        }
+        //arrow
+        .dropOut .triangle {
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid $white;
+            top: -8px;
+            left: 50%;
+            margin-left: -8px;
+        }
+        //menu items
+        .dropOut ul li {
+            text-align: left;
+            float: left;
+            width: 200px;
+            padding: 12px 0 10px 15px;
+            margin: 3px 10px;
+            color: #777;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-transition: background .2s ease-out;
+            -moz-transition: background .2s ease-out;
+            -ms-transition: background .2s ease-out;
+            -o-transition: background .2s ease-out;
+            transition: background .2s ease-out;
+            &:hover {
+                background: $light-grey;
+                cursor: pointer; 
+            }
+            //icons
+            i.drop-icon {
+                position: relative;
+                top: 4px;
+                margin-right: 15px;
+            }
+            i.drop-icon.sl {
+                position: relative;
+                top: 0;
+                margin-right: 15px;
+            }
+        }
+        //menu container
+        .dropOut ul {
+            float: left;
+            padding: 10px 0;
+            list-style: none;
+            &.big-icons {
+                li {
+                    padding: 2px 0 10px 15px;
+                    color: $title-grey;
+                }
+                i.im {
+                    font-size: 18px;
+                    color: $title-grey;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 1px;
+                }
+            }
+            //divider
+            li.dropdown-divider {
+                padding: 0 !important;
+                border-radius: 0 !important;
+                height: 5px;
+                border-bottom: 1px solid $grey-white;
+                &:hover {
+                    background-color: $white;
+                }
+            }
+        }
+        //Menu item hover colors
+        .dropOut {
+            &.is-primary ul li:hover {
+                background: $primary;
+                color: $white;
+            }
+            &.is-secondary ul li:hover {
+                background: $secondary;
+                color: $white;
+            }
+            &.is-accent ul li:hover {
+                background: $accent;
+                color: $white;
+            }
+        }
+    }
+    //Active state
+    &:hover .dropContain {
+        top: 30px !important;
+    }
+    &:hover .dropContain .dropOut {
+
+        animation: fadeInUp 0.27s ease-out;
+        opacity: 1;
+    }
+    &.drop-sm:hover .dropContain {
+        top: 15px !important;
+    }
+    &.is-centered .dropContain {
+        margin-left: -110px; /* half of width */
+    }
+    &.is-right .dropContain {
+        margin-left: -55px; /* quarter of width */
+    }
+}
+
+button {
+    i.sl-icon-arrow-down {
+        font-size: 8px !important;
+        top: 2px !important;
+        padding-left: 8px !important;
+    }
+}
+
+/* ==========================================================================
+1. jQuery Dropdowns
+========================================================================== */
+
+.jq-dropdown {
+    //default
+    .jq-dropdown-menu li > a:hover, .jq-dropdown .jq-dropdown-menu label:hover {
+        background-color: $light-grey;
+        color: inherit;
+    }
+    //primary
+    &.is-primary {
+        .jq-dropdown-menu li > a:hover, .jq-dropdown .jq-dropdown-menu label:hover {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+    //secondary
+    &.is-secondary {
+        .jq-dropdown-menu li > a:hover, .jq-dropdown .jq-dropdown-menu label:hover {
+            background-color: $secondary;
+            color: $white;
+        }
+    }
+    //accent
+    &.is-accent {
+        .jq-dropdown-menu li > a:hover, .jq-dropdown .jq-dropdown-menu label:hover {
+            background-color: $accent;
+            color: $white;
+        }
+    }
+}

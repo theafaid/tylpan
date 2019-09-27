@@ -1,0 +1,489 @@
+/*! _navbar.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Navbar related styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Resets
+1. Navbar placeholder
+2. Fixed solid navbar
+3. Static navbar
+4. Shared styles
+5. Sticky fade navbar
+6. Light and transparent navbar
+7. Base styles
+8. Hero head
+9. Account avatar
+10. Scrollnav 
+11. Hamburger menu icon
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Resets
+========================================================================== */
+.nav-item.is-tab {
+    border-top: none !important;
+}
+
+/* ==========================================================================
+1. Navbar placeholder
+========================================================================== */
+.navbar-placeholder {
+    z-index: 999;
+}
+
+/* ==========================================================================
+2. Fixed solid navbar
+========================================================================== */
+.fixed-navbar-wrapper {
+    width: 100%;
+    height: 4.6rem;
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    z-index: 9;
+    transition: all 0.3s;
+}
+
+/* ==========================================================================
+3. Static navbar
+========================================================================== */
+.navbar-wrapper {
+    width: 100%;
+    height: 4.6rem;
+    background: $white;
+    position: static;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    z-index: 20;
+    transition: all 0.6s;
+    //Transparent navbar modifiers
+    &.navbar-fade, &.navbar-minimal {
+        background-color: transparent;
+        box-shadow: none;
+        .hero-head {
+            background-color: transparent;
+            box-shadow: inherit;
+            .nav {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+4. Shared styles
+========================================================================== */
+.fixed-navbar-wrapper, .navbar-wrapper {
+    //Inverted navbar colors
+    &.nav-reverse {
+        //Sidebar menu icon (left)
+        .menu-toggle .rotate i {
+            background: $white;
+        }
+        .hero-head {
+            background: transparent;
+        }
+        //Nav item styles
+        .nav-item.is-tab {
+            color: $white;
+            &.is-active {
+                border-bottom-color: $white !important;
+                color: $smoke-white !important;
+            }
+            i {
+                color: $white !important; 
+            }
+        }
+        .nav-item.is-tab:hover {
+            border-bottom-color: $white;
+            color: $smoke-white;
+        }
+        .nav-icon.is-active-light i {
+            color: $white !important;
+        }
+        .nav-icon.nav-inner.is-active-light:hover i {
+            color: $smoke-white !important;
+        }
+        .nav .nav-item.is-tab.nav-icon:hover i {
+            color: $smoke-white !important;
+        }
+        //Responsive menu icon (right)
+        .nav-toggle {
+            span {
+                background-color: $white;
+            }
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        //Background color classes
+        &.nav-primary {
+            background: $primary;
+        }
+        &.nav-secondary {
+            background: $secondary;
+        }
+        &.nav-dark {
+            background: $sidebar;
+        }
+        &.nav-blue {
+            background: $blue;
+        }
+        &.nav-green {
+            background: $green;
+        }
+        &.nav-orange {
+            background: $orange;
+        }
+        &.nav-red {
+            background: $red;
+        }
+
+    }
+}
+
+/* ==========================================================================
+5. Sticky fade navbar
+========================================================================== */
+.navbar-wrapper.navbar-sticky {
+    width: 100%;
+    height: 4.6rem;
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    z-index: 9;
+    transition: all 0.3s;
+    &.navbar-fade {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        .hero-head {
+            background-color: transparent !important;
+            box-shadow: inherit;
+            .nav {
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+6. Light and transparent navbar
+========================================================================== */
+.navbar-fade.navbar-light, .navbar-minimal.navbar-light {
+    //Nav item styles
+    .nav-item.is-tab {
+        color: $white;
+        &.is-active {
+            border-bottom-color: $white !important;
+            color: $smoke-white !important;
+        }
+        i {
+            color: $white !important; 
+        }
+    }
+    .nav-item.is-tab:hover {
+        border-bottom-color: $white;
+        color: $smoke-white;
+    }
+    .nav-icon.is-active-light i {
+        color: $white !important;
+    }
+    .nav-icon.nav-inne.is-active-light:hover i {
+        color: $smoke-white !important;
+    }
+    .nav-item {
+        .menu-toggle .icon-box-toggle span i {
+            background: $white !important;
+        }
+    }
+    //Responsive menu icon (right)
+    .nav-toggle {
+        span {
+            background-color: $white;
+        }
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+/* ==========================================================================
+7. Base styles
+========================================================================== */
+.nav {
+    //containers
+    .container {
+        min-height: 4rem;
+    }
+    .container.big {
+        min-height: 4.6rem;
+    }
+    //Nav items
+    .nav-item {
+        &.is-tab {
+            &:hover {
+                border-bottom-color: $primary;
+            }
+            //Active state
+            &.is-active {
+                border-bottom: 1px solid $primary !important;
+                color: $primary !important;
+            }
+            //Icon item
+            &.nav-icon {
+                border-bottom: none !important;
+                i {
+                    color: $title-grey;
+                    font-size: 20px;
+                }
+                &:hover i {
+                    color: $primary !important;
+                }
+                //Active state
+                &.is-active {
+                    border-bottom: 1px solid transparent !important;
+                    i {
+                        color: $primary !important;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        //responsive behaviour
+        &.is-menu-mobile {
+            display: none;
+        }
+    }
+    //Responsive menu toggle (right)
+    .nav-toggle {
+        width: 64px;
+        height: 64px;
+        span {
+            background-color: $secondary;
+            width: 20px !important;
+        }
+        &.is-active span {
+            background-color: $primary;
+        }
+        span:nth-child(1) {
+            margin-top: -5px !important;
+        }
+        span:nth-child(2) {
+            margin-top: 1px !important;
+        }
+        span:nth-child(3) {
+            margin-top: 7px !important;
+        }
+        &:hover {
+            background-color: transparent !important;
+        }
+        &.is-active {
+            span:nth-child(3) {
+                margin-top: 9px !important;
+            }
+        }
+        &:active, &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+/* ==========================================================================
+8. Hero head
+========================================================================== */
+.hero-head {
+    background: $white;
+    &.has-shadow {
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    }
+}
+
+/* ==========================================================================
+9. Account avatar
+========================================================================== */
+.account {
+    position: relative;
+    right: 20px;
+    top: 5px;
+    margin-left: 30px;
+    .nav-item {
+        border-bottom: 1px solid transparent !important;
+    }
+    img.account-avatar {
+        max-height: 40px;
+        border-radius: 50px;
+        border: 1px solid $light-grey;
+    }
+    div a {
+        color: $medium-grey !important;
+    }
+    div a i {
+        position: relative;
+        top: 3px;
+        left: 10px;
+        font-size: 7px !important;
+        color: $medium-grey;
+    }
+    .dropOut ul {
+        margin-left: 0 !important;
+    }
+}
+
+/* ==========================================================================
+10. Scrollnav (component pages spyscroll nav)
+========================================================================== */
+.scroll-nav-wrapper {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: $white;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    .tabs {
+        background: $white;
+        a {
+            padding-bottom: 0;
+            padding-top: 0;
+            border-bottom-color: transparent;
+        }
+        ul {
+            border-bottom: none;
+        }
+        ul li a {
+            color: $title-grey;
+        }
+        ul li:hover a {
+            color: $accent;
+            border-bottom-color: $accent;
+        }
+        ul li.is-active a {
+            color: $accent;
+            border-bottom: 2px solid $accent;
+        }
+        ul li a.there {
+            color: $accent;
+            border-bottom: 2px solid $accent;
+        }
+    }
+}
+
+/* ==========================================================================
+11. Hamburger menu icon
+========================================================================== */
+.menu-toggle  {
+    font-size: 20px; 
+    color: #666; 
+    line-height: 48px; 
+    text-align: center; 
+    background: transparent; 
+    display: block; 
+    width: 24px;
+    height: 26px; 
+    cursor: pointer; 
+    padding: 0; 
+    margin: 0 14px; 
+    transition: opacity 0.4s;
+    opacity: 1;
+    position: relative;
+    top: 2px;
+    .icon-box-toggle  {
+        height: 100%;
+        width: 100%; 
+        background: tranparent; 
+        position: relative;
+        display: block; 
+        &.active > span.rotate {
+
+            /*transform*/
+            -webkit-transform: rotate(90deg);
+            -moz-transform:translate(0px, 0px) rotate(90deg);
+            -ms-transform:translate(0px, 0px) rotate(90deg);
+            -o-transform:translate(0px, 0px) rotate(90deg);
+            transform:translate(0px, 0px) rotate(90deg);
+        }
+
+
+        &.active > span > i.icon-line-center{
+            visibility: hidden; 
+            width: 1px; 
+            height: 3px; 
+            left: 70%;
+        }
+
+        &.active > span > i.icon-line-bottom {
+            margin: -1.5px 0 0 -10px;
+            left: 50%;
+            top: 50%; 
+            /*transform*/
+            -webkit-transform: rotate(135deg);
+            -moz-transform:translate(0px, 0px) rotate(135deg);
+            -ms-transform:translate(0px, 0px) rotate(135deg);
+            -o-transform:translate(0px, 0px) rotate(135deg);
+            transform:translate(0px, 0px) rotate(135deg);
+        }
+        &.active  > span > i.icon-line-top {
+            margin: -1.5px 0 0 -10px;
+            left: 50%;
+            top: 50%; 
+            /*transform*/
+            -webkit-transform: rotate(45deg);
+            -moz-transform:translate(0px, 0px) rotate(45deg);
+            -ms-transform:translate(0px, 0px) rotate(45deg);
+            -o-transform:translate(0px, 0px) rotate(45deg);
+            transform:translate(0px, 0px) rotate(45deg);
+
+        }
+    }
+
+    .icon-line-center {
+        position: absolute; 
+        width: 20px; 
+        height: 2px; 
+        background: $title-grey; 
+        margin: -1.5px 0 0 -10px;
+        left: 50%;
+        top: 50%; 
+
+        -webkit-transition: all .2s ease ;
+        -moz-transition: all .2s ease ;
+        -o-transition: all .2s ease ;
+        transition: all .2s ease ;	
+    }
+
+    .icon-line-top {
+        position: absolute; 
+        width: 20px; 
+        height: 2px; 
+        background: $title-grey; 
+        margin: -3px 0 0 -10px;
+        left: 50%;
+        top: 30%; 
+        -webkit-transition: all .2s ease ;
+        -moz-transition: all .2s ease ;
+        -o-transition: all .2s ease ;
+        transition: all .2s ease ;	
+    }
+
+    .icon-line-bottom {
+        position: absolute; 
+        width: 20px; 
+        height: 2px; 
+        background: $title-grey; 
+        margin: 1.5px 0 0 -10px;
+        left: 50%;
+        top: 60%; 
+        -webkit-transition: all .2s ease ;
+        -moz-transition: all .2s ease ;
+        -o-transition: all .2s ease ;
+        transition: all .2s ease ;	
+    }
+}

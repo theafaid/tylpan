@@ -1,0 +1,264 @@
+/*! _uploader.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+File uploader extension 
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. One button theme
+1. Thumbnails theme
+2. Drag and drop theme
+=============================================================================
+***/
+
+/* ==========================================================================
+0. One button theme
+========================================================================== */
+.fileuploader-theme-onebutton {
+    .fileuploader-input {
+        display: inline-block;
+    }
+    .fileuploader-input .fileuploader-input-caption {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+1. Thumbnails theme
+========================================================================== */
+.fileuploader-theme-thumbnails {
+    .fileuploader-thumbnails-input, .fileuploader-items-list .fileuploader-item {
+        display: inline-block;
+        width: 25%;
+        height: 115px;
+        line-height: 95px;
+        padding: 10px;
+        vertical-align: top;
+    }
+    .fileuploader-thumbnails-input-inner {
+        width: 100%;
+        max-width: 95px;
+        height: 100%;
+        border: 2px dashed #c2cdda;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 30px;
+        color: #acb9c7;
+        vertical-align: top;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.1s ease;
+        transition: all 0.1s ease;
+        span {
+            position: relative;
+            top: -5px;
+        }
+    }
+    .fileuploader-thumbnails-input-inner:hover, .fileuploader-thumbnails-input-inner:active {
+        border-color: #92a7bf;
+        color: #899baf;
+    }
+    .fileuploader-dragging .fileuploader-thumbnails-input-inner {
+        background: #fff;
+    }
+    .fileuploader-items-list {
+        margin: -5px -10px;
+    }
+    .fileuploader-item {
+        -webkit-animation: fileuploaderScaleIn 0.2s ease;
+        animation: fileuploaderScaleIn 0.2s ease;
+        border-bottom: 0;
+    }
+    .fileuploader-item-inner {
+        position: relative;
+        border-radius: 4px;
+        background: rgba(255,255,255,0.6);
+        overflow: hidden;
+        z-index: 1;
+    }
+    .fileuploader-item-inner, fileuploader-item-inner .thumbnail-holder, .fileuploader-items-list .fileuploader-item-image {
+        width: 100%;
+        height: 100%;
+    }
+    .fileuploader-items-list .fileuploader-item-image {
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+    }
+    .fileuploader-item .fileuploader-item-image img,
+    .fileuploader-item .fileuploader-item-image canvas {
+        border-radius: 0;
+    }
+    .fileuploader-items-list .fileuploader-item-image img {
+        max-height: 100%;
+        min-height: 100%;
+        max-width: none;
+    }
+    .fileuploader-item .fileuploader-item-image.fileuploader-loading:after {
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        margin-left: -15px;
+        margin-top: -15px;
+        opacity: 0.2;
+    }
+    .fileuploader-items-list .actions-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        background: rgba(33, 33, 33, 0.55);
+        text-align: right;
+        -webkit-transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease;
+        opacity: 0;
+        z-index: 3;
+    }
+    .fileuploader-items-list .fileuploader-item:hover .actions-holder {
+        opacity: 1;
+    }
+    .fileuploader-action {
+        background: none;
+        border: 0;
+        width: 24px;
+        height: 24px;
+        margin: 3px 3px 0 0;
+        z-index: 2;
+    }
+    .fileuploader-action-remove i:before,
+    .fileuploader-action-remove i:after {
+        top: 4px;
+        left: 10px;
+        height: 14px;
+        width: 3px;
+        background: #fff;
+    }
+    .fileuploader-action-sort i {
+        top: 10px;
+        width: 12px;
+    }
+    .fileuploader-action-sort i:before {
+        top: -4px;
+    }
+    .fileuploader-action-sort i:after {
+        top: 4px;   
+    }
+
+    .fileuploader-action-popup {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .fileuploader-item.upload-failed {
+        background: none;
+    }
+    .fileuploader-items-list .fileuploader-item.upload-failed .fileuploader-item-icon {
+        display: block !important;
+        background: #db6868 !important;
+        color: #fff;
+    }
+    .fileuploader-item.upload-pending .fileuploader-action-remove:after {
+        right: 0;
+        margin-top: -14px;
+    }
+    .fileuploader-item .progress-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .fileuploader-item .progress-holder .fileuploader-progressbar {
+        position: relative;
+        top: 50%;
+        width: 80%;
+        height: 6px;
+        margin: 0 auto;
+        background: #dde4f6;
+    }
+    .fileuploader-item.sorting {
+        -webkit-animation: none;
+        animation: none;
+    }
+    .fileuploader-sorter-placeholder {
+        background: none;   
+    }
+    .fileuploader-sorter-placeholder div {
+        background: #fff;
+    }
+} 
+
+/* ==========================================================================
+2. Drag and drop theme
+========================================================================== */
+.fileuploader-theme-dragdrop  {
+    .fileuploader-input {
+        display: block;
+        padding: 60px 0;
+        background: #fff;
+        border: 2px dashed #c2cdda;
+        border-radius: 3px;
+        text-align: center;
+        -webkit-transition: background-color 0.2s ease;
+        transition: background-color 0.2s ease;
+    }
+
+    .fileuploader-input .fileuploader-input-inner {
+        -webkit-transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease;
+    }
+
+    .fileuploader-input.fileuploader-dragging .fileuploader-input-inner {
+        opacity: 0.4;
+    }  
+    .fileuploader-input.fileuploader-dragging img {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    .fileuploader-input img {
+        display: block;
+        max-width: 64px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    .fileuploader-input h3 {
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        font-size: 18px;
+        line-height: 23px;
+        font-weight: bold;
+        color: #555a6b;
+        white-space: normal;
+    }
+    .fileuploader-input p {
+        color: #74809d;   
+    }
+    &.fileuploader-is-uploading .fileuploader-input-caption:after {
+        display: none;
+    }
+    .fileuploader-pending-loader .right-half,
+    .fileuploader-pending-loader .spinner {
+        background: #687ddb;   
+    }
+
+    .fileuploader-input p {
+        margin: 10px 0;   
+    }
+}
+

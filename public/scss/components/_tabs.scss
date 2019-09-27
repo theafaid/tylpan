@@ -1,0 +1,283 @@
+/*! _tabs.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Navigation tabs and pills styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Tabs nav
+1. Navigation tabs
+2. Partner tabs
+3. Tabbed reviews
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Tabs nav
+========================================================================== */
+
+.tabs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    //container
+    .tabs-container {
+        overflow: hidden;
+        width: 100%;
+        .tab-content {
+            padding: 28px 33px;
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+            width: 100%;
+        }
+        .tab-content p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .tabs-container.type-2 {
+        border-radius: 3px;
+    }
+    .tabs-container.type-1 .tab-content {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        padding: 30px 0 0 0;
+    }
+    li {
+        float: left;
+        line-height: 45px;
+        padding: 0;
+        margin-right: 4px;
+        position: relative;
+        z-index: 12;
+    }
+    li.active .tab-reviews {
+        color: $white;
+    }
+    li a, tab-reviews {
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+    li a {
+        border-bottom: 2px solid transparent;
+        color: #333;
+        display: inline-block;
+        outline: none;
+        padding: 7px 15px;
+        text-decoration: none;
+        font-size: 15px;
+        z-index: 11;
+        position: relative;
+        margin-bottom: -1px;
+        &:hover {
+            border-color: #66676b; 
+        }
+    }
+    li a:hover, li.active a {
+        border-color: $primary;
+        color: $primary !important;
+        z-index: 11;
+    }
+    li a i {
+        padding-right: 5px;
+        font-size: 16px;
+        top: 1px;
+        position: relative;
+    }
+}
+
+/* ==========================================================================
+1. Navigation tabs
+========================================================================== */
+
+.navigation-tabs {
+    overflow: hidden;
+    //navtab content
+    .navtab-content {
+        display: none;
+        padding: 15px;
+        min-height: 190px;
+        &.navtab-modal {
+            max-height: 350px;
+            overflow: auto;
+        }
+    }
+    //active state
+    .navtab-content.is-active {
+        display: block;
+    }
+    //faded tabs
+    &.animated-tabs {
+        .navtab-content {
+            animation-name: fadeInLeft;
+            animation-duration: 0.5s;
+        }
+    }
+    //translated tabs
+    &.translated-tabs {
+        .navtab-content {
+            animation-name: translateLeft;
+            animation-duration: 0.5s;
+        }
+    }
+    // Simple tabs
+    &.simple-tabs {
+        .tabs ul li a {
+            color: $title-grey;
+        }
+        .tabs ul li:hover a {
+            border-bottom-color: $primary;
+        }
+        .tabs ul li.is-active a {
+            color: $blue-grey;
+            border-bottom: 2px solid $primary;
+        }
+        .tabs ul li.is-active a .icon i {
+            color: $primary;
+        }
+
+    }
+    //boxed tabs
+    &.boxed-tabs {
+        .tabs ul li a {
+            color: $title-grey;
+        }
+        .tabs ul li.is-active a {
+            color: $primary;
+        }
+    }
+    //outlined pills
+    &.outlined-pills {
+        &.rounded-pills {
+            .tabs ul li.is-active a {
+                border-radius: 100px;
+            }
+        }
+        .tabs ul {
+            border-bottom: 1px transparent !important;
+        }
+        .tabs a {
+            border: 1px transparent;
+        }
+        .tabs ul li a {
+            color: $title-grey;
+            margin-bottom: 5px
+        }
+        .tabs ul li.is-active a {
+            color: $primary;
+            border: 1px solid $primary;
+            border-bottom-color: $primary !important;
+            border-radius: 3px;
+        }
+    }
+    //full pills
+    &.full-pills {
+        &.rounded {
+            .tabs ul li.is-active a {
+                border-radius: 100px !important;
+            }
+        }
+        .tabs ul {
+            border-bottom: 1px transparent !important;
+            padding-bottom: 10px;
+        }
+        .tabs a {
+            border: 1px transparent;
+        }
+        .tabs ul li a {
+            color: $title-grey;
+            margin-bottom: 5px
+        } 
+        //pills colors
+        &.primary {
+            .tabs ul li.is-active a {
+                color: $white;
+                border: 1px solid $primary;
+                background-color: $primary;
+                border-radius: 3px;
+                box-shadow: $primary-box-shadow;
+            }
+        }
+        &.secondary {
+            .tabs ul li.is-active a {
+                color: $white;
+                border: 1px solid $secondary;
+                background-color: $secondary;
+                border-radius: 3px;
+                box-shadow: $secondary-box-shadow;
+            }
+        }
+        &.accent {
+            .tabs ul li.is-active a {
+                color: $white;
+                border: 1px solid $accent;
+                background-color: $accent;
+                border-radius: 3px;
+                box-shadow: $accent-box-shadow;
+            }
+        }
+    }
+    //square pills
+    &.square-pills {
+        //rounded style
+        &.circle-pills {
+            .tabs ul li a {
+                border-radius: 30px;
+            }
+        }
+        .tabs ul {
+            padding: 20px;
+        }
+        .tabs ul li a {
+            padding: 0 15.5px;
+            text-align: center;
+            height: 60px;
+            width: 60px;
+            border-radius: 3px;
+            font-weight: 400;
+            color: #9a9a9a;
+            margin-right: 19px;
+            background-color: rgba(222, 222, 222, 0.3);
+            border-bottom: 1px solid transparent;
+            transition: all 0.5s;
+            :hover {
+                border-bottom: 1px solid transparent;
+            }
+            i {
+                display: block;
+                font-size: 18px;
+            }
+        }
+        .tabs ul li.is-active a {
+            background-color: $primary;
+            color: $white;
+            box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.18);
+        }
+    }
+}
+
+/* ==========================================================================
+2. Partner tabs
+========================================================================== */
+
+.tabs {
+    &.partner-tabs {
+        ul {
+            border-bottom: 1px transparent !important;
+        }
+        ul li {
+            
+        }
+    }
+}
+
+/* ==========================================================================
+3. Tabbed reviews
+========================================================================== */
+
+.tab-reviews {
+    color: #aaa;
+}

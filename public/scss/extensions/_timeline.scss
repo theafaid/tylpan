@@ -1,0 +1,279 @@
+/*! _timeline.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Timeline extension 
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Variables
+1. Timeline
+2. Responsive styles
+3. Activity feed
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Variables
+========================================================================== */
+$primary-color: $accent;
+$secondary-color: $secondary;
+$timeline-color: $primary-color;
+
+/* ==========================================================================
+1. Timeline
+========================================================================== */
+.timeline {
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+    padding: 0 10px;
+    @include prefix(transition, all .4s ease);
+    *, *:before, *:after {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    %clearfix {
+        &:after, &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+    }
+    &:before {
+        content:"";
+        width: 3px;
+        height: 100%;
+        background: $fade-grey;
+        left: 50%;
+        top: 0;
+        position: absolute;
+    }
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+        width: 100%;
+    }
+    //item
+    .timeline-item {
+        margin-bottom: 50px;
+        position: relative;
+        @extend %clearfix;
+        //icon
+        .timeline-icon {
+            background: $timeline-color;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            overflow: hidden;
+            margin-left: -23px;
+            cursor: pointer;
+            @include prefix(border-radius, 50%);
+            @include prefix(box-shadow, 0px 5px 43px rgba(0, 0, 0, 0.18));
+            i {
+                position: relative;
+                font-size: 1.6rem;
+                top: 12px;
+                left: 13px;
+                color: $white;
+            }
+
+            svg {
+                position: relative;
+                top: 14px;
+                left: 14px;
+            }
+        }
+        //content
+        .timeline-content {
+            width: 45%;
+            background: #fff;
+            padding: 20px;
+            @include prefix(box-shadow, 0px 5px 43px rgba(0, 0, 0, 0.18));
+            @include prefix(border-radius, 5px);
+            @include prefix(transition, all .3s ease);
+            //header
+            .content-header {
+                padding: 10px;
+                background: $white;
+                color: $blue-grey;
+                margin: -20px -20px 0 -20px;
+                font-weight: 300;
+                @include prefix(border-radius, 3px 3px 0 0);
+                .timestamp {
+                    font-size: 0.9rem;
+                    color: $muted-grey;
+                    //float: right;
+                    //margin-right: 10px;
+                }
+            }
+            //body
+            .content-body {
+                position: relative;
+                display: flex;
+                width: 100%;
+                .timeline-avatar {
+                    height: 40px;
+                    @include prefix(border-radius, 100px);
+                }
+                .timeline-text {
+                    margin: 0 10px;
+                    div:first-child {
+                        font-family: 'Nexa Bold', sans-serif;
+                        font-weight: 500;
+                        color: $blue-grey;
+                    }
+                    div:last-child {
+                        color: $muted-grey;
+                    }
+                    .timestamp {
+                        font-size: 0.9rem;
+                        color: $muted-grey;
+                    }
+                }
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                left: 45%;
+                top: 20px;
+                width: 0; 
+                height: 0; 
+                border-top: 7px solid transparent;
+                border-bottom: 7px solid transparent; 
+                border-left:7px solid $white; 
+            }
+            //right position
+            &.right {
+                float: right;
+
+                &:before {
+                    content: '';
+                    right: 45%;
+                    left: inherit;
+                    border-left: 0;
+                    border-right: 7px solid $white;
+                }
+            }
+        }
+    }
+    //doted style
+    &.doted .timeline-icon {
+        background: white;
+        border: 2px solid #ededed;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 22%;
+        //left: 51.9%;
+        overflow: hidden;
+        margin: -5px;
+        //margin-left: -23px;
+        cursor: pointer;
+        @include prefix(border-radius, 50%);
+        @include prefix(box-shadow, 0px 5px 43px rgba(0, 0, 0, 0.18));
+    }
+}
+
+/* ==========================================================================
+2. Responsive styles
+========================================================================== */
+@media screen and (max-width: 768px) {
+    .timeline {
+        margin: 10px;
+        padding: 0px;
+        width: 100%;
+        &:before {
+            left: 0;
+        }
+
+        .timeline-item {
+            .timeline-content {
+                width: 90%;
+                float: right;
+
+                &:before, &.right:before {
+                    left: 10%;
+                    margin-left: -6px;
+                    border-left: 0;
+                    border-right: 7px solid $white;
+                }
+            }
+
+            .timeline-icon {
+                left: 0;
+            }
+        }
+        &.doted .timeline-icon {
+            left: 0;
+        }
+    }
+}
+
+
+/* ==========================================================================
+3. Activity feed
+========================================================================== */
+.simple-feed {
+    padding: 15px;
+    list-style: none;
+    a {
+        color: $accent;
+    }
+    //item
+    .feed-item {
+        position: relative;
+        top: -10px;
+        padding-bottom: 40px;
+        padding-left: 30px;
+        border-left: 2px solid $fade-grey;
+        display: flex;
+        align-items: center;
+        //name
+        .name {
+            font-weight: 600;
+            color: $blue-grey;
+        }
+        //image
+        img {
+            border-radius: 100px;
+            width: 45px;
+            height: 45px;
+        }
+        //text
+        .feed-item-text {
+            margin-left: 15px;
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 20%;
+            left: -8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 100px;
+            background: $white;
+            border: 2px solid $fade-grey;
+        }
+        //date
+        .date {
+            display: block;
+            position: relative;
+            top: -5px;
+            color: $muted-grey;
+            text-transform: none;
+            font-size: 13px;
+        }
+        .text {
+            position: relative;
+            top: -3px;
+        }
+    }
+}

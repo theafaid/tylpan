@@ -1,0 +1,199 @@
+/*! _dialogs.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Modal dialogs styles
+========================================================================== */
+
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Base modal class
+1. Modal active state
+2. Media queries
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Base modal class
+========================================================================== */
+.modal {
+    transition: all 0.5s;
+    transform: scale(0);
+    //modal content default styles
+    .modal-content {
+        transition: all 0.4s;
+        transform: scale(0);
+        opacity: 0;
+        z-index: 99 !important;
+    }
+    //modal close default styles
+    .modal-close {
+        transition: all 0.4s;
+        z-index: 100 !important;
+        &:hover {
+            transform: rotate(135deg);
+        }
+    }
+    a {
+        border-radius: 6px;
+    }
+}
+
+/* ==========================================================================
+1. Modal active state
+========================================================================== */
+.modal.is-active {
+    transform: scale(1);
+    //modal overlay
+    .modal-background {
+        background: $webkit-modal-gradient;
+        background: $modal-gradient;
+        background-color: $primary;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 10000px;
+        transition: all 0.5s;
+        transform: scale(0);
+        margin-left: auto ;
+        margin-right: auto ;
+        left: 0 ;
+        right: 0 ;
+        top: 0 ;
+        bottom: 0 ;
+        z-index: 98 !important;
+        overflow: hidden !important;
+        &.scaleInCircle {
+            transform: scale(7);
+        }
+    }
+    //modal-content
+    .modal-content {
+        //scale in entrance
+        &.scaleIn {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    //close button z-index
+    .modal-close {
+        z-index: 100 !important;
+    }
+    //image modal variation
+    &.image-modal {
+        .modal-background {
+            background: $webkit-coal-gradient;
+            background: $coal-gradient;
+            background-color: $blue-grey;
+        }
+        img {
+            border-radius: 6px;
+        }
+        .gallery-item figure {
+            background: none;
+        }
+    }
+    //Modal card
+    .modal-card {
+        .modal-card-head, .modal-card-foot {
+            padding: 15px;
+        }
+        //header
+        .modal-card-head {
+            background-color: $white;
+            p {
+                color: $blue-grey;
+            }
+            //close button
+            .delete {
+                background: transparent !important;
+                transition: all 0.3s;
+                &:before {
+                    background: $accent;
+                }
+                &:after {
+                    background: $accent;
+                }
+                &:hover {
+                    transform: rotate(135deg);
+                }
+            }
+        }
+        //card body
+        .modal-card-body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .modal-card-body::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background: rgba(0,0,0,0.2);
+        }
+        //card footer
+        .modal-card-foot {
+            background-color: $white;
+            justify-content: flex-end;
+            border-top: none;
+        }
+    }
+    //small modal
+    &.modal-sm {
+        .modal-card-body {
+            max-height: 400px;
+        }
+    }
+    //current theme gradient overlay color
+    &.modal-hero {
+        .modal-background {
+            background: $webkit-hero-gradient;
+            background: $hero-gradient;
+            background-color: $secondary;
+        }
+    }
+    //success overlay
+    &.modal-success {
+        .modal-background {
+            background: $green;
+        }
+    }
+    //error overlay
+    &.modal-error {
+        .modal-background {
+            background: $red;
+        }
+    }
+    //warning overlay
+    &.modal-warning {
+        .modal-background {
+            background: $orange;
+        }
+    }
+    //info overlay
+    &.modal-info {
+        .modal-background {
+            background: $blue;
+        }
+    }
+    //message modals icon
+    .modal-svg {
+        max-width: 110px;
+        margin: 0 auto !important;
+    }
+}
+
+/* ==========================================================================
+2. Media queries
+========================================================================== */
+
+//Mobile adjutment
+@media screen and (min-width: 769px) {
+    .modal.modal-lg {
+        .modal-card, .modal-content {
+            width: 800px !important;
+        }
+    }
+    .modal.modal-sm {
+        .modal-card, .modal-content {
+            width: 400px !important;
+        }
+    }
+}

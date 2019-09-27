@@ -1,0 +1,181 @@
+/*! _tables.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Table styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Compare devices table
+1. feature comparison table
+2. Responsive table
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Compare devices table
+========================================================================== */
+
+.table.device-table {
+    th, td {
+        text-align: center !important;
+        border: none;
+    }
+    th i {
+        font-size: 35px;
+        color: $placeholder;
+    }
+    td {
+        padding: .75em 1em;
+        &:first-child {
+            text-align: left !important;
+        }
+        &.feature-name {
+            line-height: 1.9;
+            font-family: 'Nexa Light', sans-serif;
+        }
+        i {
+            &.im-icon-Yes {
+                font-size: 24px;
+                color: $primary;
+            } 
+            &.im-icon-Close {
+                font-size: 24px;
+                color: $placeholder;
+            } 
+        } 
+    }
+    th {
+        border-bottom: 1px solid #dbdbdb;
+    }
+}
+
+/* ==========================================================================
+1. feature comparison table
+========================================================================== */
+
+.table.compare-table {
+    th, td {
+        text-align: center !important;
+        border: none;
+    }
+    th i {
+        font-size: 35px;
+        color: $placeholder;
+    }
+    td {
+        padding: .75em 1em;
+        &:first-child {
+            text-align: left !important;
+        }
+        &.feature-name {
+            line-height: 1.9;
+            font-family: 'Nexa Light', sans-serif;
+        }
+        i {
+            &.fa-check {
+                font-size: 24px;
+                color: $primary;
+            } 
+            &.fa-close {
+                font-size: 24px;
+                color: $placeholder;
+            } 
+        } 
+    }
+    th {
+        border-bottom: 1px solid #dbdbdb;
+        font-family: 'Nexa Bold', sans-serif;
+    }
+}
+
+/* ==========================================================================
+2. Responsive table
+========================================================================== */
+
+.responsive-table {
+    margin: auto;
+    min-width: 300px;
+    max-width: 100%;
+    border-collapse: collapse;
+    color: #333;
+    border-radius: .2em;
+    overflow: hidden;
+    box-shadow: -1px 3px 10px 0 rgba(0,0,0,.06);
+    //colored headers
+    &.is-primary tr:first-child {
+        background: $primary;
+    }
+    &.is-secondary tr:first-child {
+        background: $secondary;
+    }
+    &.is-accent tr:first-child {
+        background: $accent;
+    }
+    tr:first-child {
+        border-top: none;
+        background: $muted-grey;
+        color: $white !important;
+    }
+    tr {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background-color: $white;
+        border-color: #bfbfbf;
+    }
+    &:nth-child(odd):not(:first-child) {
+        background-color: $smoke-white;
+    }
+    th {
+        display: none;
+        color: $white;
+    }
+    td {
+        display: block;
+    }
+    td:first-child {
+        margin-top: .5em;
+    }
+    td:last-child {
+        margin-bottom: .5em;
+    }
+    td:before {
+        content: attr(data-th) ": ";
+        font-weight: bold;
+        width: 120px;
+        display: inline-block;
+        color: #000;
+    }
+    th, td {
+        text-align: left;
+        padding: .5em 1em;
+    }
+    //Responsive behaviour
+    @media screen and (max-width: 601px) {
+        tr:nth-child(2) {
+            border-top: none;
+        }
+    }
+    @media screen and (min-width: 600px) {
+        tr:hover:not(:first-child) {
+            background-color: $grey-white;
+        }
+        td:before {
+            display: none;
+        }
+        th, td {
+            display: table-cell;
+            padding: .25em .5em;
+        }
+        th:first-child, td:first-child {
+            padding-left: 0;
+        }
+        th:last-child, td:last-child {
+            padding-right: 0;
+        }
+        th, td {
+            padding: 1em !important;
+        }
+    }
+}

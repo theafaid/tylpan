@@ -1,0 +1,132 @@
+/*! _messages.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Messages styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Messages
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Messages
+========================================================================== */
+.message {
+    //header
+    .message-header {
+        background: $muted-grey;
+    }
+    //primary style
+    &.msg-primary {
+        .message-header {
+            background: $primary;
+        }
+        .message-body {
+           border: 1px solid $primary; 
+        }
+    }
+    //secondary style
+    &.msg-secondary {
+        .message-header {
+            background: $secondary;
+        }
+        .message-body {
+            border: 1px solid $secondary;
+        }
+    }
+    //accent style
+    &.msg-accent {
+        .message-header {
+            background: $accent;
+        }
+        .message-body {
+           border: 1px solid $accent; 
+        }
+    }
+    //info style
+    &.msg-info {
+        .message-header {
+            background: $blue;
+        }
+        .message-body {
+            border: 1px solid $blue;
+        }
+    }
+    //success style
+    &.msg-success {
+        .message-header {
+            background: $green;
+        }
+        .message-body {
+            border: 1px solid $green;
+        }
+    }
+    //warning style
+    &.msg-warning {
+        .message-header {
+            background: $orange;
+        }
+        .message-body {
+            border: 1px solid $orange;
+        }
+    }
+    //danger style
+    &.msg-danger {
+        .message-header {
+            background: $red;
+        }
+        .message-body {
+            border: 1px solid $red;
+        }
+    }
+    //icon messages
+    &.icon-msg {
+        position: relative;
+        //body
+        .message-body {
+            padding: 1em 3em 1em 1.5em;
+            h4 {
+                padding-bottom: 5px;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: $blue-grey;
+            }
+        }
+        //icon
+        i {
+            position: absolute;
+            top: -35px;
+            right: -20px;
+            padding: 20px;
+            background: $muted-grey;
+            border: 5px solid white;
+            border-radius: 100px;
+            color: $white;
+        }
+        //color styles
+        &.primary-msg i {
+            background: $primary;
+        }
+        &.secondary-msg i {
+            background: $secondary;
+        }
+        &.accent-msg i {
+            background: $accent;
+        }
+        &.info-msg i {
+            background: $blue;
+        }
+        &.success-msg i {
+            background: $green;
+        }
+        &.warning-msg i {
+            background: $orange;
+        }
+        &.danger-msg i {
+            background: $red;
+        }
+    }
+}

@@ -1,0 +1,906 @@
+/*! _switch.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Switches extension 
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Variables
+1. Switch mixin
+2. Switch styles
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Variables
+========================================================================== */
+$switch-background: $fade-grey !default;
+$switch-border: 0.1rem solid transparent !default;
+$switch-background-active: $basaltic-grey !default;
+$switch-focus-box-shadow-size: 0 0 0 0.125em !default;
+$switch-radius: 100px !default;
+$switch-paddle-background: $white !default;
+$switch-paddle-background-active: $basaltic-grey !default;
+$switch-paddle-offset: 0.25rem !default;
+$switch-paddle-transition: all 0.25s ease-out !default;
+$size-small: 1rem;
+$size-normal: 1.2rem;
+$size-medium: 1.5rem;
+$size-large: 1.8rem;
+$radius-large: 100px;
+
+/* ==========================================================================
+1. Switch mixin
+========================================================================== */
+@mixin switch-size($size) {
+    $switch-height: $size * 1.5;
+    $switch-width: $switch-height * 2;
+    $paddle-height: $switch-height - $switch-paddle-offset * 2;
+    $paddle-width: $switch-height - $switch-paddle-offset * 2;
+    $paddle-active-offest: $switch-width - $paddle-width - $switch-paddle-offset * 1.5;
+
+    + label {
+        position: relative;
+        display: initial;
+        font-size: $size;
+        line-height: initial;
+        padding-left: $switch-width + 0.5;
+        padding-top: 0.2rem;
+        cursor: pointer;
+
+        &::before {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: $switch-width;
+            height: $switch-height;
+            border: $switch-border;
+            border-radius: $switch-radius;
+            background: $switch-background;
+            content: "";
+        }
+
+        &::after {
+            display: block;
+            position: absolute;
+            top: $switch-height / 2 - $paddle-height / 2;
+            left: $switch-paddle-offset;
+            width: $paddle-width;
+            height: $paddle-height;
+            transform: translate3d(0, 0, 0);
+            border-radius: $switch-radius;
+            background: $switch-paddle-background;
+            transition: $switch-paddle-transition;
+            content: "";
+        }
+    }
+
+    &.is-rtl {
+        + label {
+            padding-left: 0;
+            padding-right: $switch-width + 0.5;
+
+            &::before {
+                left: auto;
+                right: 0;
+            }
+
+            &::after {
+                left: auto;
+                right: $switch-paddle-offset;
+            }
+        }
+    }
+
+    &:focus  {
+        &:not(:active) {
+            + label {
+                &::before {
+                    box-shadow: $switch-focus-box-shadow-size rgba($switch-background, 0.25);
+                }
+            }
+        }
+    }
+
+    &:hover {
+        + label {
+            &::before {
+                background: darken($switch-background, 2.5%);
+            }
+        }
+    }
+
+    &:active {
+        + label {
+            &::before {
+                background: darken($switch-background, 5%);
+            }
+        }
+    }
+
+    &:checked {
+        + label {
+            &::before {
+                background: $switch-background-active;
+            }
+
+            &::after {
+                left: $paddle-active-offest;
+            }
+        }
+
+        &.is-rtl {
+            + label {
+                &::after {
+                    left: auto;
+                    right: $paddle-active-offest;
+                }
+            }
+        }
+
+        &:focus {
+            &:not(:active) {
+                + label {
+                    &::before {
+                        box-shadow: $switch-focus-box-shadow-size rgba($switch-background-active, 0.25);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            + label {
+                &::before {
+                    background: darken($switch-background-active, 2.5%);
+                }
+            }
+        }
+
+        &:active {
+            + label {
+                &::before {
+                    background: darken($switch-background-active, 5%);
+                }
+            }
+        }
+    }
+
+    &.is-outlined {
+        + label {
+            &::before {
+                background-color: transparent;
+                border-color: $switch-background;
+            }
+
+            &::after {
+                background: $fade-grey;
+            }
+        }
+
+        &:hover {
+            + label {
+                &::before {
+                    border-color: darken($switch-background, 2.5%);
+                }
+
+                &::after {
+                    background: darken($switch-background, 2.5%);
+                }
+            }
+        }
+
+        &:active {
+            + label {
+                &::before {
+                    border-color: darken($switch-background, 2.5%);
+                }
+
+                &::after {
+                    background: darken($fade-grey, 5%);
+                }
+            }
+        }
+
+        &:checked {
+            + label {
+                &::before {
+                    background-color: transparent;
+                    border-color: $switch-background-active;
+                }
+
+                &::after {
+                    background: $switch-paddle-background-active;
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        border-color: darken($switch-background-active, 2.5%);
+                    }
+
+                    &::after {
+                        background: darken($switch-background-active, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        border-color: darken($switch-background-active, 2.5%);
+                    }
+
+                    &::after {
+                        background: darken($switch-background-active, 5%);
+                    }
+                }
+            }
+        }
+    }
+
+    &.is-thin {
+        + label {
+            &::before {
+                top: $switch-height / 2.75;
+                height: $switch-height / 4;
+            }
+
+            &::after {
+                box-shadow: 0px 0px 3px $basaltic-grey;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. Switch styles
+========================================================================== */
+.switch[type="checkbox"] {
+    outline: 0;
+    user-select: none;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //disabled state
+    &[disabled] {
+        cursor: not-allowed;
+
+        + label {
+            opacity: 0.5;
+
+            &::before {
+                opactiy: 0.5;
+            }
+
+            &::after {
+                opactiy: 0.5;
+            }
+
+            &:hover,
+            &.is-hovered {
+                cursor: not-allowed;
+            }
+        }
+    }
+    //sizes
+    @include switch-size($size-normal);
+    
+    &.is-small {
+        @include switch-size($size-small);
+    }
+
+    &.is-medium {
+        @include switch-size($size-medium);
+    }
+
+    &.is-large {
+        @include switch-size($size-large);
+    }
+    //Primary color
+    &.is-primary {
+        &:checked {
+            + label {
+                &::before {
+                    background: $primary;
+                }
+            }
+
+            &:focus {
+                &:not(:active) {
+                    + label {
+                        &::before {
+                            box-shadow: $switch-focus-box-shadow-size rgba($primary, 0.25);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        background: darken($primary, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        background: darken($primary, 5%);
+                    }
+                }
+            }
+        }
+
+        &.is-outlined {
+            &:checked {
+                + label {
+                    &::before {
+                        background-color: transparent;
+                        border-color: $primary;
+                    }
+
+                    &::after {
+                        background: $primary;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: darken($primary, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($primary, 2.5%);
+                        }
+                    }
+                }
+
+                &:active {
+                    + label {
+                        &::before {
+                            border-color: darken($primary, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($primary, 5%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-thin {
+            &.is-outlined {
+                + label {
+                    &::after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    //Secondary color
+    &.is-secondary {
+        &:checked {
+            + label {
+                &::before {
+                    background: $secondary;
+                }
+            }
+
+            &:focus {
+                &:not(:active) {
+                    + label {
+                        &::before {
+                            box-shadow: $switch-focus-box-shadow-size rgba($secondary, 0.25);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        background: darken($secondary, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        background: darken($secondary, 5%);
+                    }
+                }
+            }
+        }
+
+        &.is-outlined {
+            &:checked {
+                + label {
+                    &::before {
+                        background-color: transparent;
+                        border-color: $secondary;
+                    }
+
+                    &::after {
+                        background: $secondary;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: darken($secondary, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($secondary, 2.5%);
+                        }
+                    }
+                }
+
+                &:active {
+                    + label {
+                        &::before {
+                            border-color: darken($secondary, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($secondary, 5%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-thin {
+            &.is-outlined {
+                + label {
+                    &::after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    //Accent color
+    &.is-accent {
+        &:checked {
+            + label {
+                &::before {
+                    background: $accent;
+                }
+            }
+
+            &:focus {
+                &:not(:active) {
+                    + label {
+                        &::before {
+                            box-shadow: $switch-focus-box-shadow-size rgba($accent, 0.25);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        background: darken($accent, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        background: darken($accent, 5%);
+                    }
+                }
+            }
+        }
+
+        &.is-outlined {
+            &:checked {
+                + label {
+                    &::before {
+                        background-color: transparent;
+                        border-color: $accent;
+                    }
+
+                    &::after {
+                        background: $accent;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: darken($accent, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($accent, 2.5%);
+                        }
+                    }
+                }
+
+                &:active {
+                    + label {
+                        &::before {
+                            border-color: darken($accent, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($accent, 5%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-thin {
+            &.is-outlined {
+                + label {
+                    &::after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    //Info color
+    &.is-info {
+        &:checked {
+            + label {
+                &::before {
+                    background: $blue;
+                }
+            }
+
+            &:focus {
+                &:not(:active) {
+                    + label {
+                        &::before {
+                            box-shadow: $switch-focus-box-shadow-size rgba($blue, 0.25);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        background: darken($blue, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        background: darken($blue, 5%);
+                    }
+                }
+            }
+        }
+
+        &.is-outlined {
+            &:checked {
+                + label {
+                    &::before {
+                        background-color: transparent;
+                        border-color: $blue;
+                    }
+
+                    &::after {
+                        background: $blue;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: darken($blue, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($blue, 2.5%);
+                        }
+                    }
+                }
+
+                &:active {
+                    + label {
+                        &::before {
+                            border-color: darken($blue, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($blue, 5%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-thin {
+            &.is-outlined {
+                + label {
+                    &::after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    //Success color
+    &.is-success {
+        &:checked {
+            + label {
+                &::before {
+                    background: $green;
+                }
+            }
+
+            &:focus {
+                &:not(:active) {
+                    + label {
+                        &::before {
+                            box-shadow: $switch-focus-box-shadow-size rgba($green, 0.25);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        background: darken($green, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        background: darken($green, 5%);
+                    }
+                }
+            }
+        }
+
+        &.is-outlined {
+            &:checked {
+                + label {
+                    &::before {
+                        background-color: transparent;
+                        border-color: $green;
+                    }
+
+                    &::after {
+                        background: $green;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: darken($green, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($green, 2.5%);
+                        }
+                    }
+                }
+
+                &:active {
+                    + label {
+                        &::before {
+                            border-color: darken($green, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($green, 5%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-thin {
+            &.is-outlined {
+                + label {
+                    &::after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    //Warning color
+    &.is-warning {
+        &:checked {
+            + label {
+                &::before {
+                    background: $orange;
+                }
+            }
+
+            &:focus {
+                &:not(:active) {
+                    + label {
+                        &::before {
+                            box-shadow: $switch-focus-box-shadow-size rgba($orange, 0.25);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        background: darken($orange, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        background: darken($orange, 5%);
+                    }
+                }
+            }
+        }
+
+        &.is-outlined {
+            &:checked {
+                + label {
+                    &::before {
+                        background-color: transparent;
+                        border-color: $orange;
+                    }
+
+                    &::after {
+                        background: $orange;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: darken($orange, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($orange, 2.5%);
+                        }
+                    }
+                }
+
+                &:active {
+                    + label {
+                        &::before {
+                            border-color: darken($orange, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($orange, 5%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-thin {
+            &.is-outlined {
+                + label {
+                    &::after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    //Danger color
+    &.is-danger {
+        &:checked {
+            + label {
+                &::before {
+                    background: $red;
+                }
+            }
+
+            &:focus {
+                &:not(:active) {
+                    + label {
+                        &::before {
+                            box-shadow: $switch-focus-box-shadow-size rgba($red, 0.25);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                + label {
+                    &::before {
+                        background: darken($red, 2.5%);
+                    }
+                }
+            }
+
+            &:active {
+                + label {
+                    &::before {
+                        background: darken($red, 5%);
+                    }
+                }
+            }
+        }
+
+        &.is-outlined {
+            &:checked {
+                + label {
+                    &::before {
+                        background-color: transparent;
+                        border-color: $red;
+                    }
+
+                    &::after {
+                        background: $red;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: darken($red, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($red, 2.5%);
+                        }
+                    }
+                }
+
+                &:active {
+                    + label {
+                        &::before {
+                            border-color: darken($red, 2.5%);
+                        }
+
+                        &::after {
+                            background: darken($red, 5%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-thin {
+            &.is-outlined {
+                + label {
+                    &::after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

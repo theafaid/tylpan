@@ -1,0 +1,329 @@
+/*! _accordion.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Accordion styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Simple accordion
+1. Multi toggle
+2. Single toggle
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Simple accordion
+========================================================================== */
+.simple-accordion-wrapper {
+    //Section
+    .accordion-section {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: $white;
+        border: 1px solid $fade-grey;
+        a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: $grey-5;
+            font-weight: 600;
+            -webkit-transition:all 0.2s linear;
+            -moz-transition:all 0.2s linear;
+            transition:all 0.2s linear;
+        }
+        a i {
+            position:relative;
+            float: right;
+            margin-top:4px;
+            color: $grey-6;
+        }
+        a.active {
+            background-color: $blue-grey;
+            color: $white;
+        }
+        a.active i {
+            color: $white;
+        }
+        .accordion-content {
+            position:relative;
+            width: 100%;
+            height: auto;
+            background-color: $white;
+            display:none;
+            p {
+                padding: 20px 25px;
+                margin: 0;
+                color: $grey-3;
+            }
+        }
+    }
+    //Colors
+    &.is-primary {
+        a.active {
+            background-color: $primary;
+        }
+    }
+    &.is-secondary {
+        a.active {
+            background-color: $secondary;
+        }
+    }
+    &.is-accent {
+        a.active {
+            background-color: $accent;
+        }
+    }
+    &.is-info {
+        a.active {
+            background-color: $blue;
+        }
+    }
+    &.is-success {
+        a.active {
+            background-color: $green;
+        }
+    }
+}
+
+/* ==========================================================================
+1. Multi toggle
+========================================================================== */
+.multi-toggle-wrapper {
+    //Multi toggle item
+    .mt-item {
+        position: relative;
+        margin-bottom: 1px;
+        width: 100%;
+        color: $blue-grey;
+        border: 1px solid $fade-grey;
+        overflow: hidden;
+        &:hover .mt-item-label {
+            color: $primary;
+            span {
+                color: $primary;
+            }
+        } 
+        //Input
+        .mt-item-input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        //Label
+        .mt-item-label {
+            position: relative;
+            display: block;
+            padding: 0 0 0 3em;
+            background: $white;
+            font-weight: bold;
+            line-height: 3;
+            cursor: pointer;
+            color: $placeholder;
+            text-transform: uppercase;
+            font-size: 1em;
+            margin-bottom: 0;
+            border-radius: 3px 3px 0 0;
+            border-bottom: 1px solid $fade-grey;
+            span {
+                color: $blue-grey;
+                font-weight: 600;
+                text-transform: none;
+                -webkit-transition: all .45s;
+                -o-transition: all .45s;
+                transition: all .45s;
+            }
+        }
+        //Content
+        .mt-item-content {
+            max-height: 0;
+            overflow: hidden;
+            -webkit-transition: max-height .45s;
+            -o-transition: max-height .45s;
+            transition: max-height .45s;
+            background-color: $white;
+            border-radius: 3px;
+            p {
+                margin: 1em;
+            }
+            .mt-item {
+                padding: 10px;
+                background: #fff;
+                color: $blue-grey;
+                margin: 2px 0px;
+                border-radius: 3px;
+                label {
+                    border-radius: 0;
+                }
+            }
+        }
+        //Inner
+        .mt-item-inner {
+            padding: 1px 0 0;
+            label {
+                font-weight: 400;
+                background-color: $placeholder;
+                color: $white;
+            }
+            .mt-item-content {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    li {
+                        list-style-type: none;
+                        .checkBox {
+                            input {}
+                            label {
+                                background-color: transparent;
+                                color: $blue-grey;
+                                text-transform: capitalize;
+                                padding-left: 0;
+                                margin: 0;
+                                &:after {
+                                    content: "";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mt-item-input:checked ~ .mt-item-content {
+            max-height: 50em;
+        }
+        .mt-item-label::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 3em;
+            height: 3em;
+            line-height: 3;
+            text-align: center;
+            -webkit-transition: all .45s;
+            -o-transition: all .45s;
+            transition: all .45s;
+        }
+        .mt-item-input[type=checkbox] + .mt-item-label::after {
+            font-family: "FontAwesome";
+            content: "\f077";
+            font-weight: 300;
+        }
+        .mt-item-input[type=checkbox]:checked + .mt-item-label::after {
+            transform: rotate(180deg);
+        }
+    }
+    //Checkbox
+    .checkbox-custom {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .checkbox-custom,
+    .checkbox-custom-label {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .checkbox-custom-label {
+        position: relative;
+    }
+
+    .checkbox-custom + .checkbox-custom-label:before{
+        content: '';
+        background: transparent;
+        border: 2px solid #ddd;
+        display: inline-block;
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        padding: 2px;
+        margin-right: 10px;
+        text-align: center;
+    }
+
+    .checkbox-custom:checked + .checkbox-custom-label:before {
+        content: "\f00c";
+        font-family: 'FontAwesome';
+        color: $placeholder;
+        line-height: 10px;
+        font-weight: 300;
+    }
+}
+
+/* ==========================================================================
+2. Single toggle
+========================================================================== */
+.single-toggle-wrapper {
+    //wrap
+    .toggle-wrap {
+        border: 1px solid #e0e0e0;
+        border-radius: 3px 3px 0 0;
+        padding-left: 20px;
+        padding-right: 10px;
+        transition: all 0.5s;
+        &:hover {
+            box-shadow: inset rgba(143,160,241,0.2) 0 0 0 1px, rgba(213,220,247,0.59) 0 10px 20px;
+        }
+        //trigger
+        .trigger a {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            padding: 0;
+            line-height: 26px;
+            outline: none;
+            color: $blue-grey;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            transition: background-color 0.2s, color 0.2s;
+            padding: 16px 27px;
+            margin: -1px 0 0 0;
+            i {
+                padding-right: 6px;
+                margin: 0 4px 0 0;
+                transition: all 0.3s;
+            }
+            .im-icon-Add {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                font-size: 24px;
+                transform: translate3d(0, -50%, 0) rotate(0);
+                transition: 0.2s;
+            }
+            .im-icon-Coding {
+                position: relative;
+                top: 7px;
+            }
+        }
+        .trigger a {
+            text-transform: uppercase;
+            border: none;
+            margin: 0;
+            padding: 15px 0;
+            text-transform: none;
+            font-size: 11px;
+            font-weight: 500;
+            background-color: transparent;
+            color: $blue-grey;
+            padding-right: 60px;
+            font-weight: 600;
+        }
+        .trigger.active .im-icon-Add {
+            margin-top: 2px;
+            transform: translate3d(0, -50%, 0) rotate(45deg);
+            color: $muted-grey;
+        }
+        .toggle-container {
+            padding: 0px 0 30px 0;
+            border: none;
+        }
+    }
+}

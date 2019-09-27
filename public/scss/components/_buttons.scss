@@ -1,0 +1,466 @@
+/*! _buttons.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Button styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Main button class
+1. Square buttons
+2. Link buttons
+3. Primary button
+4. Secondary button
+5. Accent button
+6. Success button
+7. Warning button
+8. Danger button
+9. Info button
+10. Social buttons
+11. Ripple effect
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Main button class
+========================================================================== */
+.button {
+    transition: all 0.5s;
+    //Sign up buttons
+    &.button-signup {
+        padding: 22px 40px !important;
+        &.btn-outlined.is-bold {
+            border-width: 2px;
+            font-weight: 600;
+        }
+    }
+    //CTA buttons
+    &.button-cta {
+        padding: 22px 40px !important;
+        &.btn-outlined.is-bold {
+            border-width: 2px;
+            font-weight: 600;
+        }
+    }
+    //Line height fix class
+    &.no-lh {
+        line-height: 0 !important;
+    }
+    //Action button
+    &.button-action {
+        padding: 25px 40px !important;
+    }
+    //Button text alignments
+    &.btn-align {
+        padding: 3px 13px 6px 13px;
+    }
+    &.btn-align-md {
+        padding: 5px 15px 18px 15px;
+    }
+    &.btn-align-lg {
+        padding: 6px 15px 18px 15px;
+    }
+    //Uppercase buttons
+    &.btn-upper {
+        text-transform: uppercase;
+    }
+    //Rounded buttons
+    &.rounded {
+        border-radius: 500px;
+    }
+    //Hover raised buttons
+    &.raised:hover {
+        box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important;
+        opacity: 0.8;
+    }
+    //Raised buttons
+    &.is-raised {
+        box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important;
+    }
+    //Fade buttons
+    &.btn-fade:hover {
+        opacity: 0.6;
+    }
+    //Outlined buttons
+    &.btn-outlined {
+        background: transparent;
+        //Light buttons
+        &.light-btn {
+            border-color: $white;
+            color: $white;
+            &:hover {
+                background-color: $white;
+                color: $blue-grey;
+            }
+        }
+        //bold outlined buttons
+        &.is-bold {
+            border-width: 2px;
+            font-weight: 600;
+        }
+    }
+    //Padded button
+    &.btn-padding {
+        padding: 6px 13px 16px 13px !important;
+    }
+    //Default button
+    &.default-btn {
+        color: $placeholder !important;
+    }
+    //Link buttons
+    &.is-link {
+        text-decoration: none !important;
+    }
+    //Icon buttons
+    &.has-icon-right i {
+        padding-left: 8px;
+    }
+    //Default border
+    &:focus {
+        border-color: $default-input;
+    }
+    //Buttons with icons
+    i {
+        position: relative;
+        top: 1px;
+        padding-right: 8px;
+    }
+    &.has-icon {
+        i {
+            position: relative;
+            margin-right: 5px;
+            font-size: 1.7rem;
+        }
+    }
+    &.is-fullwidth {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
+
+/* ==========================================================================
+1. Square buttons
+========================================================================== */
+.button.btn-square {
+    width: 45px;
+    height: 45px;
+    text-align: center !important;
+    display: block;
+    //Button sizes
+    &.is-small {
+        width: 36px;
+        height: 36px;  
+    }
+    &.is-medium {
+        width: 55px;
+        height: 55px;  
+    }
+    &.is-large {
+        width: 64px;
+        height: 64px;  
+    }
+    //Icon sizes
+    i {
+        top: 5px;
+        font-size: 21px;
+        padding: 0 !important;
+    }
+    &.is-small i {
+        top: 4px;
+        font-size: 18px;
+    }
+    &.is-medium i {
+        font-size: 28px;
+    }
+    &.is-large i {
+        top: 7px;
+        font-size: 32px;
+    }
+}
+
+/* ==========================================================================
+2. Link buttons
+========================================================================== */
+.button.is-link {
+    &.btn-more {
+        text-decoration: none !important;
+    }
+    &.color-primary {
+        i {
+            font-size: 9px;
+            margin-left: 10px;
+            position: relative;
+            top: 2px;
+            color: $primary !important;
+            transition: all 0.5s;
+        }
+    }
+    &:hover i {
+        transform: translate(10px,0);
+    }
+}
+
+/* ==========================================================================
+3. Primary button
+========================================================================== */
+.button.primary-btn {
+    outline: none;
+    border-color: $primary;
+    background-color: $primary;
+    color: $white;
+    transition: all 0.5s;
+    &:hover {
+        color: $white;
+    }
+    &.raised:hover {
+        box-shadow: $primary-box-shadow;
+        opacity: 0.9.5;
+    }
+    &.btn-outlined {
+        border-color: $primary;
+        color: $primary;
+        background-color: transparent; 
+        &:hover {
+            color: $white;
+            background-color: $primary;
+        }
+    }
+    &:focus {
+        border-color: $primary;
+    }
+}
+
+/* ==========================================================================
+4. Secondary button
+========================================================================== */
+.button.secondary-btn {
+    outline: none;
+    border-color: $secondary;
+    background-color: $secondary;
+    color: $white;
+    transition: all 0.5s;
+    &:hover {
+        color: $white;
+    }
+    &.raised:hover {
+        box-shadow: $secondary-box-shadow;
+        opacity: 0.95;
+    }
+    &.btn-outlined {
+        border-color: $secondary;
+        color: $secondary;
+        background-color: transparent; 
+        &:hover {
+            color: $white;
+            background-color: $secondary;
+        }
+    }
+    &:focus {
+        border-color: $secondary;
+    }
+}
+
+/* ==========================================================================
+5. Accent button
+========================================================================== */
+.button.accent-btn {
+    outline: none;
+    border-color: $accent;
+    background-color: $accent;
+    color: $white;
+    transition: all 0.5s;
+    &:hover {
+        color: $white;
+    }
+    &.raised:hover {
+        box-shadow: $accent-box-shadow;
+        opacity: 0.8;
+    }
+    &.btn-outlined {
+        border-color: $accent;
+        color: $accent;
+        background-color: transparent;
+        &:hover {
+            color: $white;
+            background-color: $accent;
+        }
+    }
+    &:focus {
+        border-color: $accent;
+    }
+}
+
+/* ==========================================================================
+6. Success button
+========================================================================== */
+.button.success-btn {
+    outline: none;
+    border-color: $green;
+    background-color: $green;
+    color: $white;
+    transition: all 0.5s;
+    &:hover {
+        color: $white;
+    }
+    &.raised:hover {
+        box-shadow: $green-box-shadow;
+        opacity: 0.8;
+    }
+    &.btn-outlined {
+        border-color: $green;
+        color: $green;
+        background-color: transparent;
+        &:hover {
+            color: $white;
+            background-color: $green;
+        }
+    }
+    &:focus {
+        border-color: $green;
+    }
+}
+
+/* ==========================================================================
+7. Warning button
+========================================================================== */
+.button.warning-btn {
+    outline: none;
+    border-color: $orange;
+    background-color: $orange;
+    color: $white;
+    transition: all 0.5s;
+    &:hover {
+        color: $white;
+    }
+    &.raised:hover {
+        box-shadow: $orange-box-shadow;
+        opacity: 0.8;
+    }
+    &.btn-outlined {
+        border-color: $orange;
+        color: $orange;
+        background-color: transparent;
+        &:hover {
+            color: $white;
+            background-color: $orange;
+        }
+    }
+    &:focus {
+        border-color: $orange;
+    }
+}
+
+/* ==========================================================================
+8. Danger button
+========================================================================== */
+.button.danger-btn {
+    outline: none;
+    border-color: $red;
+    background-color: $red;
+    color: $white;
+    transition: all 0.5s;
+    &:hover {
+        color: $white;
+    }
+    &.raised:hover {
+        box-shadow: $red-box-shadow;
+        opacity: 0.8;
+    }
+    &.btn-outlined {
+        border-color: $red;
+        color: $red;
+        background-color: transparent;
+        &:hover {
+            color: $white;
+            background-color: $red;
+        }
+    }
+    &:focus {
+        border-color: $red;
+    }
+}
+
+/* ==========================================================================
+9. Info button
+========================================================================== */
+.button.info-btn {
+    outline: none;
+    border-color: $blue;
+    background-color: $blue;
+    color: $white;
+    transition: all 0.5s;
+    &:hover {
+        color: $white;
+    }
+    &.raised:hover {
+        box-shadow: $blue-box-shadow;
+        opacity: 0.8;
+    }
+    &.btn-outlined {
+        border-color: $blue;
+        color: $blue;
+        background-color: transparent;
+        &:hover {
+            color: $white;
+            background-color: $blue;
+        }
+    }
+    &:focus {
+        border-color: $blue;
+    }
+}
+
+/* ==========================================================================
+10. Social buttons
+========================================================================== */
+.button.social-btn {
+    color: $white;
+    &.facebook {
+        background-color: $facebook;
+    }
+    &.twitter {
+        background-color: $twitter;
+    }
+    &.linkedin {
+        background-color: $linkedin;
+    }
+    &.tumblr {
+        background-color: $tumblr;
+    }
+    &.github {
+        background-color: $github;
+    }
+    &.icon-solo i.fa {
+        top: 12px !important;
+    }
+}
+
+/* ==========================================================================
+11. Ripple effect
+========================================================================== */
+.ripple {
+    overflow:hidden;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    animation: ripple-animation 2s;
+}
+
+//Ripple animation keyframes
+@keyframes ripple-animation {
+    from {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    to {
+        transform: scale(100);
+        opacity: 0;
+    }
+}

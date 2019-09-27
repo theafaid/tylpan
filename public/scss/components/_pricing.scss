@@ -1,0 +1,1010 @@
+/*! _pricing.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Pricing tables styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Classic pricing
+1. Minimal pricing
+2. Clean pricing
+3. Fancy pricing
+4. Colored headers pricing
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Classic pricing
+========================================================================== */
+
+.classic-pricing {
+    //table
+    .pricing-table {
+        display: flex;
+        align-items: stretch;
+        flex-direction: row;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        //comparative layout
+        &.is-comparative {
+            .pricing-plan {
+                margin: 0;
+
+                &:not(:last-child) {
+                    border-right: none;
+                }
+            }
+        }
+        //horizontal layout
+        &.is-horizontal {
+            .pricing-plan {
+                display: flex;
+                flex-direction: row;
+                flex-basis: 100%;
+
+                .plan-header {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .plan-price {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .plan-items {
+                    width: 100%;
+                    background-color: $smoke-white;
+                    columns: 2;
+                    -webkit-columns: 2;
+                    -moz-columns: 2;
+                    column-gap: 0.1rem;
+                }
+
+                .plan-footer {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin: auto;
+                }
+            }
+        }
+        //pricing plan
+        .pricing-plan {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background-color: $white;
+            border: 0.1rem solid $fade-grey;
+            border-radius: 3px;
+            list-style-type: none;
+            transition: 0.25s;
+            margin: 0.5em;
+            //header
+            .plan-header {
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                background-color: $white;
+                font-size: 1.1rem;
+                font-weight: 700;
+                padding: 0.75em;
+                align-content: center;
+                text-align: center;
+            }
+            //item
+            .plan-item {
+                background: $smoke-white;
+                border-bottom: 1px solid $fade-grey;
+                padding: 0.75em;
+                align-content: center;
+                text-align: center;
+                font-size: 0.9em;
+                color: $blue-grey;
+                &:hover {
+                    background: $light-grey;
+                }
+            }
+            //price
+            .plan-price {
+                background-color: $white;
+                font-size: 0.8rem;
+                font-weight: normal;
+                padding: 0.75em;
+                align-content: center;
+                text-align: center;
+                //number
+                .plan-price-amount {
+                    font-size: 3rem;
+                    font-weight: bolder;
+                    //currency symbol
+                    .plan-price-currency {
+                        vertical-align: super;
+                        font-size: 1.1rem !important;
+                        font-weight: normal!important;
+                        color: $blue-grey;
+                        margin-right: 0.25rem;
+                    }
+                }
+            }
+            //footer
+            .plan-footer {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+                padding: 0.75em;
+                align-content: center;
+                text-align: center;
+                margin-top: auto;
+            }
+            //Primary style
+            &.is-primary {
+                .plan-header {
+                    color: $primary;
+                }
+                .plan-price {
+                    .plan-price-amount {
+                        color: $primary;
+                    }
+                    .plan-price-currency {
+                        color: $primary;
+                    }
+                }
+                .plan-footer {
+                    .button {
+                        background-color: $primary;
+                        border-color: transparent;
+                        color: $white;
+
+                        &:hover,
+                        &.is-hovered {
+                            background-color: darken($primary, 2.5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &:focus,
+                        &.is-focused {
+                            border-color: transparent;
+                            box-shadow: 0 0 0.5em rgba($primary, 0.25);
+                            color: $white;
+                        }
+
+                        &:active,
+                        &.is-active {
+                            background-color: darken($primary, 5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &[disabled] {
+                            background-color: $primary;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            //Secondary style
+            &.is-secondary {
+                .plan-header {
+                    color: $secondary;
+                }
+                .plan-price {
+                    .plan-price-amount {
+                        color: $secondary;
+                    }
+                    .plan-price-currency {
+                        color: $secondary;
+                    }
+                }
+                .plan-footer {
+                    .button {
+                        background-color: $secondary;
+                        border-color: transparent;
+                        color: $white;
+
+                        &:hover,
+                        &.is-hovered {
+                            background-color: darken($secondary, 2.5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &:focus,
+                        &.is-focused {
+                            border-color: transparent;
+                            box-shadow: 0 0 0.5em rgba($secondary, 0.25);
+                            color: $white;
+                        }
+
+                        &:active,
+                        &.is-active {
+                            background-color: darken($secondary, 5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &[disabled] {
+                            background-color: $secondary;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            //Accent style
+            &.is-accent {
+                .plan-header {
+                    color: $accent;
+                }
+                .plan-price {
+                    .plan-price-amount {
+                        color: $accent;
+                    }
+                    .plan-price-currency {
+                        color: $accent;
+                    }
+                }
+                .plan-footer {
+                    .button {
+                        background-color: $accent;
+                        border-color: transparent;
+                        color: $white;
+
+                        &:hover,
+                        &.is-hovered {
+                            background-color: darken($accent, 2.5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &:focus,
+                        &.is-focused {
+                            border-color: transparent;
+                            box-shadow: 0 0 0.5em rgba($accent, 0.25);
+                            color: $white;
+                        }
+
+                        &:active,
+                        &.is-active {
+                            background-color: darken($accent, 5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &[disabled] {
+                            background-color: $accent;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            //Success style
+            &.is-success {
+                .plan-header {
+                    color: $green;
+                }
+                .plan-price {
+                    .plan-price-amount {
+                        color: $green;
+                    }
+                    .plan-price-currency {
+                        color: $green;
+                    }
+                }
+                .plan-footer {
+                    .button {
+                        background-color: $green;
+                        border-color: transparent;
+                        color: $white;
+
+                        &:hover,
+                        &.is-hovered {
+                            background-color: darken($green, 2.5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &:focus,
+                        &.is-focused {
+                            border-color: transparent;
+                            box-shadow: 0 0 0.5em rgba($green, 0.25);
+                            color: $white;
+                        }
+
+                        &:active,
+                        &.is-active {
+                            background-color: darken($green, 5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &[disabled] {
+                            background-color: $green;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            //Warning style
+            &.is-warning {
+                .plan-header {
+                    color: $orange;
+                }
+                .plan-price {
+                    .plan-price-amount {
+                        color: $orange;
+                    }
+                    .plan-price-currency {
+                        color: $orange;
+                    }
+                }
+                .plan-footer {
+                    .button {
+                        background-color: $orange;
+                        border-color: transparent;
+                        color: $white;
+
+                        &:hover,
+                        &.is-hovered {
+                            background-color: darken($orange, 2.5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &:focus,
+                        &.is-focused {
+                            border-color: transparent;
+                            box-shadow: 0 0 0.5em rgba($orange, 0.25);
+                            color: $white;
+                        }
+
+                        &:active,
+                        &.is-active {
+                            background-color: darken($orange, 5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &[disabled] {
+                            background-color: $orange;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            //Danger style
+            &.is-danger {
+                .plan-header {
+                    color: $red;
+                }
+                .plan-price {
+                    .plan-price-amount {
+                        color: $red;
+                    }
+                    .plan-price-currency {
+                        color: $red;
+                    }
+                }
+                .plan-footer {
+                    .button {
+                        background-color: $red;
+                        border-color: transparent;
+                        color: $white;
+
+                        &:hover,
+                        &.is-hovered {
+                            background-color: darken($red, 2.5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &:focus,
+                        &.is-focused {
+                            border-color: transparent;
+                            box-shadow: 0 0 0.5em rgba($red, 0.25);
+                            color: $white;
+                        }
+
+                        &:active,
+                        &.is-active {
+                            background-color: darken($red, 5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &[disabled] {
+                            background-color: $red;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            //Info style
+            &.is-info {
+                .plan-header {
+                    color: $blue;
+                }
+                .plan-price {
+                    .plan-price-amount {
+                        color: $blue;
+                    }
+                    .plan-price-currency {
+                        color: $blue;
+                    }
+                }
+                .plan-footer {
+                    .button {
+                        background-color: $blue;
+                        border-color: transparent;
+                        color: $white;
+
+                        &:hover,
+                        &.is-hovered {
+                            background-color: darken($blue, 2.5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &:focus,
+                        &.is-focused {
+                            border-color: transparent;
+                            box-shadow: 0 0 0.5em rgba($blue, 0.25);
+                            color: $white;
+                        }
+
+                        &:active,
+                        &.is-active {
+                            background-color: darken($blue, 5%);
+                            border-color: transparent;
+                            color: $white;
+                        }
+
+                        &[disabled] {
+                            background-color: $blue;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+            //Active state (Featured state)
+            &.is-active {
+                box-shadow: inset rgba(143,160,241,0.2) 0 0 0 1px, rgba(213,220,247,0.59) 0 10px 20px;
+                transform: scale(1.05);
+            }
+        }
+    }
+    //Tablet setings
+    @media (min-width : 768px) and (max-width : 1024px) {
+        .pricing-table {
+            //comparative style
+            &.is-comparative {
+                margin: 0.5rem;
+
+                &.is-features {
+                    display: none;
+                }
+
+                .plan-item {
+                    &::before {
+                        content: attr("data-feature");
+                    }
+                }
+            }
+            //horizontal style
+            &.is-horizontal {
+                .pricing-plan {
+                    display: flex;
+                    flex-direction: row;
+                    flex-basis: 100%;
+
+                    .plan-header {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+
+                    .plan-price {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                    }
+
+                    .plan-items {
+                        width: 100%;
+                        background-color: $smoke-white;
+                        columns: 2;
+                        -webkit-columns: 2;
+                        -moz-columns: 2;
+                        column-gap: 0.1rem;
+                    }
+
+                    .plan-footer {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+    //Mobile setings
+    @media (max-width: 767px) {
+        .pricing-table {
+            //comparative style
+            &.is-comparative {
+                .pricing-plan {
+                    width: 100% !important;
+                    &.is-features {
+                        display: none;
+                    }
+
+                    margin: 0.5rem;
+
+                    .plan-item {
+                        &::before {
+                            content: attr(data-feature);
+                            display: block;
+                            font-weight: 600;
+                            font-size: 0.8rem;
+                            color: $light-grey;
+                        }
+                    }
+                }
+            }
+            //horizontal style
+            &.is-horizontal {
+                .plan-items {
+                    display: none;
+                }
+            }
+        }
+        .pricing-plan.is-mobile {
+            min-width: 100% !important;
+            display: block !important;
+        }
+    }
+}
+
+/* ==========================================================================
+1. Minimal pricing
+========================================================================== */
+
+.minimal-pricing {
+    border: 2px solid $blue-grey;
+    border-radius: 2px;
+    //wide box style
+    &.wide-box {
+        max-width: 100%;
+        margin: 0 10px 0 10px;
+        padding: 20px 0 20px 0;
+    }
+    //featured state
+    &.featured {
+        border: 2px solid $primary;
+        .plan-name {
+            color: $primary;
+        }
+        .price .price-number {
+            color: $primary;
+        }
+        .price .price-currency {
+            color: $primary;
+        }
+    }
+    //secondary ackground
+    &.bg-secondary {
+        background-color: $secondary;
+        border: 2px solid $secondary;
+        .plan-name {
+            color: $white;
+        }
+        .price {
+            .price-number {
+                color: $white;
+            }
+            .price-currency {
+                color: $white;
+            }
+            .price-period {
+                color: $white;
+            }
+        } 
+
+        .plan-features {
+            color: $white;
+        }
+    }
+    //plan definition
+    .plan-name {
+        color: $blue-grey;
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    //plan price
+    .price {
+        margin-bottom: 20px;
+        .price-currency {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+        .price-number {
+            font-size: 6rem;
+            font-weight: bold;
+        }
+        .price-period {
+
+        }
+    }
+    //plan features
+    .plan-features {
+        margin-bottom: 30px;
+        ul li {
+            padding: 5px 10px 5px 10px;
+        }
+    }
+}
+
+//wide box background
+.minimal-pricing.wide-box {
+    background-image: url(https://place-hold.it/1280x720);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+/* ==========================================================================
+2. Clean pricing
+========================================================================== */
+
+//Clean pricing billing switch
+.plan-controls {
+    padding: 10px 0;
+    span {
+        margin: 0 5px 0 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        //Active state
+        &.is-active {
+            border: 1px solid $primary;
+            border-radius: 4px;
+            color: $primary;
+        }
+    }
+}
+//Period select
+.period-select {
+    padding: 20px 0;
+    max-width: 245px;
+    span {
+        padding: 8px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        color: $blue-grey;
+        border: 1px solid $blue-grey;
+        &:first-child {
+            border-right: 1px solid $blue-grey;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+        &:last-child {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        &.is-active {
+            background: $blue-grey;
+            color: $white;
+        }
+    }
+}
+//Clean pricing tables
+.side-pricing {
+    //card
+    .pricing-card {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+        border: 1px solid $fade-grey;
+        border-radius: 6px;
+        color: rgba(0,0,0, 0.87);
+        background: #fff;
+        transition: all 0.5s;
+        //popular plan symbol
+        .popular {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            i {
+                font-size: 26px;
+                color: $primary;
+            }
+        }
+        //inner section
+        .inner {
+            padding: 15px;
+            //name
+            .plan-name {
+                font-size: 0.9em;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: $muted-grey;
+            }
+            //price
+            .plan-price {
+                color: $blue-grey;
+                font-weight: bolder;
+                font-size: 3.8em;
+                line-height: 1.15em;
+                position: relative;
+                small.currency {
+                    position: relative;
+                    top: 38px;
+                    left: -90px;
+                    font-size: 26px;
+                }
+                small:last-child {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
+            //features
+            ul {
+                list-style: none;
+                padding: 0;
+                max-width: 240px;
+                margin: 10px auto;
+                li {
+                    color: $muted-grey;
+                    text-align: center;
+                    padding: 12px 0;
+                    border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+                    b {
+                        color: #3C4858;
+                    }
+                }
+            }
+            a {
+                margin: 10px 0;
+            }
+        }
+        //transparent table style
+        &.transparent {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+        //shadow on hover
+        &.card-raised:hover {
+            box-shadow: inset rgba(143,160,241,0.2) 0 0 0 1px, rgba(213,220,247,0.59) 0 10px 20px !important;
+        }
+    }
+}
+
+
+/* ==========================================================================
+3. Fancy pricing
+========================================================================== */
+
+.fancy-pricing {
+    //pricing card
+    .fancy-pricing-card {
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px 15px 0 15px;
+        transition: all 0.3s;
+        &:hover {
+            transform: translateY(-20px);
+            .plan-icon i {
+                box-shadow: inset rgba(143,160,241,0.2) 0 0 0 1px, rgba(213,220,247,0.59) 0 10px 20px;
+            }
+        }
+        //plan name
+        .plan-name {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 10px 0;
+        }
+        //icon
+        .plan-icon {
+            padding: 20px 0;
+            i {
+                font-size: 3rem;
+                padding: 20px;
+                border: 1px solid $fade-grey;
+                color: $white;
+                border-radius: 200px;
+                transition: all 0.5s;
+            }
+        }
+        //price
+        .plan-price {
+            font-size: 3rem;
+            padding: 30px 20px;
+            color: $blue-grey;
+            font-weight: bolder;
+            small:first-child {
+                font-size: 1.4rem;
+                position: relative;
+                top: -20px;
+            }
+            small:last-child {
+                font-size: 1rem;
+                font-weight: 400;
+            }
+        }
+        //features
+        .plan-features {
+            text-align: left;
+            padding: 10px 0;
+            //item
+            li {
+                margin: 10px 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                //small number
+                .feature-count {
+                    &.unlimited {
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+                }
+                //text
+                .feature-count-text {
+                    color: $muted-grey;
+                }
+            }
+        }
+        //streched plan style
+        &.streched {
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+            padding: 20px 40px;
+            .plan-name {
+                font-family: 'Nexa Bold', sans-serif;
+                margin-bottom: 0;
+                margin-right: 25px;
+            }
+            .plan-price {
+                margin-top: 0;
+                font-size: 2rem;
+                small:first-child {
+                    position: static !important;
+                }
+            }
+            .large-count {
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+        }
+        //colors
+        &.primary {
+            .plan-name {
+                color: $primary;
+            }
+            .plan-icon i {
+                color: $primary;
+            }
+            .plan-features {
+                li .large-count {
+                    color: $primary;
+                }
+            }
+        }
+        &.secondary {
+            .plan-name {
+                color: $secondary;
+            }
+            .plan-icon i {
+                color: $secondary;
+            }
+            .plan-features {
+                li .large-count {
+                    color: $secondary;
+                }
+            }
+        }
+        &.accent {
+            .plan-name {
+                color: $accent;
+            }
+            .plan-icon i {
+                color: $accent;
+            }
+            .plan-features {
+                li .large-count {
+                    color: $accent;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+4. Colored headers pricing
+========================================================================== */
+
+.header-pricing {
+    //pricing card
+    .header-pricing-card {
+        text-align: center;
+        border-radius: 15px 15px 0 15px;
+        transition: all 0.3s;
+        //plan name
+        .plan-name {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: $white;
+            background: $muted-grey;
+            padding: 20px;
+        }
+        //card-body
+        .pricing-card-body {
+            border: 1px solid $fade-grey;
+            border-top-color: transparent;
+            //price
+            .plan-price {
+                font-size: 3rem;
+                padding: 40px 20px;
+                color: $blue-grey;
+                font-weight: bolder;
+                small:first-child {
+                    font-size: 1.4rem;
+                    position: relative;
+                    top: -20px;
+                }
+                small:last-child {
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+            }
+            //features
+            ul {
+                list-style: none;
+                padding: 0;
+                max-width: 240px;
+                margin: 10px auto;
+                li {
+                    color: $muted-grey;
+                    text-align: center;
+                    padding: 12px 0;
+                    border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+                    b {
+                        color: #3C4858;
+                    }
+                }
+            }
+        }
+        //colors
+        &.primary {
+            .plan-name {
+                background: $primary;
+            }
+        }
+        &.secondary {
+            .plan-name {
+                background: $secondary;
+            }
+        }
+        &.accent {
+            .plan-name {
+                background: $accent;
+            }
+        }
+    }
+}

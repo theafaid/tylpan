@@ -1,0 +1,214 @@
+/*! _testimonials.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Testimonial styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Simple testimonials
+1. Vertical testimonials
+2. Flat testimonials
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Simple testimonials
+========================================================================== */
+
+.testimonials, .demo {
+    position: relative;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    //item
+    .testimonial-item {
+        margin: 40px;
+        outline: none !important;
+        //avatar
+        .testimonial-avatar {
+            display: flex;
+            justify-content: center;
+            img {
+                border-radius: 100px;
+                width: 75px;
+                height: 75px;
+                position: relative;
+                top: -40px;
+            }
+        }
+        //meta
+        .testimonial-name {
+            text-align: center;
+            h3 {
+                font-family: 'Nexa Bold', sans-serif;
+                font-size: 18px;
+                color: $accent;
+                position: relative;
+                top: -20px;
+            }
+            span {
+                font-family: 'Nexa Light', sans-serif;
+                font-size: 14px;
+                color: $title-grey;
+                position: relative;
+                top: -15px;
+            }
+        }
+        //content
+        .testimonial-content {
+            p {
+                padding: 20px 30px;
+            }
+        }
+    }
+}
+
+//Pagination dots
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: $accent !important;
+}
+
+/* ==========================================================================
+1. Vertical testimonials
+========================================================================== */
+
+.vertical-testimonials {
+    margin-top: 90px;
+    //item
+    .vtestimonial-item {
+        margin: 5px 80px;
+        border-radius: 12px;
+        &:last-child {
+            margin-bottom: 100px;
+        }
+        //avatar
+        .vt-avatar {
+            height:55px;
+            border-radius: 100px;
+        }
+        //content
+        .vt-content {
+            margin: 0 10px;
+            .vt-name {
+                font-family: 'Nexa Bold', sans-serif;
+                font-weight: 500;
+                color: $secondary;
+                margin-bottom: .7em !important;
+            }
+            .vt-text {
+                padding-right: 5px;
+                font-size: 12px;
+            }
+            .star-rating {
+                float: right;
+                position: relative;
+                top: 3px;
+                right: 15px;
+            }
+        }
+    }
+    //active testimonial card
+    .slick-current.slick-active.slick-center {
+        transform: scale(1.1);
+        box-shadow: inset rgba(143,160,241,0.2) 0 0 0 1px, rgba(213,220,247,0.59) 0 10px 20px;
+    }
+    //fade out non active cards
+    .slick-slide {
+        &:not(.slick-current) {
+            opacity: 0.1 !important;
+        }
+    }
+}
+
+/* ==========================================================================
+2. Flat testimonials
+========================================================================== */
+
+.flat-testimonials {
+    //item
+    .flat-testimonial-item {
+        margin: 0 20px 50px 20px;
+        //image
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            img {
+                border-radius: 10px;
+                box-shadow:  0px 5px 12px rgba(0, 0, 0, 0.18); 
+            }
+            //image overlay
+            .skewed-overlay {
+                position: absolute;
+                top: 95%;
+                left: 0;
+                height: 40%;
+                width: 200%;
+                transform: skewY(8deg);
+                padding: 20px;
+                background: $white;
+            }
+        }
+        //Content
+        .testimonial-text {
+            .quoted-text {
+                color: $basaltic-grey;
+            }
+            .client-name {
+                margin-top: 20px;
+                font-family: 'Nexa Bold', sans-serif;
+                font-weight: 400;
+                font-size: 1.2rem;
+            }
+            .client-position {
+                font-family: 'Nexa Light', sans-serif;
+                font-size: 0.9rem;
+                color: $blue-grey;
+            }
+            .company {
+                max-height: 60px;
+                margin-right: 50px;
+                float: right;
+            }
+            .fa-quote-left {
+                margin: 20px 0 !important;
+            }
+        }
+        //colors
+        &.primary {
+            .skewed-overlay {
+                background: $primary;
+            }
+            .client-name {
+                color: $primary;
+            }
+            .fa-quote-left {
+                color: $primary;
+            }
+        }
+        &.secondary {
+            .skewed-overlay {
+                background: $secondary;
+            }
+            .client-name {
+                color: $secondary;
+            }
+            .fa-quote-left {
+                color: $secondary;
+            }
+        }
+        &.accent {
+            .skewed-overlay {
+                background: $accent;
+            }
+            .client-name {
+                color: $accent;
+            }
+            .fa-quote-left {
+                color: $accent;
+            }
+        }
+    }
+}

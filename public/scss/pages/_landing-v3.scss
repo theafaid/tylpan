@@ -1,0 +1,810 @@
+/*! _landing-v3.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Landing kit v4 SCSS file
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Hero styles
+1. Landing page 
+2. Pricing page
+3. Help center
+4. Help category
+5. Help article 
+6. Media queries
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Hero styles
+========================================================================== */
+
+.big-title {
+    font-family: 'Nexa Bold', sans-serif;
+    margin-bottom: 0 !important;
+    padding: 10px 0;
+}
+
+//Light style subtitle
+.light-subtitle {
+    font-size: 1.5rem;
+    padding: 2% 10% 2% 10%;
+    margin-bottom: 0 !important;
+}
+
+//Video modal popup link
+.video-link {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    span {
+        color: $blue-grey;
+    }
+    i {
+        position: relative;
+        top: 2px;
+        padding-right: 10px;
+        color: $coal;
+        transition: all 0.4s;
+    }
+    &:hover {
+        i, span {
+            color: $primary;
+        }
+    }
+}
+
+//Mockup and background positionning
+.mockup-section {
+    padding: 5rem 1.5rem !important;
+    .app-mockup {
+        position: relative;
+        padding-top: 5%;
+        z-index: 2;
+    }
+    .hr-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: 1096px;
+        width: 100%;
+        z-index: 0;
+    }
+}
+
+/* ==========================================================================
+1. Landing page styles
+========================================================================== */
+
+//Feature text
+.minimal-feature {
+    .minimal-title {
+        font-family: 'Nexa Bold', sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        color: $blue-grey;
+        padding: 10px 0;
+        margin-bottom: 0 !important;
+    }
+}
+
+//Featured image
+.minimal-feature-image {
+    position: relative;
+    .main-image {
+        position: relative;
+        z-index: 2;
+    }
+    .image-bg {
+        position: absolute;
+        top: 10%;
+        left: -20%;
+        right: 0;
+        margin: 0 auto;
+        max-width: 1096px;
+        width: 120%;
+        z-index: 0;
+    }
+}
+
+//CTA image position
+.city-container {
+    img {
+        display: block;
+    }
+}
+
+//Purchase conditions
+.conditions {
+    position: relative;
+    top: 12px;
+    font-size: 85%;
+    margin-left: 15px;
+    color: $white;
+}
+
+/* ==========================================================================
+2. Pricing page
+========================================================================== */
+
+//Pricing switch
+.billing-switcher-wrapper {
+    padding-top: 40px;
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .by-month {
+        padding-right: 20px
+    }
+    .by-year {
+        padding-left: 10px;
+    }
+    .by-month, .by-year {
+        color: $title-grey;
+        &.is-active {
+            color: $primary;
+        }
+    }
+    //save 10% image
+    .discount {
+        position: absolute;
+        top: -10px;
+        right: -100px;
+        img {
+            max-height: 70px;
+            height: 70px;
+        }
+    }
+}
+
+//Pricing table
+.pricing-wrapper {
+    position: relative;
+    //table background
+    .hr-bg {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: 1096px;
+        width: 100%;
+        z-index: 0;
+    }
+    //table
+    .flex-card {
+        z-index: 2;
+        .condensed-plan {
+            padding: 20px;
+            text-align: center;
+            border-right: 1px solid $fade-grey;
+            &.is-last {
+                border-right: none;
+            }
+            &.is-switched {
+                .monthly-price {
+                    display: none !important;
+                }
+                .yearly-price {
+                    display: block !important;
+                }
+                .yearly-billed {
+                    visibility: visible !important;
+                }
+            }
+            .plan-header {
+                font-size: 1.2rem;
+                font-weight: 500;
+                padding-bottom: 20px
+            }
+            .plan-description {
+                color: $title-grey;
+                padding-bottom: 20px;
+                span {
+                    font-weight: 500;
+                    color: $primary;
+                }
+            }
+            .plan-price {
+                font-size: 6rem;
+                font-weight: 400;
+                padding-bottom: 2rem;
+                border-bottom: 1px dashed $title-grey;
+                span {
+                    &:after {
+                        content: "PER MONTH";
+                        display: block;
+                        margin-top: -8px;
+                        font-size: 0.8rem;
+                        line-height: 1rem;
+                        font-family: inherit;
+                        font-weight: 300;
+                        color: #748088;
+                    }
+                    &:before {
+                        content: "$";
+                        display: inline-block;
+                        font-weight: 700;
+                        line-height: 4rem;
+                        font-size: 1rem;
+                        padding-top: 1rem;
+                        margin-right: 0;
+                        vertical-align: text-top;
+                    }  
+                }
+                .monthly-price {
+                    display: block;
+                }
+                .yearly-price {
+                    display: none;
+                }
+                .yearly-billed {
+                    padding-top: 2rem;
+                    font-size: 0.9rem;
+                    color: $primary;
+                    visibility: hidden;
+                }
+            }
+            .plan-features {
+                padding-top: 3rem;
+                li {
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+3. Help center
+========================================================================== */
+
+//Help page
+.help-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+        max-height: 45px;
+        max-width: 45px;
+        padding-right: 20px;
+        border-right: 1px solid $white;
+    }
+    .title {
+        color: $white;
+        padding-left: 20px;
+        position: relative;
+        top: -2px;
+    }
+}
+
+.help-subheader {
+    padding: 20px 0 30px 0;
+}
+
+//Search input wrapper
+.help-search-wrapper {
+    position: relative;
+    width: 100%;
+    //input
+    input {
+        width: 100%;
+        padding: 20px 32px 21px 59px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        outline: none;
+        color: rgba(255,255,255,0.7);
+        font-size: 18px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.03);
+        -webkit-transition: background .4s, box-shadow .2s;
+        transition: background .4s, box-shadow .2s;
+        //placeholders
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: rgba(255,255,255,0.7) !important;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: rgba(255,255,255,0.7) !important;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: rgba(255,255,255,0.7) !important;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: rgba(255,255,255,0.7) !important;
+        }
+        //focused input
+        &:focus {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.14);
+            background: $white;
+            color: $blue-grey;
+            + i {
+                color: $muted-grey;
+            }
+            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: $placeholder !important;
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: $placeholder !important;
+            }
+            &:-ms-input-placeholder { /* IE 10+ */
+                color: $placeholder !important;
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                color: $placeholder !important;
+            }
+        }
+    }
+    //search icon
+    i {
+        font-size: 2rem;
+        color: rgba(255,255,255,0.7);
+        position: absolute;
+        top: 18px;
+        left: 18px;
+    }
+}
+
+//Help section layout
+.section.help-section {
+    background: $background-grey;
+    //Card
+    .category-card {
+        box-shadow: 0 3px 8px 0 rgba(0,0,0,0.03);
+        .card-body {
+            a {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .icon {
+                    width: 110px;
+                    height: 110px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    i {
+                        font-size: 3.5rem;
+                        color: $icon-grey !important;
+                    }
+                }
+                //Inner section
+                .inner-content {
+                    padding-left: 25px;
+                    .title {
+                        margin-bottom: 10px !important;
+                        font-weight: 400;
+                        color: $primary;
+                    }
+                    .inner-text {
+                        color: $muted-grey !important;
+                    }
+                    //Meta
+                    .card-meta {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-top: 12px;
+                        .small-avatar {
+                            height: 34px;
+                            width: 34px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                            border: 2px solid $white;
+                            position: relative;
+                            &:not(:first-child) {
+                                margin-left: -19px;
+                            }
+                            &:first-child {
+                                z-index: 3;
+                            }
+                            &:nth-child(2) {
+                                z-index: 2;
+                            }
+                            &:nth-child(3) {
+                                z-index: 1;
+                            }
+                            &:nth-child(4) {
+                                z-index: 0;
+                            }
+                            &.is-more {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: $white;
+                                background: $muted-grey;
+                                font-weight: 500;
+                                font-size: 13px;
+                                span {
+                                    position: relative;
+                                    top: -2px;
+                                    left: -1px;
+                                }
+                            }
+                        }
+                        .meta-info {
+                            color: $muted-grey !important;
+                            .articles-number {
+                                font-size: 13px; 
+                            }
+                            .authors {
+                                font-size: 13px; 
+                                span {
+                                    color: $blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Breadcrumbs
+.breadcrumbs {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    color: $muted-grey;
+    ul {
+        margin: 0 !important;
+        li {
+            display: inline-block;
+            list-style: none;
+            margin: 0 0 0 10px;
+            &:first-child:before {
+                content: '';
+                margin-left: -20px;
+            }
+            &:before {
+                content: "\f105";
+                font-family: "FontAwesome";
+                color: #a0a0a0;
+                font-size: 14px;
+                margin-right: 15px;
+            }
+        }
+    }
+    a {
+        font-weight: 500;
+        color: $primary;
+    }
+}
+
+/* ==========================================================================
+5. Help category
+========================================================================== */
+.help-container {
+    position: relative;
+    //grey background frame
+    .shadow-bg {
+        width: 100%;
+        &:before {
+            content: ' ';
+            position: absolute;
+            display: block;
+            top: 50px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #ebeef1;
+            border-radius: 4px;
+            -webkit-transition: background .3s;
+            transition: background .3s;
+            z-index: 0;
+            margin: 0 10px;
+        }
+    }
+    //Header
+    .category-header {
+        padding: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        top: 20px;
+        z-index: 2;
+        .icon {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+                font-size: 3.5rem;
+                color: $icon-grey !important;
+            }
+        }
+        //Inner section
+        .inner-content {
+            padding-left: 25px;
+            .title {
+                margin-bottom: 10px !important;
+                font-weight: 400;
+                color: $primary;
+            }
+            .inner-text {
+                color: $muted-grey !important;
+            }
+            //meta
+            .card-meta {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin-top: 12px;
+                .small-avatar {
+                    height: 34px;
+                    width: 34px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    border: 2px solid $white;
+                    &:not(:first-child) {
+                        margin-left: -19px;
+                    }
+                    &:first-child {
+                        z-index: 3;
+                    }
+                    &:nth-child(2) {
+                        z-index: 2;
+                    }
+                    &:nth-child(3) {
+                        z-index: 1;
+                    }
+                    &:nth-child(4) {
+                        z-index: 0;
+                    }
+                    &.is-more {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $white;
+                        background: $muted-grey;
+                        font-weight: 500;
+                        font-size: 13px;
+                        span {
+                            position: relative;
+                            top: -2px;
+                            left: -1px;
+                        }
+                    }
+                }
+                .meta-info {
+                    color: $muted-grey !important;
+                    .articles-number {
+                        font-size: 13px; 
+                    }
+                    .authors {
+                        font-size: 13px; 
+                        span {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //List of help articles
+    .articles-list {
+        position: relative;
+        margin: 30px;
+        background: $white;
+        width: calc(100% - 60px);
+        border-radius: 4px;
+        border: 1px solid $border-grey;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.05);
+        //list item
+        .help-article {
+            padding: 30px;
+            a {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .inner-content {
+                    .title {
+                        margin-bottom: 10px !important;
+                        font-weight: 400;
+                        color: $primary;
+                    }
+                    .inner-text {
+                        color: $muted-grey !important;
+                    }
+                    .card-meta {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-top: 12px;
+                        .small-avatar {
+                            height: 34px;
+                            width: 34px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                            border: 2px solid $white;
+                            position: relative;
+                        }
+                        .meta-info {
+                            color: $muted-grey !important;
+                            line-height: 1.1rem;
+                            .author {
+                                font-size: 13px; 
+                                span {
+                                    color: $blue;
+                                }
+                            }
+                            .status {
+                                font-size: 12px;
+                                color: $title-grey;
+                            }
+                        }
+                    }
+                }
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid $border-grey;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+5. Help article
+========================================================================== */
+.single-help-article {
+    border-radius: 4px;
+    border: 1px solid $border-grey;
+    margin-top: 20px;
+    padding: 60px;
+    //inner section
+    .article-inner {
+        max-width: 640px;
+        margin: 0 auto;
+        h2 {
+            font-weight: 500;
+        }
+        h3 {
+            padding-top: 20px;
+            color: $muted-grey;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        //article meta
+        .article-meta {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: $muted-grey !important;
+            line-height: 1.1rem;
+            .small-avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+            }
+            .meta-info {
+                color: $muted-grey !important;
+                line-height: 1.1rem;
+                margin-left: 15px;
+                .author {
+                    font-size: 13px; 
+                    span {
+                        color: $blue;
+                    }
+                }
+                .status {
+                    font-size: 12px;
+                    color: $title-grey;
+                }
+            }
+        }
+        //article content
+        .content {
+            padding-top: 30px;
+            p {
+                font-size: 16px;
+                color: $blue-grey;
+            }
+            h4 {
+                padding-top: 10px;
+                font-weight: 500;
+            }
+            ul {
+                font-size: 16px;
+            }
+        }
+        //rating smileys
+        .rating-section {
+            width: 100%;
+            text-align: center;
+            .question {
+                padding-top: 25px;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: $title-grey
+            }
+            .rating-buttons {
+                position: relative;
+                top: 18px;
+            }
+            .rating-button {
+                max-width: 60px;
+                max-height: 60px;
+                cursor: pointer;
+                i {
+                    font-size: 50px;
+                    font-weight: 200;
+                    color: $title-grey;
+                    transition: all 0.3s;
+                }
+                &:hover i {
+                    color: $primary;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+6. Media queries
+========================================================================== */
+@media (max-width: 768px) {
+    //Category card on main help page
+    .category-card .card-body {
+        padding: 30px 20px !important;
+        a {
+            flex-direction: column !important;
+        }
+        .inner-content {
+            padding-left: 0 !important;
+        }
+        .icon {
+            width: 100% !important;
+            height: 60px !important;
+            display: flex;
+            justify-content: flex-start !important;
+            i {
+                font-size: 2.8rem !important;
+            }
+        }
+    }
+    //Category header
+    .category-header {
+        padding: 30px 20px !important;
+        flex-direction: column !important;
+        .inner-content {
+            padding-left: 0 !important;
+        }
+        .icon {
+            width: 100% !important;
+            height: 60px !important;
+            display: flex;
+            justify-content: flex-start !important;
+            i {
+                font-size: 2.8rem !important;
+            }
+        }
+    }
+    //Avatars
+    .small-avatar {
+        &:nth-child(2), &:nth-child(3), &:nth-child(4), &.is-more {
+            display: none !important;
+        }
+    }
+    //Help article
+    .help-article {
+        padding: 30px 20px !important;
+    }
+    .articles-list {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+    .single-help-article {
+        padding: 25px 20px;
+    }
+}

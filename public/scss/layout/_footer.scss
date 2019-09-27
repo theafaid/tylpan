@@ -1,0 +1,268 @@
+/*! _footer.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Footer styles
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Dark footer
+1. Light Footer
+2. Light left Footer
+3. Dark left Footer
+4. Light medium footer
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Dark footer
+========================================================================== */
+footer.footer-dark {
+    background: $blue-grey;
+    color: $white;
+    position: relative;
+    .columns {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .footer-logo {
+        padding: 10px 0;
+        img {
+            height: 25px;
+        }
+    }
+    .footer-column {
+        .footer-header {
+            padding: 10px 0;
+            h3 {
+                font-family: 'Nexa Bold', sans-serif;
+                font-weight:400;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 0 !important;
+                color: $light-grey;
+            }
+        }
+        ul.link-list {
+            line-height: 30px;
+            font-size: 1rem;
+            a {
+                color: $light-blue-grey;
+                font-weight: 400;
+                transition: all 0.5s;
+            }
+            :hover {
+                color: $smoke-white;
+            }
+        }
+        .level-item .icon {
+            color: $primary;
+            transition: all 0.5s;
+            :hover {
+                color: $smoke-white;
+            }
+        }
+        .copyright {
+            padding: 10px 0;
+        }
+    }
+}
+
+/* ==========================================================================
+1. Light Footer
+========================================================================== */
+footer.footer-light {
+    background: $white;
+    color: $blue-grey;
+    position: relative;
+    .columns {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .footer-logo {
+        padding: 10px 0;
+        img {
+            height: 25px;
+        }
+    }
+    .footer-column {
+        .footer-header {
+            padding: 10px 0;
+            h3 {
+                font-family: 'Nexa Bold', sans-serif;
+                font-weight:400;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 0 !important;
+                color: $blue-grey;
+            }
+        }
+        ul.link-list {
+            line-height: 30px;
+            font-size: 1rem;
+            a {
+                color: $light-blue-grey;
+                font-weight: 400;
+                transition: all 0.5s;
+            }
+            :hover {
+                color: $primary;
+            }
+        }
+        .level-item .icon {
+            color: $muted-grey;
+            transition: all 0.5s;
+            :hover {
+                color: $secondary;
+            }
+        }
+        .copyright {
+            padding: 10px 0;
+        }
+    }
+}
+
+//Footer columns adjustment on mobile
+@media (max-width: 768px) {
+    .footer-columns.is-flex-mobile {
+        flex-wrap: wrap !important;
+    }
+}
+
+/* ==========================================================================
+2. Light left Footer
+========================================================================== */
+footer.footer-light-left {
+    padding: 5rem 1.5rem !important;
+    .footer-nav-right {
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+        .footer-nav-link {
+            margin: 0 10px;
+            padding: 20px 0;
+            color: $blue-grey !important;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                color: $muted-grey !important;
+                border-bottom: 2px solid $muted-grey;
+            }
+            &.is-active {
+                color: $primary !important;
+                border-bottom: 2px solid $primary !important;
+            }
+        }
+
+    }
+    .level-item .icon {
+        color: $placeholder;
+        transition: all 0.5s;
+        :hover {
+            color: $primary;
+        }
+    }
+    .moto {
+        color: $muted-grey;
+    }
+}
+
+//Mobile adjustment
+@media (max-width: 768px) {
+    .footer-nav-right {
+        margin-top: 0 !important;
+    }
+}
+
+/* ==========================================================================
+3. Dark left Footer
+========================================================================== */
+footer.footer-dark-left {
+    padding: 5rem 1.5rem !important;
+    background: $blue-grey;
+    .footer-nav-right {
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+        .footer-nav-link {
+            margin: 0 10px;
+            padding: 20px 0;
+            color: $white !important;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                color: $smoke-white !important;
+                border-bottom: 2px solid $white;
+            }
+            &.is-active {
+                color: $primary !important;
+                border-bottom: 2px solid $primary !important;
+            }
+        }
+
+    }
+    .level-item .icon {
+        color: $white;
+        transition: all 0.5s;
+        :hover {
+            color: $primary;
+        }
+    }
+    .moto {
+        color: $white;
+    }
+}
+
+
+/* ==========================================================================
+4. Light medium footer
+========================================================================== */
+footer.footer-light-medium {
+    padding-bottom: 10rem !important;
+    padding-top: 8rem !important;
+    background: $white;
+    .social-links {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        a {
+            color: $title-grey;
+            margin: 0 5px;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    .footer-description {
+        color: $title-grey;
+    }
+    .footer-column {
+        padding-top: 20px;
+        .column-header {
+            font-family: 'Nexa Light', sans-serif;
+            text-transform: uppercase;
+            color: $blue-grey;
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .column-item {
+            padding-bottom: 10px;
+            a {
+                color: $title-grey;
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+    .moto {
+        color: $muted-grey;
+    }
+    .small-footer-logo {
+        height: 28px;
+    }
+}

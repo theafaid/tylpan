@@ -1,0 +1,143 @@
+/*! _ribbon.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Box ribbon extension 
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Variables
+1. Ribbon Mixins
+2. Ribbon position
+3. Ribbon styles
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Variables
+========================================================================== */
+$ribbon-color: $muted-grey !default;
+$ribbon-background-color: $white !default;
+$ribbon-border: 0.1rem solid $fade-grey !default;
+$size-normal: 1rem !important;
+$size-small: 0.8rem !important;
+$size-medium: 1.3rem !important;
+$size-large: 1.6rem !important;
+
+/* ==========================================================================
+1. Ribbon Mixins
+========================================================================== */
+// The ribbon sizes use mixins so they can be used at different breakpoints
+@mixin ribbon-small {
+    font-size: $size-small;
+}
+
+@mixin ribbon-medium {
+    font-size: $size-medium;
+}
+
+@mixin ribbon-large {
+    font-size: $size-large;
+}
+
+/* ==========================================================================
+2. Ribbon position
+========================================================================== */
+//Class to attach to a box
+.has-ribbon {
+    position: relative;
+}
+//left position
+.has-ribbon-left {
+    position: relative;
+    .ribbon {
+        right: auto;
+        left: 0;
+        border-left: none;
+        border-right: $ribbon-border;
+    }
+}
+//bottom position
+.has-ribbon-bottom {
+    position: relative;
+    .ribbon {
+        top: auto;
+        bottom: 0.5em;
+    }
+}
+
+/* ==========================================================================
+3. Ribbon styles
+========================================================================== */
+.ribbon {
+    background-color: $ribbon-background-color;
+    border: $ribbon-border;
+    border-right: none;
+    color: $ribbon-color;
+    font-size: $size-normal;
+    justify-content: center;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    font-weight: 400;
+    z-index: 2;
+    //Ribbon colors
+    &.is-primary {
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+    }
+    &.is-secondary {
+        background-color: $secondary;
+        color: $white;
+        border-color: $secondary;
+    }
+    &.is-accent {
+        background-color: $accent;
+        color: $white;
+        border-color: $accent;
+    }
+    &.is-success {
+        background-color: $green;
+        color: $white;
+        border-color: $green;
+    }
+    &.is-warning {
+        background-color: $orange;
+        color: $white;
+        border-color: $orange;
+    }
+    &.is-danger {
+        background-color: $red;
+        color: $white;
+        border-color: $red;
+    }
+    &.is-info {
+        background-color: $blue;
+        color: $white;
+        border-color: $blue;
+    }
+    // Sizes
+    &.is-small {
+        @include ribbon-small;
+    }
+
+    &.is-medium {
+        @include ribbon-medium;
+    }
+
+    &.is-large {
+        @include ribbon-large;
+    }
+    //outlined style
+    &.is-outlined {
+        background-color: transparent;
+    }
+}

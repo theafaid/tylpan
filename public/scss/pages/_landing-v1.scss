@@ -1,0 +1,256 @@
+/*! _landing-v1.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Landing kit v2 SCSS file
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Hero styles
+1. Section title
+2. Font settings
+3. Icon boxes
+4. Pricing tables
+5. Login and sign up pages
+6. Footer
+7. Media queries
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Hero styles
+========================================================================== */
+.hero-body.is-clean {
+    padding-top: 0 !important;
+}
+
+//clean style title
+.clean-title {
+    font-family: 'Nexa Bold', sans-serif;
+    font-weight: 700;
+    font-size: 3.4rem;
+    color: $blue-grey;
+    padding: 0;
+}
+
+//Hero mockup position and z-index
+.clean-hero-mockup {
+    margin-top: 80px;
+    z-index:2;
+}
+
+//cta wrapper
+.cta-wrapper {
+    padding: 20px 0;
+}
+
+//pricing hero
+.pricing-hero {
+    padding: 120px 0;
+}
+
+//Caption center on mobile and tablet portrait
+@media (max-width: 768px) {
+    .column.caption-column {
+        .clean-title, .subtitle, .cta-wrapper {
+            text-align: center !important;
+        }
+    }
+}
+
+/* ==========================================================================
+1. Section title
+========================================================================== */
+
+//Background glyph on section titles
+.section-title-wrapper {
+    .clean-bg-symbol {
+        position: absolute;
+        font-weight: bolder;
+        top: -25px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        font-size: 10rem;
+        z-index: 0;
+        opacity: 0.1;
+        color: #999;
+        width: 150px;
+        i {
+            font-weight: 900;
+        }
+    }
+    .subtitle {
+        font-family: 'Nexa Light', sans-serif;
+        color: $title-grey;
+    }
+}
+
+//Section title
+.clean-section-title {
+    font-family: 'Nexa Bold', sans-serif;
+    font-size: 2.6rem;
+    color: $blue-grey;
+    &:before {
+        content: "";
+        border-top: 3px solid $fade-grey;
+        position: absolute;
+        width: 100px;
+        top: 40%;
+        left: 15%;
+        z-index: -999;
+    }
+    &:after {
+        content: "";
+        border-top: 3px solid #ededed;
+        position: absolute;
+        width: 100px;
+        top: 40%;
+        right: 15%;
+        z-index: -999;
+    }
+}
+//Media query for section title (mobile)
+@media (max-width: 768px) {
+    .clean-section-title {
+        &:after, &:before {
+            display: none !important;
+        }
+    }
+}
+
+//background numbers font-weight
+.bg-number.is-fat {
+    font-weight: 900 !important;
+}
+
+/* ==========================================================================
+2. Font settings
+========================================================================== */
+
+//Font settings
+.feature-headline.is-clean, .card-title.is-clean {
+    font-family: 'Nexa Bold', sans-serif;
+}
+
+.clean-text {
+    font-family: 'Nexa Light', sans-serif;
+}
+
+/* ==========================================================================
+3. Icon boxes
+========================================================================== */
+
+.icon-box {
+    .box-icon {
+        margin-bottom: 0;
+    }
+    .box-title {
+        margin: 0;
+        padding: 5px 0;
+        font-weight: 700;
+    }
+}
+
+/* ==========================================================================
+4. Pricing tables
+========================================================================== */
+
+//Pricing tables position
+.clean-pricing {
+    padding-top: 80px !important;
+}
+
+/* ==========================================================================
+5. Login and sign up pages
+========================================================================== */
+
+//Login and signup cards
+.clean-login-card, .clean-signup-card {
+    padding: 40px;
+    border-radius: 6px;
+    max-width: 400px;
+    margin: auto;
+    background-color: $white;
+    border: 1px solid #ecf0f1;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    h2 {
+        font-size: 24px;
+        padding: 20px 0;
+        font-family: 'Nexa Bold', sans-serif;
+    }
+}
+
+.clean-signup-info {
+    padding: 40px 40px 40px 40px;
+    h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+    .feature {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 30px;
+        img {
+            height: 60px !important;
+            width: 60px !important;
+
+        }
+        .feature-text {
+            margin-left: 20px;
+            color: $muted-grey;
+        }
+
+    }
+}
+
+/* ==========================================================================
+6. Footer
+========================================================================== */
+
+//Small footer logo
+.small-footer-logo {
+    height: 38px;
+}
+
+/* ==========================================================================
+7. Media queries
+========================================================================== */
+
+//Hover icon boxes
+@media (max-width: 767px) {
+    .icon-card-hover {
+        padding: 20px 20px 10px 100px !important;
+        .card-description {
+            font-size: 14px;
+        }
+    }
+}
+
+//Layout media queries
+@media (max-width: 768px) {
+    //hero
+    .hero-body.is-clean {
+        padding-top: 3rem !important;
+    }
+    //pricing tables
+    .clean-pricing {
+        .column.is-5 {
+            text-align: center !important;
+        }
+        .period-select {
+            margin: 0 auto;
+        }
+    }
+}
+
+//Tablet portrait media queries
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    .is-tablet-padded {
+        padding: 0 20%;
+    }
+}

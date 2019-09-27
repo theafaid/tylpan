@@ -1,0 +1,56 @@
+/*! themes/_flashy.scss | Bulkit | CSS Ninja */
+
+/* ==========================================================================
+Flashy theme variables and styles (Flashy theme is used in "Agency Kit")
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Theme color variables
+1. Theme gradient
+2. Box shadows
+3. Pageloader
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Theme color variables
+========================================================================== */
+$primary: #00D1B2;
+$secondary: #7F00FF;
+$accent: #536dfe;
+
+/* ==========================================================================
+1. Theme gradient
+========================================================================== */
+$webkit-hero-gradient: -webkit-linear-gradient(to right, $accent, $secondary); 
+$hero-gradient: linear-gradient(to right, $accent, $secondary); 
+
+/* ==========================================================================
+2. Box shadows
+========================================================================== */
+$base-shadow: rgba(0, 0, 0, 0.12);
+
+//Primary box shadow
+$primary-shadow-from: rgba(0, 209, 178, 0.42);
+$primary-shadow-to: rgba(0, 209, 178, 0.2);
+$primary-box-shadow:  0 14px 26px -12px $primary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $primary-shadow-to !important;
+
+//Secondary box shadow
+$secondary-shadow-from: rgba(127, 0, 255, 0.42);
+$secondary-shadow-to: rgba(127, 0, 255, 0.2);
+$secondary-box-shadow:  0 14px 26px -12px $secondary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $secondary-shadow-to !important;
+
+//Accent box shadow
+$accent-shadow-from: rgba(83,109,254, 0.42);
+$accent-shadow-to: rgba(83,109,254, 0.2);
+$accent-box-shadow:  0 14px 26px -12px $accent-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $accent-shadow-to !important;
+
+
+/* ==========================================================================
+3. Pageloader
+========================================================================== */
+.pageloader {
+    background: $primary !important;
+}

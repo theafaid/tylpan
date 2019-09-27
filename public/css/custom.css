@@ -1,0 +1,37 @@
+h1, strong{
+    font-family: 'Nexa Bold', cursive !important;
+}
+h2, h3, h4, h5, h6,input, a, p{
+    font-family: 'Nexa Light', cursive !important;
+}
+
+.country-flag {
+    -webkit-box-shadow: 2px 2px 10px 2px #404040;
+    -moz-box-shadow:  2px 2px 10px 2px #404040;
+    box-shadow:  2px 2px 10px 2px #404040;
+}
+
+.flags-separator {
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.toasted.bubble .action {
+    color: #ddd !important;
+}
+
+.social-link {
+    display: inline !important;
+    padding: 7px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.rounded-avatar {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
